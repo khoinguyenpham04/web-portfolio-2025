@@ -6,6 +6,8 @@ import { NextJsIcon } from "../icons/NextJsIcon"
 import { PostgreSQLIcon } from "../icons/PostgreSQLIcon"
 import { SupabaseIcon } from "../icons/SupabaseIcon"
 import { ReactIcon } from "../icons/ReactIcon"
+import TypeScriptIcon from "../icons/TypeScriptIcon"
+import TailwindCSSIcon from "../icons/TailwindCSSIcon"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,8 +23,10 @@ const projectsData: Project[] = [
     tags: [
       { name: "Next.js", icon: <NextJsIcon /> },
       { name: "React", icon: <ReactIcon /> },
-      { name: "TypeScript" },
-      { name: "Tailwind CSS" },
+      { name: "TypeScript", icon: <TypeScriptIcon /> },
+      { name: "Supabase", icon: <SupabaseIcon /> },
+      { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
+      { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
       { name: "OpenAI API" },
     ],
     images: [
@@ -40,10 +44,9 @@ const projectsData: Project[] = [
       "Designed and coded 2 web apps. Working together for some time now and planning to do more big projects.",
     tags: [
       { name: "Next.js", icon: <NextJsIcon /> },
-      { name: "Supabase", icon: <SupabaseIcon /> },
       { name: "React", icon: <ReactIcon /> },
-      { name: "Tailwind CSS" },
-      { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
+      { name: "TypeScript", icon: <TypeScriptIcon /> },
+      { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
     ],
     images: [
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
