@@ -5,6 +5,7 @@ import { SparkleIcon } from "../icons/SparkleIcon"
 import { NextJsIcon } from "../icons/NextJsIcon"
 import { PostgreSQLIcon } from "../icons/PostgreSQLIcon"
 import { SupabaseIcon } from "../icons/SupabaseIcon"
+import { ReactIcon } from "../icons/ReactIcon"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ const projectsData: Project[] = [
     description: "AI-powered instant personalized feedback, and structured practice for IELTS Speaking.",
     tags: [
       { name: "Next.js", icon: <NextJsIcon /> },
-      { name: "React" },
+      { name: "React", icon: <ReactIcon /> },
       { name: "TypeScript" },
       { name: "Tailwind CSS" },
       { name: "OpenAI API" },
@@ -40,7 +41,7 @@ const projectsData: Project[] = [
     tags: [
       { name: "Next.js", icon: <NextJsIcon /> },
       { name: "Supabase", icon: <SupabaseIcon /> },
-      { name: "React" },
+      { name: "React", icon: <ReactIcon /> },
       { name: "Tailwind CSS" },
       { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
     ],
