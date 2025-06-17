@@ -31,8 +31,8 @@ const menuItems: MenuItem[] = [
         name: 'Projects',
         submenu: true,
         items: [
-            { name: 'Hackathons', href: '#hackathons' },
-            { name: 'Personal Projects', href: '#personal-projects' },
+            { name: 'Hackathons', href: 'projects' },
+            { name: 'Personal Projects', href: 'projects' },
         ],
     },
     { name: 'Resume', href: '#resume' },
