@@ -1,21 +1,14 @@
 import React from 'react';
+import Image from 'next/image';
 import { SparkleIcon } from '../icons/SparkleIcon';
 
-// --- SVG Icon Components (Unchanged) ---
-// In a real project, you might place these in their own files.
-const NotionLogo = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 64 64" width="1em" className={className}>
-    <svg viewBox="0 0 120 126" style={{ width: '100%', height: '100%', display: 'block', fill: 'inherit', flexShrink: 0 }}>
-      <path d="m7.5434 5.40612 69.3741-5.120205c8.5191-.732314 10.711-.2417737 16.0655 3.656575l22.145 15.59941c3.654 2.6825 4.872 3.4128 4.872 6.337v85.5571c0 5.362-1.949 8.533-8.763 9.018l-80.5636 4.876c-5.115.245-7.5494-.486-10.2281-3.901l-16.30795-21.206c-2.92219-3.903-4.13735-6.8233-4.13735-10.24v-76.0489c0-4.38486 1.94945-8.04243 7.5434-8.52798z" fill="#fff"></path>
-      <path clipRule="evenodd" d="m76.9175.285915-69.3741 5.120205c-5.59395.48555-7.5434 4.14312-7.5434 8.52798v76.0489c0 3.4167 1.21516 6.337 4.13735 10.24l16.30795 21.206c2.6787 3.415 5.1131 4.146 10.2281 3.901l80.5636-4.876c6.814-.485 8.763-3.656 8.763-9.018v-85.5571c0-2.7717-1.094-3.5724-4.32-5.9327-.178-.1299-.361-.2644-.552-.4043l-22.145-15.59941c-5.3545-3.8983487-7.5464-4.388889-16.0655-3.656575zm-44.4175 24.189785c-6.5771.4452-8.0716.5463-11.8066-2.495l-9.4982-7.5559c-.9688-.9771-.4829-2.1959 1.9493-2.4377l66.6911-4.87545c5.5965-.48854 8.5165 1.46463 10.7083 3.17005l11.4381 8.2882c.487.2428 1.702 1.7034.241 1.7034l-68.8739 4.1452c-.2922.0195-.5751.0387-.8491.0572zm-7.6758 86.2273v-72.6344c0-3.1681.9736-4.6317 3.8926-4.8775l79.1002-4.6297c2.683-.2437 3.897 1.4637 3.897 4.6297v72.1469c0 3.171-.488 5.856-4.87 6.098l-75.693 4.39c-4.3806.241-6.3268-1.219-6.3268-5.123zm74.7229-68.7382c.4849 2.196 0 4.3899-2.1947 4.6366l-3.6473.7284v53.6232c-3.1664 1.706-6.0864 2.681-8.5195 2.681-3.8957 0-4.8713-1.219-7.7893-4.8734l-23.8558-37.5369v36.3181l7.5488 1.7074s0 4.3848-6.0903 4.3848l-16.7898.977c-.4878-.977 0-3.412 1.703-3.9l4.3814-1.2171v-48.019l-6.0834-.4886c-.4878-2.1959.7272-5.362 4.1371-5.6077l18.0118-1.2169 24.8265 38.0255v-33.6386l-6.3298-.7282c-.4859-2.6845 1.4585-4.6338 3.8926-4.8755z" fill="#000" fillRule="evenodd"></path>
-    </svg>
-  </svg>
-);
+// --- SVG Icon Components ---
 const AppleLogo = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 170 170" className={className}>
         <path d="m150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.197-2.12-9.973-3.17-14.34-3.17-4.58 0-9.492 1.05-14.746 3.17-5.262 2.13-9.501 3.24-12.742 3.35-4.929 0.21-9.842-1.96-14.746-6.52-3.13-2.73-7.045-7.41-11.735-14.04-5.032-7.08-9.169-15.29-12.41-24.65-3.471-10.11-5.211-19.9-5.211-29.378 0-10.857 2.346-20.221 7.045-28.068 3.693-6.303 8.606-11.275 14.755-14.925s12.793-5.51 19.948-5.629c3.915 0 9.049 1.211 15.429 3.591 6.362 2.388 10.447 3.599 12.238 3.599 1.339 0 5.877-1.416 13.57-4.239 7.275-2.618 13.415-3.702 18.445-3.275 13.63 1.1 23.87 6.473 30.68 16.153-12.19 7.386-18.22 17.731-18.1 31.002 0.11 10.337 3.86 18.939 11.23 25.769 3.34 3.17 7.07 5.62 11.22 7.36-0.9 2.61-1.85 5.11-2.86 7.51zm-31.26-123.01c0 8.1021-2.96 15.667-8.86 22.669-7.12 8.324-15.732 13.134-25.071 12.375-0.119-0.972-0.188-1.995-0.188-3.07 0-7.778 3.386-16.102 9.399-22.908 3.002-3.446 6.82-6.3113 11.45-8.597 4.62-2.2516 8.99-3.4968 13.1-3.71 0.12 1.0831 0.17 2.1663 0.17 3.2409z" fill="currentColor"></path>
     </svg>
 );
+
 const NotionMailIcon = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 64 64" width="1em" className={className}>
         <svg viewBox="0 0 22 22" style={{ width: '100%', height: '100%', display: 'block', fill: 'inherit', flexShrink: 0 }}>
@@ -24,6 +17,7 @@ const NotionMailIcon = ({ className }: { className?: string }) => (
         </svg>
     </svg>
 );
+
 const NotionCalendarIcon = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 64 64" width="1em" className={className}>
         <svg viewBox="0 0 57 60" style={{ width: '100%', height: '100%', display: 'block', fill: 'inherit', flexShrink: 0 }}>
@@ -38,90 +32,106 @@ const NotionCalendarIcon = ({ className }: { className?: string }) => (
 
 // --- Reusable Placeholder Component ---
 const ImagePlaceholder = ({ className }: { className?: string }) => (
-    // In a real app, this would be a <Image> component from next/image
-    <div className={`bg-neutral-200 ${className}`}></div>
+    <div className={`bg-gray-100 rounded-2xl overflow-hidden ${className}`}>
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+    </div>
 );
-
 
 const FeaturedHackathons = () => {
     return (
-        <section className="w-full max-w-[1100px] mx-auto py-16 px-6 font-sans text-[#191919]">
+        <section className="bg-white py-16 sm:py-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
                         <SparkleIcon className="size-5"/>
                         <span>Winning Hackathons</span>
-                        </div>
-                        <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutråal-900 mb-4">
-                            Featured Hackathons
-                        </h2>
-                        <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
+                    </div>
+                    <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
+                        Featured Hackathons
+                    </h2>
+                    <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
                         Discover our latest web applications built with modern technologies, delivering exceptional user experiences.
-                        </p>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6 mb-8 pt-10">
-                
-                {/* --- Notion Desktop Block --- */}
-                <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between lg:row-span-2">
-                    <div className="p-10 flex flex-col gap-6">
-                        <NotionLogo className="w-12 h-12 text-black" />
-                        <div>
-                            <h3 className="text-[28px] font-bold leading-tight m-0">Get started on Notion</h3>
-                            <p className="text-base text-black/70 mt-1">Your AI workspace.</p>
-                        </div>
-                        <a href="#" className="w-fit inline-flex items-center justify-center gap-2 bg-[#007AFF] text-white px-5 py-2.5 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-[#0056b3]">
-                            <AppleLogo className="w-6 h-6 fill-current" />
-                            Download for Mac
-                        </a>
-                    </div>
-                    <div className="w-full relative pt-[61.29%]">
-                        {/* Using padding-top for aspect ratio. The image is absolutely positioned inside. */}
-                        <ImagePlaceholder className="absolute inset-0 w-full h-full object-cover" />
-                    </div>
+                    </p>
                 </div>
 
-                {/* --- Notion Mail Block --- */}
-                <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between min-h-[250px]">
-                     <div className="p-6 flex flex-col gap-4 flex-grow z-10">
-                        <NotionMailIcon className="w-12 h-12 text-black" />
-                        <div>
-                            <h3 className="text-[28px] font-bold leading-tight m-0">Notion Mail</h3>
-                            <p className="text-base text-black/70 mt-1">The inbox that thinks like you.</p>
+                <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6">
+                    
+                    {/* --- Race The Ages Block --- */}
+                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between lg:row-span-2">
+                        <div className="p-10 flex flex-col gap-6">
+                            <div className="relative w-32 h-32">
+                                <Image 
+                                    src="/hackathon-images/ChronoQuest.png"
+                                    alt="ChronoQuest Logo"
+                                    fill
+                                    className="object-contain"
+                                    sizes="(max-width: 768px) 96px, 128px"
+                                    priority
+                                />
+                            </div>
+                            <div>
+                                <h3 className="text-[28px] font-bold leading-tight m-0">Race The Ages</h3>
+                                <p className="text-base text-black/70 mt-1">Real-time historical guesser multiplayer game</p>
+                            </div>
+                            <a href="#" className="w-fit inline-flex items-center justify-center gap-2 bg-[#007AFF] text-white px-5 py-2.5 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-[#0056b3]">
+                                <AppleLogo className="w-6 h-6 fill-current" />
+                                Download for Mac
+                            </a>
                         </div>
-                        <a href="#" className="w-fit inline-flex items-center justify-center bg-white text-[#191919] border border-black/10 px-4 py-2 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-black/5">
-                            Download
-                        </a>
-                    </div>
-                     <div className="absolute right-0 bottom-0 w-[260px] h-[230px] z-0">
-                        <ImagePlaceholder className="w-full h-full" />
-                    </div>
-                </div>
-                
-                {/* --- Notion Calendar Block --- */}
-                <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between min-h-[250px]">
-                    <div className="p-6 flex flex-col gap-4 flex-grow z-10">
-                        <NotionCalendarIcon className="w-12 h-12 text-black" />
-                        <div>
-                            <h3 className="text-[28px] font-bold leading-tight m-0">Notion Calendar</h3>
-                            <p className="text-base text-black/70 mt-1">Time and work, together.</p>
+                        <div className="w-full relative p-3">
+                            <div className="relative pt-[61.29%]">
+                                <ImagePlaceholder className="absolute inset-0 w-full h-full" />
+                            </div>
                         </div>
-                        <a href="#" className="w-fit inline-flex items-center justify-center bg-white text-[#191919] border border-black/10 px-4 py-2 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-black/5">
-                            Download
-                        </a>
                     </div>
-                    <div className="absolute right-0 bottom-0 w-[260px] h-[230px] z-0">
-                         <ImagePlaceholder className="w-full h-full" />
-                    </div>
-                </div>
 
+                    {/* --- LeetCoachBlock --- */}
+                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
+                         <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
+                            <NotionMailIcon className="w-12 h-12 text-black" />
+                            <div>
+                                <h3 className="text-[28px] font-bold leading-tight m-0">LeetCoach</h3>
+                                <p className="text-base text-black/70 mt-1">
+                                    Your personal coding interview voice agent AI.
+                                </p>
+                            </div>
+                            <a href="#" className="w-fit inline-flex items-center justify-center bg-white text-[#191919] border border-black/10 px-4 py-2 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-black/5">
+                                Download
+                            </a>
+                        </div>
+                         <div className="relative w-full lg:w-[260px] h-[230px] lg:h-full z-0 p-3">
+                            <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100">
+                                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* --- Omni Block --- */}
+                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
+                        <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
+                            <NotionCalendarIcon className="w-12 h-12 text-black" />
+                            <div>
+                                <h3 className="text-[28px] font-bold leading-tight m-0">Omni</h3>
+                                <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI agents</p>
+                            </div>
+                            <a href="#" className="w-fit inline-flex items-center justify-center bg-white text-[#191919] border border-black/10 px-4 py-2 rounded-lg text-base font-medium no-underline cursor-pointer transition-colors duration-200 hover:bg-black/5">
+                                Download
+                            </a>
+                        </div>
+                        <div className="relative w-full lg:w-[260px] h-[230px] lg:h-full z-0 p-3">
+                            <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100">
+                                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p className="text-center text-black/70 text-base mt-8">
+                    Notion is always at home right{' '}
+                    <a href="#" className="text-inherit no-underline font-medium group">
+                        <span className="border-b border-black/30 transition-colors duration-200 group-hover:border-black/70">in your browser</span>
+                    </a>.
+                </p>
             </div>
-            <p className="text-center text-black/70 text-base">
-                Notion is always at home right{' '}
-                <a href="#" className="text-inherit no-underline font-medium group">
-                    <span className="border-b border-black/30 transition-colors duration-200 group-hover:border-black/70">in your browser</span>
-                </a>.
-            </p>
         </section>
     );
 };
