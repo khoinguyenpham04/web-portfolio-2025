@@ -9,6 +9,8 @@ import { SupabaseIcon } from "../icons/SupabaseIcon"
 import { ReactIcon } from "../icons/ReactIcon"
 import TypeScriptIcon from "../icons/TypeScriptIcon"
 import TailwindCSSIcon from "../icons/TailwindCSSIcon"
+import OpenAIIcon from "../icons/OpenAIIcon";
+import MongoIcon from "../icons/MongoIcon";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +29,9 @@ const projectsData: Project[] = [
       { name: "Supabase", icon: <SupabaseIcon /> },
       { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
       { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
-      { name: "OpenAI API" },
+      { name: "OpenAI", icon: <OpenAIIcon/> },
+      { name: "Whisper", icon: <OpenAIIcon/> },
+      
     ],
     images: [
       "/blue-gradient-placeholder.jpg",
@@ -47,6 +51,7 @@ const projectsData: Project[] = [
       { name: "Next.js", icon: <NextJsIcon /> },
       { name: "React", icon: <ReactIcon /> },
       { name: "TypeScript", icon: <TypeScriptIcon /> },
+      { name: "MongoDB", icon: <MongoIcon /> },
       { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
     ],
     images: [
