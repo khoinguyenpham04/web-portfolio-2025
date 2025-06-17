@@ -15,7 +15,6 @@ const inter = Inter({
   display: "swap",
 })
 
-// Project data with real online images
 const projectsData: Project[] = [
   {
     id: "speakwisely",
@@ -31,9 +30,9 @@ const projectsData: Project[] = [
       { name: "OpenAI API" },
     ],
     images: [
-      "https://images.unsplash.com/photo-1596524430615-b46475ddff6e?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
+      "/blue-gradient-placeholder.jpg",
+      "/blue-bg.jpg",
+      "/blue-gradient-placeholder.jpg",
     ],
     href: "#speakwisely",
     layout: "imageRight",
@@ -51,9 +50,9 @@ const projectsData: Project[] = [
       { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
     ],
     images: [
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200&auto=format&fit=crop",
+      "/blue-gradient-placeholder.jpg",
+      "/blue-bg.jpg",
+      "/blue-gradient-placeholder.jpg",
     ],
     href: "#studymapper",
     layout: "imageLeft",
