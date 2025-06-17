@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google"
 import type { Project } from "./types"
 import { ProjectCard } from "./ProjectCard"
+import { ExploreProjectsCallToAction } from "./ExploreProjectsCallToAction";
 import { SparkleIcon } from "../icons/SparkleIcon"
 import { NextJsIcon } from "../icons/NextJsIcon"
 import { PostgreSQLIcon } from "../icons/PostgreSQLIcon"
@@ -81,7 +82,8 @@ export default function FeaturedWork() {
           {projectsData.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
-        </div>
+          <ExploreProjectsCallToAction />
+        </div> 
       </div>
     </section>
   )
