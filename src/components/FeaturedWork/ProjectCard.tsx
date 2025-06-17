@@ -66,7 +66,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   )
 
   const imageGallery = (
-    <div className="relative flex-1 min-h-[300px] lg:min-h-[400px] bg-gray-100 rounded-2xl overflow-hidden">
+    <div className="relative flex-1 bg-gray-100 rounded-2xl overflow-hidden aspect-[4/3]">
       {project.images.map((src, index) => (
         <div 
           key={src} 

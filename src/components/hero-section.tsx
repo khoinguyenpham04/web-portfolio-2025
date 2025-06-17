@@ -10,10 +10,9 @@ export default function HeroSection() {
         <section className="py-20">
             <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
                 <div className="relative text-center">
-                    <MistKitLogo className="mx-auto" />
-                    <h1 className="mx-auto mt-16 max-w-xl text-balance text-5xl font-medium">The Note App</h1>
+                    <h1 className="mx-auto mt-16 max-w-xl text-balance text-5xl font-medium">Noah Pham</h1>
 
-                    <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">The Note App is a simple note app that allows you to create and manage your notes.</p>
+                    <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">He is a SWE in Manchester</p>
 
                     <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
                         <Button
@@ -97,13 +96,3 @@ export default function HeroSection() {
         </section>
     )
 }
-
-const MistKitLogo = ({ className }: { className?: string }) => (
-    <div
-        aria-hidden
-        className={cn('border-background bg-linear-to-b rounded-(--radius) relative flex size-9 translate-y-0.5 items-center justify-center border from-yellow-300 to-orange-600 shadow-lg shadow-black/20 ring-1 ring-black/10', className)}>
-        <BookOpen className="mask-b-from-25% size-6 fill-white stroke-white drop-shadow-sm" />
-        <BookOpen className="absolute inset-0 m-auto size-6 fill-white stroke-white opacity-65 drop-shadow-sm" />
-        <div className="z-1 h-4.5 absolute inset-2 m-auto w-px translate-y-px rounded-full bg-black/10"></div>
-    </div>
-)

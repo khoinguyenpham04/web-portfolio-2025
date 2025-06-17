@@ -54,7 +54,7 @@ const FeaturedHackathons = () => {
                     
                     {/* --- Race The Ages Block --- */}
                     <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between lg:row-span-2">
-                        <div className="p-10 flex flex-col gap-6">
+                        <div className="p-8 flex flex-col gap-4">
                             <div className="relative w-22 h-22">
                                 <Image 
                                     src="/hackathon-images/ChronoQuest.png"
@@ -100,7 +100,7 @@ const FeaturedHackathons = () => {
                                 </a>
                             </Button>
                         </div>
-                         <div className="relative w-full lg:w-[260px] h-[230px] lg:h-full z-0 p-3">
+                         <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100">
                                 <div className="absolute inset-0 bg-gray-200 animate-pulse" />
                             </div>
@@ -122,7 +122,7 @@ const FeaturedHackathons = () => {
                                 </a>
                             </Button>
                         </div>
-                        <div className="relative w-full lg:w-[260px] h-[230px] lg:h-full z-0 p-3">
+                        <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden bg-gray-100">
                                 <div className="absolute inset-0 bg-gray-200 animate-pulse" />
                             </div>
