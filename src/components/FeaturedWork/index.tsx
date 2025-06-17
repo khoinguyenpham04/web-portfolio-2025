@@ -36,6 +36,7 @@ const projectsData: Project[] = [
     ],
     href: "#speakwisely",
     layout: "imageRight",
+    brandIcon: "/speakwiselylogo.svg"
   },
   {
     id: "studymapper",
@@ -55,6 +56,7 @@ const projectsData: Project[] = [
     ],
     href: "#studymapper",
     layout: "imageLeft",
+    brandIcon: "/studdymapperlogo.svg"
   },
 ]
 
@@ -70,9 +72,8 @@ export default function FeaturedWork() {
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
             Crafted with Precision
           </h2>
-          <p className="text-lg text-neutral-600 max-w-[50ch] mx-auto">
-            Discover our latest web applications built with modern technologies, delivering exceptional user experiences
-            and innovative solutions.
+          <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
+            Discover our latest web applications built with modern technologies, delivering exceptional user experiences.
           </p>
         </div>
 

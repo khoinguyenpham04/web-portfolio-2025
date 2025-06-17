@@ -11,4 +11,5 @@ export interface Project {
   images: string[]
   href: string
   layout: "imageLeft" | "imageRight"
+  brandIcon?: string
 }
