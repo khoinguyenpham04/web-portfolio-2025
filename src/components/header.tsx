@@ -26,9 +26,9 @@ interface MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'Resume', href: '/resume' },
 ]
 
 export const Header = () => {
