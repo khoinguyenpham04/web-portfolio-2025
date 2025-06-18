@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../ui/button';
 
 export const ExploreProjectsCallToAction: React.FC = () => {
   return (
@@ -22,18 +23,11 @@ export const ExploreProjectsCallToAction: React.FC = () => {
           Discover my diverse range of projects and case studies.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            type="button"
-            className="btn-tactile-secondary px-8 py-3"
-          >
-            Explore all projects
-          </button>
-          <button 
-            type="button"
-            className="btn-tactile-primary px-8 py-3"
-          >
-            Book a call
-          </button>
+          <Button variant="tactile-primary" size="default" asChild>
+            <a href="/projects" className="inline-flex items-center gap-2">
+                Click to View More
+            </a>
+          </Button>
         </div>
       </div>
     </div>

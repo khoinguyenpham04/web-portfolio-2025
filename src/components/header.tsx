@@ -27,14 +27,7 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
     { name: 'About', href: '#about' },
-    {
-        name: 'Projects',
-        submenu: true,
-        items: [
-            { name: 'Hackathons', href: 'projects' },
-            { name: 'Personal Projects', href: 'projects' },
-        ],
-    },
+    { name: 'Projects', href: '/projects' },
     { name: 'Resume', href: '#resume' },
 ]
 

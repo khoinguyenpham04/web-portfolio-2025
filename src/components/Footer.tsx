@@ -44,7 +44,7 @@ const socialLinks: SocialLink[] = [
 const Footer = () => {
   return (
     <footer className="w-full p-4">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 rounded-2xl bg-gray-100 p-2 sm:p-3 md:flex-row md:justify-between md:gap-0">
+      <div className="mx-auto flex max-w-6xl flex-col items-center rounded-2xl bg-gray-100 p-5 sm:p-5 md:flex-row md:justify-between md:gap-4">
         {/* Email Link */}
         <a
           href="mailto:tran.pham@student.manchester.ac.uk"

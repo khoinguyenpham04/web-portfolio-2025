@@ -2,12 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
-import { BookOpen } from 'lucide-react'
-import { cn } from '@/lib/utils'
 
 export default function HeroSection() {
     return (
-        <section className="py-20 lg:py-24">
+        <section>
             <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
                 <div className="relative text-center">
                     <h1 className="mx-auto mt-8 lg:mt-12 max-w-xl text-balance text-5xl font-medium">Noah Pham</h1>
@@ -33,15 +31,17 @@ export default function HeroSection() {
                 </div>
 
                 <div className="relative mt-12 overflow-hidden rounded-3xl bg-black/10 md:mt-16">
-                    <img
-                        src="https://images.unsplash.com/photo-1547623641-d2c56c03e2a7?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                        alt=""
+                    <Image
+                        src="/blue-bg.jpg"
+                        alt="lol"
+                        width="2880"
+                        height="1842"
                         className="absolute inset-0 size-full object-cover"
                     />
 
                     <div className="bg-background rounded-(--radius) relative m-4 overflow-hidden border border-transparent shadow-xl shadow-black/15 ring-1 ring-black/10 sm:m-8 md:m-12">
                         <Image
-                            src=""
+                            src="/blue-gradient-placeholder.jpg"
                             alt="app screen"
                             width="2880"
                             height="1842"
