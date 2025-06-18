@@ -124,7 +124,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     : null;
 
   return (
-    <div className="bg-[#FAFAFA] min-h-screen">
+    <div className="min-h-screen">
       <div className="container max-w-7xl mx-auto px-4 md:px-6 py-4 md:py-8">
         {/* Back button */}
         <Button asChild variant="ghost" className="mb-6 md:mb-8 hover:bg-white">

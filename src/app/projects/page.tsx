@@ -17,7 +17,7 @@ export default function ProjectsPage() {
   const hackathonProjects = allProjects.filter((project: Project) => project.category === "hackathon");
   
   return (
-    <div className={`${inter.className} bg-white py-12 sm:py-16 md:py-24`}>
+    <div className={`${inter.className} bg-white py-6 sm:py-8 md:py-10`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Regular Projects Section */}

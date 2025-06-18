@@ -21,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Header />
-        {children}
-        <Footer /> {/* Add the Footer component here */}
+        <main className="pt-20 lg:pt-24">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
