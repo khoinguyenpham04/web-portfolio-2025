@@ -4,6 +4,7 @@ description: "An all-in-one productivity platform that combines task management,
 tags: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS"]
 images: ["/blue-gradient-placeholder.jpg", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
+date: "2025-04-15"
 brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"
 ---
