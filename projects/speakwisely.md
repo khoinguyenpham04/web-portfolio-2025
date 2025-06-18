@@ -5,6 +5,7 @@ tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS
 images: ["/blue-gradient-placeholder.jpg", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
 brandIcon: "/speakwiselylogo.svg"
+category: "project"
 ---
 
 This is the case study for SpeakWisely.

@@ -12,4 +12,5 @@ export interface Project {
   href: string
   layout: "imageLeft" | "imageRight"
   brandIcon?: string
+  category?: "project" | "hackathon"
 }

@@ -65,7 +65,7 @@ const FeaturedHackathons = () => {
                                 <p className="text-base text-black/70 mt-1">Real-time historical guesser multiplayer game</p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="#" className="inline-flex items-center gap-2">
+                                <a href="/projects/race-the-ages" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
                                 </a>
@@ -94,7 +94,7 @@ const FeaturedHackathons = () => {
                                 </p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="#" className="inline-flex items-center gap-2">
+                                <a href="/projects/leetcoach" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
                                 </a>
@@ -121,7 +121,7 @@ const FeaturedHackathons = () => {
                                 <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI agents</p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="#" className="inline-flex items-center gap-2">
+                                <a href="/projects/omni" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
                                 </a>
@@ -141,7 +141,7 @@ const FeaturedHackathons = () => {
                 </div>
                 <div className="text-center mt-8 text-3xl">
                     <Button variant="tactile-secondary" size="default" asChild>
-                        <a href="#" className="inline-flex items-center gap-2">
+                        <a href="/projects" className="inline-flex items-center gap-2">
                             Click to View More Hackathon Submissions
                         </a>
                     </Button>

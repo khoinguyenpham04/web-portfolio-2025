@@ -22,8 +22,9 @@ async function getProjectData(id: string) {
   };
 }
 
-export default async function ProjectPage({ params }: { params: { id: string } }) {
-  const projectData = await getProjectData(params.id);
+export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const projectData = await getProjectData(id);
 
   return (
     <div className="prose mx-auto py-12">

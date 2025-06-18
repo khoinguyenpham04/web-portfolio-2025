@@ -23,6 +23,7 @@ export function getProjectsData(): Project[] {
       href: `/projects/${id}`,
       layout: matterResult.data.layout,
       brandIcon: matterResult.data.brandIcon,
+      category: matterResult.data.category || "project",
     };
     return project;
   });

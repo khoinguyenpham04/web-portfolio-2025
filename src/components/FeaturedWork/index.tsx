@@ -3,69 +3,17 @@ import type { Project } from "./types"
 import { ProjectCard } from "./ProjectCard"
 import { ExploreProjectsCallToAction } from "./ExploreProjectsCallToAction";
 import { SparkleIcon } from "../icons/SparkleIcon"
-import { NextJsIcon } from "../icons/NextJsIcon"
-import { PostgreSQLIcon } from "../icons/PostgreSQLIcon"
-import { SupabaseIcon } from "../icons/SupabaseIcon"
-import { ReactIcon } from "../icons/ReactIcon"
-import TypeScriptIcon from "../icons/TypeScriptIcon"
-import TailwindCSSIcon from "../icons/TailwindCSSIcon"
-import OpenAIIcon from "../icons/OpenAIIcon";
-import MongoIcon from "../icons/MongoIcon";
+import { getProjectsData } from "@/lib/projects"
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 })
 
-const projectsData: Project[] = [
-  {
-    id: "speakwisely",
-    name: "SpeakWisely",
-    description: "AI-powered instant personalized feedback, and structured practice for IELTS Speaking.",
-    tags: [
-      { name: "Next.js", icon: <NextJsIcon /> },
-      { name: "React", icon: <ReactIcon /> },
-      { name: "TypeScript", icon: <TypeScriptIcon /> },
-      { name: "Supabase", icon: <SupabaseIcon /> },
-      { name: "PostgreSQL", icon: <PostgreSQLIcon /> },
-      { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
-      { name: "OpenAI", icon: <OpenAIIcon/> },
-      { name: "Whisper", icon: <OpenAIIcon/> },
-      
-    ],
-    images: [
-      "/blue-gradient-placeholder.jpg",
-      "/blue-bg.jpg",
-      "/blue-gradient-placeholder.jpg",
-    ],
-    href: "#speakwisely",
-    layout: "imageRight",
-    brandIcon: "/speakwiselylogo.svg"
-  },
-  {
-    id: "studymapper",
-    name: "StudyMapper",
-    description:
-      "Designed and coded 2 web apps. Working together for some time now and planning to do more big projects.",
-    tags: [
-      { name: "Next.js", icon: <NextJsIcon /> },
-      { name: "React", icon: <ReactIcon /> },
-      { name: "TypeScript", icon: <TypeScriptIcon /> },
-      { name: "MongoDB", icon: <MongoIcon /> },
-      { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
-    ],
-    images: [
-      "/blue-gradient-placeholder.jpg",
-      "/blue-bg.jpg",
-      "/blue-gradient-placeholder.jpg",
-    ],
-    href: "#studymapper",
-    layout: "imageLeft",
-    brandIcon: "/studdymapperlogo.svg"
-  },
-]
-
 export default function FeaturedWork() {
+  const allProjects = getProjectsData();
+  const featuredProjects = allProjects.filter((project: Project) => project.category === "project" || !project.category);
+  
   return (
     <section className={`${inter.className} bg-white py-16 sm:py-24`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -83,7 +31,7 @@ export default function FeaturedWork() {
         </div>
 
         <div className="mt-16 max-w-6xl mx-auto flex flex-col gap-8">
-          {projectsData.map((project) => (
+          {featuredProjects.map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
           <ExploreProjectsCallToAction />
