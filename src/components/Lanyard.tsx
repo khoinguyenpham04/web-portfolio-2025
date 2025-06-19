@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
@@ -39,7 +38,7 @@ export default function Lanyard({
   transparent = true,
 }: LanyardProps) {
   return (
-    <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
+    <div className="relative z-0 w-full h-full flex justify-center items-center transform scale-100 origin-center">
       <Canvas
         camera={{ position, fov }}
         gl={{ alpha: transparent }}
@@ -93,11 +92,18 @@ interface BandProps {
 
 function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
   // Using "any" for refs since the exact types depend on Rapier's internals
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const band = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const fixed = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const j1 = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const j2 = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const j3 = useRef<any>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const card = useRef<any>(null);
 
   const vec = new THREE.Vector3();
@@ -105,6 +111,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
   const rot = new THREE.Vector3();
   const dir = new THREE.Vector3();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const segmentProps: any = {
     type: "dynamic" as RigidBodyProps["type"],
     canSleep: true,
@@ -113,6 +120,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
     linearDamping: 4,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/about/Lanyard/card.glb") as any;
   const texture = useTexture("/about/Lanyard/lanyard.png");
   const [curve] = useState(
@@ -249,10 +257,12 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onPointerUp={(e: any) => {
               e.target.releasePointerCapture(e.pointerId);
               drag(false);
             }}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             onPointerDown={(e: any) => {
               e.target.setPointerCapture(e.pointerId);
               drag(

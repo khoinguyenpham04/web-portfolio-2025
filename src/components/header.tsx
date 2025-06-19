@@ -153,7 +153,7 @@ export const Header = () => {
                                     variant="tactile-secondary"
                                 >
                                     <Link href="#contact">
-                                        <span>Let's Talk</span>
+                                        <span>Let&apos;s Talk</span>
                                     </Link>
                                 </Button>
                             </div>

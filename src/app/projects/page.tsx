@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                 Featured Hackathons
               </h2>
               <p className="text-base sm:text-lg text-neutral-700 max-w-[50ch] mx-auto">
-                I wouldn't be where I am today without the support of these amazing hackathons.
+                I wouldn&apos;t be where I am today without the support of these amazing hackathons.
               </p>
             </div>
 

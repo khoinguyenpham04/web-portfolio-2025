@@ -8,7 +8,7 @@ export default function HeroSection() {
         <section>
             <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
                 <div className="relative text-center">
-                    <h1 className="mx-auto mt-8 lg:mt-12 max-w-xl text-balance text-5xl font-medium">Noah Pham</h1>
+                    <h1 className="mx-auto mt-8 lg:mt-12 max-w-xl text-balance text-5xl font-semibold tracking-tight">Noah Pham</h1>
 
                     <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">Founder, Student, Athlete</p>
 

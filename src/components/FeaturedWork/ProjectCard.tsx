@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
-import { useState, useRef, useEffect } from "react"
+import { useState } from "react"
 import type { Project } from "./types"
 import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
 
