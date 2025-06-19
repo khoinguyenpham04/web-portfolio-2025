@@ -15,16 +15,16 @@ export default function HeroSection() {
                     <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
                         <Button
                             asChild
-                            variant="default">
+                            variant="tactile-primary">
                             <Link href="#link">
-                                <span className="text-nowrap">Get Started</span>
+                                <span className="text-nowrap">Let&apos;s Talk</span>
                             </Link>
                         </Button>
                         <Button
                             asChild
-                            variant="ghost">
+                            variant="tactile-secondary">
                             <Link href="#link">
-                                <span className="text-nowrap">View Demo</span>
+                                <span className="text-nowrap">My Resume</span>
                             </Link>
                         </Button>
                     </div>
@@ -47,49 +47,6 @@ export default function HeroSection() {
                             height="1842"
                             className="object-top-left size-full object-cover"
                         />
-                    </div>
-                </div>
-
-                <div className="mt-8 flex flex-wrap items-center gap-4">
-                    <p className="text-muted-foreground text-center">Trusted by teams at :</p>
-                    <div className="flex flex-wrap items-center justify-center gap-8">
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-4 w-fit"
-                                src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                alt="Nvidia Logo"
-                                height="20"
-                                width="auto"
-                            />
-                        </div>
-
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-3 w-fit"
-                                src="https://html.tailus.io/blocks/customers/column.svg"
-                                alt="Column Logo"
-                                height="16"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-3 w-fit"
-                                src="https://html.tailus.io/blocks/customers/github.svg"
-                                alt="GitHub Logo"
-                                height="16"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-4 w-fit"
-                                src="https://html.tailus.io/blocks/customers/nike.svg"
-                                alt="Nike Logo"
-                                height="20"
-                                width="auto"
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

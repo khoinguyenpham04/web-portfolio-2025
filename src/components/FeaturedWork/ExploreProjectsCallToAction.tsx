@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 export const ExploreProjectsCallToAction: React.FC = () => {
   return (
@@ -24,9 +25,9 @@ export const ExploreProjectsCallToAction: React.FC = () => {
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="tactile-primary" size="default" asChild>
-            <a href="/projects" className="inline-flex items-center gap-2">
+            <Link href="/projects" className="inline-flex items-center gap-2">
                 Click to View More
-            </a>
+            </Link>
           </Button>
         </div>
       </div>

@@ -9,7 +9,7 @@ export function InfiniteMovingImages() {
       <InfiniteMovingCards
         items={images}
         direction="right"
-        speed="fast"
+        speed="normal"
       />
     </div>
   );

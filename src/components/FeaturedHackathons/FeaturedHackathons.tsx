@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import { SparkleIcon } from '../icons/SparkleIcon';
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import { IconPointerFilled } from "@tabler/icons-react";
+import Link from 'next/link';  // added Link import
 
 // --- SVG Icon Components ---
 const NotionMailIcon = ({ className }: { className?: string }) => (
@@ -41,7 +42,7 @@ const FeaturedHackathons = () => {
                         Featured Hackathons
                     </h2>
                     <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
-                        I wouldn't be where I am today without the support of these amazing hackathons.
+                        I wouldn&apos;t be where I am today without the support of these amazing hackathons.
                     </p>
                 </div>
 
@@ -65,10 +66,10 @@ const FeaturedHackathons = () => {
                                 <p className="text-base text-black/70 mt-1">Real-time historical guesser multiplayer game</p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="/projects/race-the-ages" className="inline-flex items-center gap-2">
+                                <Link href="/projects/race-the-ages" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
-                                </a>
+                                </Link>
                             </Button>
                         </div>
                         <div className="w-full relative p-3">
@@ -94,10 +95,10 @@ const FeaturedHackathons = () => {
                                 </p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="/projects/leetcoach" className="inline-flex items-center gap-2">
+                                <Link href="/projects/leetcoach" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
-                                </a>
+                                </Link>
                             </Button>
                         </div>
                          <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
@@ -121,10 +122,10 @@ const FeaturedHackathons = () => {
                                 <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI agents</p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
-                                <a href="/projects/omni" className="inline-flex items-center gap-2">
+                                <Link href="/projects/omni" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
-                                </a>
+                                </Link>
                             </Button>
                         </div>
                         <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
@@ -141,9 +142,9 @@ const FeaturedHackathons = () => {
                 </div>
                 <div className="text-center mt-8 text-3xl">
                     <Button variant="tactile-secondary" size="default" asChild>
-                        <a href="/projects" className="inline-flex items-center gap-2">
+                        <Link href="/projects" className="inline-flex items-center gap-2">
                             Click to View More Hackathon Submissions
-                        </a>
+                        </Link>
                     </Button>
                 </div>
             </div>
