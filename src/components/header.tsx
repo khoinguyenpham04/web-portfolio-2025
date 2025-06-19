@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
@@ -31,9 +32,34 @@ const menuItems: MenuItem[] = [
     { name: 'Resume', href: '/resume' },
 ]
 
+const profileImages = [
+    '/profile-icons/cartoon2.jpg',
+    '/profile-icons/speaker-icon.jpeg',
+    '/profile-icons/icon1.png',
+];
+
+
 export const Header = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
+    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+    const [isAnimating, setIsAnimating] = React.useState(false);
+
+
+    const handleImageClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
+        e.preventDefault();
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % profileImages.length);
+        setIsAnimating(true);
+    };
+
+    React.useEffect(() => {
+        if (isAnimating) {
+            const timer = setTimeout(() => setIsAnimating(false), 1500); // Tailwind's bounce is 1s
+            return () => clearTimeout(timer);
+        }
+    }, [isAnimating]);
+
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -54,7 +80,19 @@ export const Header = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
-                                Noah Pham
+                                <button
+                                    onClick={handleImageClick}
+                                    className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-xl", isAnimating && "animate-wiggle")}
+                                >
+                                    <Image
+                                        src={profileImages[currentImageIndex]}
+                                        alt="Profile Picture"
+                                        width={40}
+                                        height={40}
+                                        className="h-full w-full object-cover"
+                                    />
+                                </button>
+                                <span>Noah Pham</span>
                             </Link>
 
                             <button
