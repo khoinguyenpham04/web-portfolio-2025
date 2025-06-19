@@ -1,15 +1,7 @@
-import HeroSection from "@/components/hero-section";
-import FeaturedWork from "@/components/FeaturedWork";
-import FeaturedHackathons from "@/components/FeaturedHackathons/FeaturedHackathons";
-import { InfiniteMovingImages } from "@/components/InfiniteScrollingImage";
+import { getProjectsData } from "@/lib/projects";
+import HomePage from "./HomePage";
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <InfiniteMovingImages />
-      <FeaturedWork />
-      <FeaturedHackathons />
-    </>
-  );
+  const projects = getProjectsData();
+  return <HomePage projects={projects} />;
 }

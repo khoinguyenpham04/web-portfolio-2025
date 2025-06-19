@@ -3,17 +3,13 @@ import type { Project } from "./types"
 import { ProjectCard } from "./ProjectCard"
 import { ExploreProjectsCallToAction } from "./ExploreProjectsCallToAction";
 import { SparkleIcon } from "../icons/SparkleIcon"
-import { getProjectsData } from "@/lib/projects"
 
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
 })
 
-export default function FeaturedWork() {
-  const allProjects = getProjectsData();
-  const featuredProjects = allProjects.filter((project: Project) => project.category === "project" || !project.category);
-  
+export default function FeaturedWork({ projects }: { projects: Project[] }) {
   return (
     <section className={`${inter.className} bg-white py-16 sm:py-24`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -31,7 +27,7 @@ export default function FeaturedWork() {
         </div>
 
         <div className="mt-16 max-w-6xl mx-auto flex flex-col gap-8">
-          {featuredProjects.map((project: Project) => (
+          {projects.map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
           <ExploreProjectsCallToAction />
