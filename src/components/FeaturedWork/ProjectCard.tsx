@@ -48,9 +48,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <Image 
             src={project.brandIcon} 
             alt={`${project.name} logo`}
-            width={48} 
-            height={48} 
-            className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 object-contain shadow-sm rounded-lg"
+            width={80} 
+            height={80} 
+            className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 shadow-sm rounded-lg object-contain"
           />
         )}
         <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900">{project.name}</h2>

@@ -17,23 +17,19 @@ export function InfiniteMovingImages() {
 
 const images = [
   {
-    src: "/blue-bg.jpg",
+    src: "/speakwisely/thumbnail.png",
     alt: "ChronoQuest",
   },
   {
-    src: "/blue-gradient-placeholder.jpg",
-    alt: "Blue gradient placeholder",
-  },
-  {
-    src: "/blue-bg.jpg",
-    alt: "Blue background",
+    src: "/studymapper/thumbnail.png",
+    alt: "studymapper",
   },
   {
     src: "/blue-gradient-placeholder.jpg",
     alt: "Lanyard",
   },
   {
-    src: "/blue-bg.jpg",
-    alt: "UOM",
+    src: "/chessmind/chessmind169.png",
+    alt: "Blue background",
   },
 ];
