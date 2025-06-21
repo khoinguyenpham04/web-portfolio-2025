@@ -4,16 +4,8 @@ import { SparkleIcon } from '../icons/SparkleIcon';
 import { Button } from "@/components/ui/button";
 import { IconPointerFilled } from "@tabler/icons-react";
 import Link from 'next/link';  // added Link import
+import { Codesandbox } from 'lucide-react';
 
-// --- SVG Icon Components ---
-const NotionMailIcon = ({ className }: { className?: string }) => (
-    <svg viewBox="0 0 64 64" width="1em" className={className}>
-        <svg viewBox="0 0 22 22" style={{ width: '100%', height: '100%', display: 'block', fill: 'inherit', flexShrink: 0 }}>
-            <path d="M1.55617 8.19127C0.579346 8.44327 0.322683 9.19783 0.797222 9.6789L4.51639 13.1375C4.56 13.1758 4.58732 13.2262 4.59755 13.2843L5.74661 19.8009C5.87804 20.5463 6.83186 20.7831 7.29769 20.1855L9.19411 17.7479C9.25825 17.6676 9.37598 17.656 9.45269 17.7253L12.4303 20.3926C13.1551 20.9664 14.1015 20.6318 14.3274 20.0581L20.8045 4.1832C21.3339 2.76468 20.2979 1.31037 18.3367 2.12389" fill="currentColor"></path>
-            <path d="M6.5025 11.7319C10.1428 9.58286 12.7689 7.53232 15.9535 5.62596C16.2611 5.44184 16.5291 5.82255 16.2599 6.05928C15.5026 6.72523 14.7709 7.37237 14.5951 7.54025C14.2008 7.91697 9.79719 11.6886 9.79719 11.6886L7.61508 13.6861C8.54636 15.0129 12.1389 17.7421 13.1126 18.1146C15.6038 13.1812 17.298 8.95012 19.0422 4.23471C19.1762 3.87253 18.8246 3.52014 18.4618 3.65253L7.97959 7.47798L3.24764 9.38752L6.5025 11.7319Z" fill="white"></path>
-        </svg>
-    </svg>
-);
 
 const NotionCalendarIcon = ({ className }: { className?: string }) => (
     <svg viewBox="0 0 64 64" width="1em" className={className}>
@@ -75,7 +67,7 @@ const FeaturedHackathons = () => {
                         <div className="w-full relative p-3">
                             <div className="relative pt-[61.29%] rounded-2xl overflow-hidden">
                                 <Image
-                                    src="/blue-gradient-placeholder.jpg"
+                                    src="/racetheagescollage.png"
                                     alt="Placeholder image"
                                     fill
                                     className="object-cover"
@@ -87,7 +79,13 @@ const FeaturedHackathons = () => {
                     {/* --- LeetCoachBlock --- */}
                     <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
                          <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
-                            <NotionMailIcon className="w-12 h-12 text-black" />
+                            {/* LeetCoach Icon */}
+                            <Image
+                                src="/leetcoach.png"
+                                alt="LeetCoach Icon"
+                                width={64}
+                                height={64}
+                            />
                             <div>
                                 <h3 className="text-[28px] font-bold leading-tight m-0">LeetCoach</h3>
                                 <p className="text-base text-black/70 mt-1">
@@ -104,7 +102,7 @@ const FeaturedHackathons = () => {
                          <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden">
                                 <Image
-                                    src="/blue-gradient-placeholder.jpg"
+                                    src="/leetcoach-thumbnail.png"
                                     alt="Placeholder image"
                                     fill
                                     className="object-cover"
@@ -116,10 +114,10 @@ const FeaturedHackathons = () => {
                     {/* --- Omni Block --- */}
                     <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
                         <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
-                            <NotionCalendarIcon className="w-12 h-12 text-black" />
+                            <Codesandbox className="w-12 h-12 text-black" />
                             <div>
                                 <h3 className="text-[28px] font-bold leading-tight m-0">Omni</h3>
-                                <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI agents</p>
+                                <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI strategist</p>
                             </div>
                             <Button variant="tactile-primary" size="default" asChild className="w-fit">
                                 <Link href="/projects/omni" className="inline-flex items-center gap-2">
@@ -141,7 +139,7 @@ const FeaturedHackathons = () => {
                     </div>
                 </div>
                 <div className="text-center mt-8 text-3xl">
-                    <Button variant="tactile-secondary" size="default" asChild>
+                    <Button variant="tactile-primary" size="default" asChild>
                         <Link href="/projects" className="inline-flex items-center gap-2">
                             Click to View More Hackathon Submissions
                         </Link>

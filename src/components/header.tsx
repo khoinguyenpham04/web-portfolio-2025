@@ -82,7 +82,7 @@ export const Header = () => {
                                 className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
                                 <button
                                     onClick={handleImageClick}
-                                    className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-xl", isAnimating && "animate-wiggle")}
+                                    className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-md", isAnimating && "animate-wiggle")}
                                 >
                                     <Image
                                         src={profileImages[currentImageIndex]}

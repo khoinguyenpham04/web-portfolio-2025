@@ -23,9 +23,10 @@ const About = () => {
                 <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
               </div>  
               {/* Content Section */}
-              <div className="space-y-6">
-                <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">About Me</h1>
-                <div className="space-y-4 text-normal text-gray-700">
+              <div className="space-y-10">
+                <h1 className="text-4xl md:text-7xl font-semibold tracking-tight">About Me</h1>
+
+                <div className="space-y-4 text-normal text-gray-700 text-md md:text-2xl">
                   <p>
                     I&apos;m a passionate developer who loves creating innovative solutions 
                     and bringing ideas to life through code.

@@ -25,11 +25,14 @@ const images = [
     alt: "studymapper",
   },
   {
-    src: "/blue-gradient-placeholder.jpg",
-    alt: "Lanyard",
+    src: "/leetcoach-thumbnail.png",  
+    alt: "LeetCoach",},
+  {
+    src: "/chessmind/588shots_so.png",
+    alt: "Blue background",
   },
   {
-    src: "/chessmind/chessmind169.png",
-    alt: "Blue background",
+    src: "/racetheagescollage.png",
+    alt: "racetheagescollage",
   },
 ];
