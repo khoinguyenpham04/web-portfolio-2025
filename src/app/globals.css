@@ -122,6 +122,26 @@
 }
 
 
+/* Smooth Scroll Setup */
+html, body {
+  height: 100%;
+}
+
+#smooth-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#smooth-content {
+  min-height: 100%;
+  overflow: visible;
+}
+
+
 /* 3D Tactile Button Variants */
 .btn-tactile-primary {
   height: 2.25rem; /* h-9 */
