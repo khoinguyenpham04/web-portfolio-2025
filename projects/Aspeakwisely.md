@@ -4,7 +4,7 @@ description: "AI-powered instant personalized feedback, and structured practice 
 tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "OpenAI", "Whisper", "Google Analytics"]
 images: ["/speakwisely/thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
-brandIcon: "/speakwiselylogo.svg"
+brandIcon: "/svg/speakwiselylogo.svg"
 category: "project"
 date: "2025-12-15"
 liveUrl: "https://speakwisely.app"

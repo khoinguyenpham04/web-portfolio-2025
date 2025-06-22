@@ -4,7 +4,7 @@ description: "AI-powered coding companion for interview preparation with voice-e
 tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "AIOHTTP", "Gemini API", "Neuphonic API", "CodeMirror", "Docker", "Firebase", "Cloudflare", "Vercel"]
 images: ["/leetcoach-thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
-brandIcon: "/leetcoach.svg"
+brandIcon: "/svg/leetcoach.svg"
 category: "hackathon"
 date: "2025-06-21"
 liveUrl: "https://leetcoach.app"

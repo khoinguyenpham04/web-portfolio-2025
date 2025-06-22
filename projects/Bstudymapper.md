@@ -1,10 +1,10 @@
 ---
 title: "StudyMapper"
 description: "Interactive web app helping University of Manchester students find available study spaces across campus."
-tags: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS"]
+tags: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS", "Mapbox GL"]
 images: ["/studymapper/thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageLeft"
-brandIcon: "/studdymapperlogo.svg"
+brandIcon: "/svg/studdymapperlogo.svg"
 category: "project"
 date: "2025-06-21"
 ---

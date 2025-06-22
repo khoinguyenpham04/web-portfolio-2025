@@ -5,7 +5,7 @@ tags: ["Next.js", "React", "TypeScript", "Polkadot", "Substrate", "AI", "DeFi", 
 images: ["/omni-thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
 date: "2025-04-15"
-brandIcon: "/omnilogo.svg"
+brandIcon: "/svg/omnilogo.svg"
 category: "hackathon"
 ---
 

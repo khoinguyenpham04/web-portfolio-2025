@@ -6,6 +6,7 @@ import TypeScriptIcon from "@/components/icons/TypeScriptIcon"
 import TailwindCSSIcon from "@/components/icons/TailwindCSSIcon"
 import OpenAIIcon from "@/components/icons/OpenAIIcon";
 import MongoIcon from "@/components/icons/MongoIcon";
+import GoogleAnalytics from "@/components/icons/GoogleAnalytics"
 
 export function getIcon(tag: string) {
     switch (tag) {
@@ -27,6 +28,8 @@ export function getIcon(tag: string) {
             return <OpenAIIcon />;
         case "MongoDB":
             return <MongoIcon />;
+        case "Google Analytics":
+            return <GoogleAnalytics />;
         default:
             return null;
     }

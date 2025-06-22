@@ -5,7 +5,7 @@ tags: ["Next.js", "Amazon EC2", "Framer Motion", "MongoDB", "PartyKit", "Tailwin
 images: ["/codeclash.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
 category: "hackathon"
-brandIcon: "/code-clash.svg"
+brandIcon: "/svg/code-clash.svg"
 date: "2024-11-21"
 ---
 
