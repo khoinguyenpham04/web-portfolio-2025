@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
+
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { Header } from "@/components/header";
-import SmoothScroll from "@/components/SmoothScroll";
 
-const sfPro = localFont({
-  src: "../fonts/SF-Pro.ttf",
-  display: "swap",
-  variable: "--font-sf-pro",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.vercel.app'),
@@ -46,14 +42,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={sfPro.className}>
+      <body className={inter.className}>
         <Header />
-        <SmoothScroll>
           <main className="pt-20 lg:pt-24">
             {children}
           </main>
           <Footer />
-        </SmoothScroll>
       </body>
     </html>
   );
