@@ -1,13 +1,14 @@
-import { Inter } from "next/font/google"
+import localFont from "next/font/local";
 import { ProjectCard } from "@/components/FeaturedWork/ProjectCard"
 import { SparkleIcon } from "@/components/icons/SparkleIcon"
 import { getProjectsData } from "@/lib/projects";
 import type { Project } from "@/components/FeaturedWork/types"
 
-const inter = Inter({
-  subsets: ["latin"],
+const sfPro = localFont({
+  src: "../../fonts/SF-Pro.ttf",
   display: "swap",
-})
+  variable: "--font-sf-pro",
+});
 
 export default function ProjectsPage() {
   const allProjects = getProjectsData();
@@ -17,7 +18,7 @@ export default function ProjectsPage() {
   const hackathonProjects = allProjects.filter((project: Project) => project.category === "hackathon");
   
   return (
-    <div className={`${inter.className} bg-white py-6 sm:py-8 md:py-10`}>
+    <div className={`${sfPro.className} bg-white py-6 sm:py-8 md:py-10`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Regular Projects Section */}

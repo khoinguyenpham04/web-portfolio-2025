@@ -30,7 +30,7 @@ export default function HeroSection() {
                     </div>
                 </div>
 
-                <div className="relative mt-12 overflow-hidden rounded-3xl bg-black/10 md:mt-16">
+                {/* <div className="relative mt-12 overflow-hidden rounded-3xl bg-black/10 md:mt-16">
                     <Image
                         src="/blue-bg.jpg"
                         alt="lol"
@@ -48,7 +48,7 @@ export default function HeroSection() {
                             className="object-top-left size-full object-cover"
                         />
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     )
