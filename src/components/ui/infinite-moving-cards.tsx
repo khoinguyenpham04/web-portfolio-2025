@@ -69,6 +69,17 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+
+  // Update speed CSS variable when prop changes
+  useEffect(() => {
+    getSpeed();
+  }, [speed]);
+
+  // Update direction CSS variable when prop changes
+  useEffect(() => {
+    getDirection();
+  }, [direction]);
+
   return (
     <div
       ref={containerRef}

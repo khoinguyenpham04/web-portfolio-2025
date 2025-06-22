@@ -14,13 +14,13 @@ const FeaturedHackathons = () => {
                 <div className="text-center max-w-3xl mx-auto">
                     <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
                         <SparkleIcon className="size-5"/>
-                        <span>Winning Hackathons</span>
+                        <span>Featured Projects</span>
                     </div>
                     <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-                        Featured Hackathons
+                        Favorite Hackathons
                     </h2>
                     <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
-                        I wouldn&apos;t be where I am today without the support of these amazing hackathons.
+                        I wouldn&apos;t be where I am today without these brilliant competitions.
                     </p>
                 </div>
 
@@ -115,7 +115,7 @@ const FeaturedHackathons = () => {
                         <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden">
                                 <Image
-                                    src="/blue-gradient-placeholder.jpg"
+                                    src="/omni-thumbnail.png"
                                     alt="Placeholder image"
                                     fill
                                     className="object-cover"

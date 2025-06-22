@@ -10,7 +10,7 @@ export default function HeroSection() {
                 <div className="relative text-center">
                     <h1 className="mx-auto mt-8 lg:mt-12 max-w-xl text-balance text-5xl font-semibold tracking-tight">Noah Pham</h1>
 
-                    <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">Founder, Student, Athlete</p>
+                    <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">Founder, Student, Builder</p>
 
                     <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
                         <Button

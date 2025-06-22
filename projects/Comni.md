@@ -2,7 +2,7 @@
 title: "Omni AI"
 description: "A decentralized application for wallet management for Polkadot-based assets with an AI-powered investment strategist."
 tags: ["Next.js", "React", "TypeScript", "Polkadot", "Substrate", "AI", "DeFi", "Hardhat", "Gemini"]
-images: ["/blue-gradient-placeholder.jpg", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
+images: ["/omni-thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
 date: "2025-04-15"
 brandIcon: "/omnilogo.svg"

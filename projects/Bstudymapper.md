@@ -1,6 +1,6 @@
 ---
 title: "StudyMapper"
-description: "Designed and coded 2 web apps. Working together for some time now and planning to do more big projects."
+description: "Interactive web app helping University of Manchester students find available study spaces across campus."
 tags: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS"]
 images: ["/studymapper/thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageLeft"

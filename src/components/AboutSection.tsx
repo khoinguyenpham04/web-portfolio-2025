@@ -21,17 +21,18 @@ const skills: { [key: string]: Skill[] } = {
   "Languages & Frameworks": [
     { name: "JavaScript (ES6+)" },
     { name: "TypeScript", iconName: "TypeScript" },
+    { name: "Python" },
+    { name: "Java" },
     { name: "React", iconName: "React" },
     { name: "Next.js", iconName: "Next.js" },
-    { name: "Svelte" },
-    { name: "Angular" },
   ],
   "Styling & Design": [
     { name: "CSS3" },
     { name: "SASS (SCSS)" },
-    { name: "Less" },
     { name: "Tailwind CSS", iconName: "Tailwind CSS" },
     { name: "Figma" },
+    { name: "Photoshop" },
+    { name: "Illustrator" },
   ],
   "Backend & Tools": [
     { name: "Node.js" },
@@ -41,7 +42,10 @@ const skills: { [key: string]: Skill[] } = {
     { name: "MongoDB", iconName: "MongoDB" },
     { name: "Git" },
   ],
-  "Testing & QA": [{ name: "Jest" }],
+  "Testing & QA": [
+    { name: "Jest" },
+    { name: "Sentry" }
+  ],
 };
 
 export default function AboutSection() {

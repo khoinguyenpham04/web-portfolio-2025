@@ -22,7 +22,7 @@ export default function FeaturedWork({ projects }: { projects: Project[] }) {
             Crafted with Precision
           </h2>
           <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
-            Discover our latest web applications built with modern technologies, delivering exceptional user experiences.
+            Discover my latest applications built with modern technologies, delivering exceptional user experiences.
           </p>
         </div>
 

@@ -2,7 +2,7 @@
 title: "LeetCoach"
 description: "AI-powered coding companion for interview preparation with voice-enabled support and real-time feedback."
 tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "AIOHTTP", "Gemini API", "Neuphonic API", "CodeMirror", "Docker", "Firebase", "Cloudflare", "Vercel"]
-images: ["/racetheagescollage.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
+images: ["/leetcoach-thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
 layout: "imageRight"
 brandIcon: "/leetcoach.svg"
 category: "hackathon"
