@@ -3,8 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { cn } from '@/lib/utils'
+import { getCalApi } from "@calcom/embed-react"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -45,6 +46,12 @@ export const Header = () => {
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
     const [isAnimating, setIsAnimating] = React.useState(false);
 
+    useEffect(() => {
+        (async function () {
+            const cal = await getCalApi({"namespace":"15min"});
+            cal("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+        })();
+    }, [])
 
     const handleImageClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
@@ -186,13 +193,13 @@ export const Header = () => {
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
-                                    asChild
                                     size="sm"
-                                    variant="tactile-secondary"
+                                    variant="tactile-primary"
+                                    data-cal-namespace="15min"
+                                    data-cal-link="noahpham/15min"
+                                    data-cal-config='{"layout":"month_view","theme":"light"}'
                                 >
-                                    <Link href="#contact">
-                                        <span>Let&apos;s Talk</span>
-                                    </Link>
+                                    <span>Let&apos;s Talk</span>
                                 </Button>
                             </div>
                         </div>

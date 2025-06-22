@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { getCalApi } from "@calcom/embed-react"
 
 export default function HeroSection() {
+    useEffect(() => {
+        (async function () {
+            const cal = await getCalApi({"namespace":"15min"});
+            cal("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+        })();
+    }, [])
+
     return (
         <section>
             <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
@@ -13,11 +21,11 @@ export default function HeroSection() {
 
                     <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
                         <Button
-                            asChild
-                            variant="tactile-primary">
-                            <Link href="#link">
-                                <span className="text-nowrap">Let&apos;s Talk</span>
-                            </Link>
+                            variant="tactile-primary"
+                            data-cal-namespace="15min"
+                            data-cal-link="noahpham/15min"
+                            data-cal-config='{"layout":"month_view","theme":"light"}'>
+                            <span className="text-nowrap">Let&apos;s Talk</span>
                         </Button>
                         <Button
                             asChild
