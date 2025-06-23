@@ -132,13 +132,11 @@ const calculateAvailability = (studySpace: StudySpace): AvailabilityStatus => {
 ## Impact and Results
 
 ### User Adoption
-- **300+ Daily Active Users** during exam periods
+- **100+ Daily Active Users** during exam periods
 - **1,500+ Monthly Users** across the academic year
-- **4.7/5 Star Rating** based on user feedback
 
 ### Student Feedback
 - "Saved me hours of walking around campus looking for a place to study"
-- "The real-time updates during exam season were a lifesaver"
 - "I discovered study spaces I never knew existed"
 
 ### Academic Value
@@ -152,9 +150,6 @@ This project allowed me to apply classroom knowledge to a real-world problem:
 
 ### Map Data Processing
 Converting university building data into usable GeoJSON format required custom processing scripts and manual verification.
-
-### Real-Time Availability Estimation
-Without direct access to occupancy sensors, I developed a predictive model based on historical patterns, time of day, and crowdsourced reports.
 
 ### Performance on Mobile Devices
 Mapbox rendering required significant optimization for smooth performance on lower-end devices commonly used by students.

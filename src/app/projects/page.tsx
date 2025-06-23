@@ -37,6 +37,7 @@ export default function ProjectsPage() {
           ))}
         </div>
 
+
         {/* Hackathon Projects Section */}
         {hackathonProjects.length > 0 && (
           <div className="mt-24 sm:mt-32">
@@ -60,6 +61,13 @@ export default function ProjectsPage() {
             </div>
           </div>
         )}
+
+        {/* More Projects Coming Soon */}
+        <div className="mt-10 sm:mt-12 text-center">
+          <p className="text-base sm:text-lg text-gray-500 font-medium">
+            More projects will be added soon...
+          </p>
+        </div>
       </div>
     </div>
   )
