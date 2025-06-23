@@ -13,13 +13,13 @@ export default function FeaturedWork({ projects }: { projects: Project[] }) {
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
             <SparkleIcon className="size-5"/>
-            <span>Featured Projects</span>
+            <span>Crafted with Precision</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-            Crafted with Precision
+            My Latest Work
           </h2>
-          <p className="text-lg text-neutral-700 max-w-[50ch] mx-auto">
-            Discover my latest applications built with modern technologies, delivering exceptional user experiences.
+          <p className="text-lg text-neutral-500 max-w-[50ch] mx-auto">
+            Discover my latest projects built with modern technologies, delivering exceptional user experiences.
           </p>
         </div>
 

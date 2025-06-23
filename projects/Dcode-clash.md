@@ -2,7 +2,7 @@
 title: "Code Clash"
 description: "A gamified learning platform with real-time multiplayer coding battles."
 tags: ["Next.js", "Amazon EC2", "Framer Motion", "MongoDB", "PartyKit", "Tailwind CSS", "TypeScript", "React"]
-images: ["/codeclash.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
+images: ["/codeclash.png"]
 layout: "imageRight"
 category: "hackathon"
 brandIcon: "/svg/code-clash.svg"

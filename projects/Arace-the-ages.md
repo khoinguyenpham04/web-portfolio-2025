@@ -2,7 +2,7 @@
 title: "Race the Ages"
 description: "Turning history into a multiplayer adventure where players guess historical dates and locations in real-time."
 tags: ["Next.js", "React", "TypeScript", "PartyKit", "Tailwind CSS", "Framer Motion"]
-images: ["/racetheagescollage.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
+images: ["/racetheagescollage.png"]
 layout: "imageLeft"
 brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"

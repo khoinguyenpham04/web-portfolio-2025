@@ -15,29 +15,42 @@ const About = () => {
               sparkCount={10}
               duration={400}
             >
-        <div className="min-h-screen bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        
+        <div className="min-h-screen bg-white py-2">
+          <div className="container mx-auto max-w-6xl px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               {/* Lanyard Component Section */}
               <div className="relative h-[600px] lg:h-[800px]">
                 <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
               </div>  
               {/* Content Section */}
-              <div className="space-y-10">
-                <h1 className="text-4xl md:text-7xl font-semibold tracking-tight">About Me</h1>
+              <div className="mb-16">
+                <div className="space-y-6">
+                  <h2 className="mb-12 text-sm font-medium uppercase tracking-wider text-gray-400">
+                    Introduction
+                  </h2>
+                  <h1 className="mb-6 text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl lg:text-4xl">
+                    <span className="text-gray-300">I&apos;m a</span>
+                    <span className="text-gray-300"> CompSci</span>
+                    <span className="text-gray-900"> Student,</span>
+                    <span className="text-gray-900"> Founder,</span>
+                    <span className="text-gray-300"> and</span>
+                    <span className="text-gray-900"> Developer</span>
+                    <br />
+                    <span className="text-gray-300"> based in</span>
+                    <span className="text-gray-900"> Manchester.</span>
+                  </h1>
+                </div>
 
-                <div className="space-y-4 text-normal text-gray-700 text-md md:text-2xl">
+                <div className="space-y-6 text-lg text-gray-500">
                   <p>
-                    I&apos;m a passionate developer who loves creating innovative solutions 
-                    and bringing ideas to life through code.
+                    I build products that solve real problems for real people. Whether it&apos;s an english speaking platform or a voice-powered coding assistant, I focus on creating tools that make complex tasks accessible and enjoyable.
                   </p>
                   <p>
-                    With expertise in modern web technologies, I focus on building 
-                    performant, accessible, and user-friendly applications.
+                    My work centers on understanding how people interact with technology. I believe the best products feel intuitive, remove friction, and genuinely improve someone&apos;s productivity.
                   </p>
                   <p>
-                    When I&apos;m not coding, you can find me exploring new technologies, 
-                    playing sports, or going on adventures with friends.
+                    Currently studying at Manchester while building the next generation of intelligent applications. Always excited to collaborate on projects that push boundaries.
                   </p>
                 </div>
               </div>

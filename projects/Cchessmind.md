@@ -2,7 +2,7 @@
 title: "ChessMind AI"
 description: "Your personal chess coach powered by AI - providing real-time move analysis, adaptive opponents, and immersive learning experiences."
 tags: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI", "Stockfish", "Clerk"]
-images: ["/chessmind/thumbnail.png", "/blue-bg.jpg", "/blue-gradient-placeholder.jpg"]
+images: ["/chessmind/thumbnail.png"]
 layout: "imageRight"
 brandIcon: "/chessmindlogo.png"
 category: "project"

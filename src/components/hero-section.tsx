@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
 import { getCalApi } from "@calcom/embed-react"
 
 export default function HeroSection() {
@@ -13,13 +11,21 @@ export default function HeroSection() {
 
     return (
         <section>
-            <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
-                <div className="relative text-center">
-                    <h1 className="mx-auto mt-8 lg:mt-12 max-w-xl text-balance text-5xl font-semibold tracking-tight">Noah Pham</h1>
+            <div className="relative z-10 mx-auto w-full max-w-2xl px-6 pt-12">
+                <div className="relative text-center mb-8">
+                    <h2 className="mb-6 text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-400">
+                        Computer Science @ University of Manchester
+                    </h2>
+                    <h1 className="mx-auto mt-2 max-w-7xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+                        <span className="text-gray-300">I love building</span>
+                        <span className="text-gray-900"> products</span>
+                        <span className="text-gray-300"> that</span>
+                        <span className="text-gray-900"> solve real problems</span>
+                        <span className="text-gray-300"> for</span>
+                        <span className="text-gray-900"> real people.</span>
+                    </h1>
 
-                    <p className="text-muted-foreground mx-auto mb-6 mt-4 text-balance text-xl">Founder, Student, Builder</p>
-
-                    <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
+                    {/* <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto mt-8">
                         <Button
                             variant="tactile-primary"
                             data-cal-namespace="15min"
@@ -34,7 +40,7 @@ export default function HeroSection() {
                                 <span className="text-nowrap">My Resume</span>
                             </Link>
                         </Button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* <div className="relative mt-12 overflow-hidden rounded-3xl bg-black/10 md:mt-16">

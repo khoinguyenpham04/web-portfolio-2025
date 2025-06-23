@@ -24,7 +24,7 @@ export function InfiniteMovingImages2() {
   }, []);
 
   return (
-    <div className="h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden pt-5">
+    <div className="h-[15rem] md:h-[20rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden pt-0 md:pt-5 pb-2 md:pb-0">
       <InfiniteMovingCards
         items={images}
         direction="right"
