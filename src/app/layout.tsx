@@ -8,13 +8,13 @@ import { Header } from "@/components/header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.vercel.app'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me'),
   title: "Noah Pham - Portfolio",
   description: "This is the portfolio of Noah Pham, a student and builder. Explore my projects, skills, and experiences.",
   openGraph: {
     title: "Noah Pham - Portfolio",
     description: "This is the portfolio of Noah Pham, a student and builder. Explore my projects, skills, and experiences.",
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.vercel.app',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me',
     siteName: "Noah Pham Portfolio",
     images: [
       {
