@@ -16,7 +16,7 @@ export default function HeroSection() {
                     <h2 className="mb-6 text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-400">
                         Computer Science @ University of Manchester
                     </h2>
-                    <h1 className="mx-auto mt-2 max-w-7xl text-balance text-4xl font-semibold tracking-tight md:text-5xl">
+                    <h1 className="mx-auto mt-2 max-w-7xl text-balance text-3xl font-semibold tracking-tight md:text-5xl">
                         <span className="text-gray-300">I love building</span>
                         <span className="text-gray-900"> products</span>
                         <span className="text-gray-300"> that</span>
