@@ -6,6 +6,7 @@ images: ["/studymapper/thumbnail.png"]
 layout: "imageLeft"
 brandIcon: "/svg/studdymapperlogo.svg"
 category: "project"
+liveUrl: "https://studymapper.vercel.app"
 date: "2025-06-21"
 ---
 # StudyMapper: Finding Study Spaces at the University of Manchester

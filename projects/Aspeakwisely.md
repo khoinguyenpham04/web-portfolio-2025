@@ -7,8 +7,7 @@ layout: "imageRight"
 brandIcon: "/svg/speakwiselylogo.svg"
 category: "project"
 date: "2025-12-15"
-liveUrl: "https://speakwisely.app"
-githubUrl: "https://github.com/username/speakwisely"
+liveUrl: "https://speakwisely.me"
 ---
 # Overview
 

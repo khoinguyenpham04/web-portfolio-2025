@@ -6,9 +6,7 @@ images: ["/leetcoach-thumbnail.png"]
 layout: "imageRight"
 brandIcon: "/svg/leetcoach.svg"
 category: "hackathon"
-date: "2025-06-21"
-liveUrl: "https://leetcoach.app"
-githubUrl: "https://github.com/username/leetcoach"
+githubUrl: "https://github.com/khoinguyenpham04/SHack25Neuphonic"
 ---
 
 # Overview

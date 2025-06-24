@@ -7,6 +7,7 @@ layout: "imageLeft"
 brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"
 date: "2024-06-21"
+githubUrl: "https://github.com/khoinguyenpham04/GUHack2024"
 ---
 
 # ChronoQuest: Turning History Into a Multiplayer Adventure 🚀
