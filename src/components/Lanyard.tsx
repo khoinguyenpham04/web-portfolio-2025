@@ -122,7 +122,7 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/about/Lanyard/card.glb") as any;
-  const texture = useTexture("/about/Lanyard/lanyard.png");
+  const texture = useTexture("/about/Lanyard/lanyards.png");
   const [curve] = useState(
     () =>
       new THREE.CatmullRomCurve3([

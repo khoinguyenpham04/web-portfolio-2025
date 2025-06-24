@@ -4,6 +4,7 @@ import React from 'react'
 import Lanyard from "@/components/Lanyard";
 import AboutSection from "@/components/AboutSection";
 import ClickSpark from '@/components/ui/ClickSpark';
+import CircularText from '@/components/ui/CircularText/CircularText';
 
 const About = () => {
   return (
@@ -22,6 +23,15 @@ const About = () => {
               {/* Lanyard Component Section */}
               <div className="relative h-[600px] lg:h-[800px]">
                 <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
+                {/* Circular Text Component in top right corner */}
+                <div className="absolute top-0 right-0 z-10">
+                  <CircularText 
+                    text="PLAY*WITH*THE*LANYARD*" 
+                    onHover="speedUp" 
+                    spinDuration={20} 
+                    className="" 
+                  />
+                </div>
               </div>  
               {/* Content Section */}
               <div className="mb-16">

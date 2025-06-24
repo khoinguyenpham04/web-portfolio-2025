@@ -6,6 +6,8 @@ import {
   MotionValue,
   Transition,
 } from "framer-motion";
+
+import "./CircularText.css";
 interface CircularTextProps {
   text: string;
   spinDuration?: number;
@@ -16,7 +18,7 @@ interface CircularTextProps {
 const getRotationTransition = (
   duration: number,
   from: number,
-  loop: boolean = true
+  loop: boolean = true,
 ) => ({
   from,
   to: from + 360,
@@ -116,11 +118,7 @@ const CircularText: React.FC<CircularTextProps> = ({
         const transform = `rotateZ(${rotationDeg}deg) translate3d(${x}px, ${y}px, 0)`;
 
         return (
-          <span
-            key={i}
-            className="absolute inline-block inset-0 text-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
-            style={{ transform, WebkitTransform: transform }}
-          >
+          <span key={i} style={{ transform, WebkitTransform: transform }}>
             {letter}
           </span>
         );
