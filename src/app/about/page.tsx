@@ -24,7 +24,7 @@ const About = () => {
               <div className="relative h-[600px] lg:h-[800px]">
                 <Lanyard position={[0, 0, 10]} gravity={[0, -40, 0]} />
                 {/* Circular Text Component in top right corner */}
-                <div className="absolute top-0 right-0 z-10">
+                <div className="absolute top-5 left-0 z-10">
                   <CircularText 
                     text="PLAY*WITH*THE*LANYARD*" 
                     onHover="speedUp" 

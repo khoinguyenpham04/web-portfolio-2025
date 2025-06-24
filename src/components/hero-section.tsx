@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { getCalApi } from "@calcom/embed-react"
+import StyledBlurText from './ui/StyledBlurText'
 
 export default function HeroSection() {
     useEffect(() => {
@@ -16,14 +17,26 @@ export default function HeroSection() {
                     <h2 className="mb-6 text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-400">
                         Computer Science @ University of Manchester
                     </h2>
-                    <h1 className="mx-auto mt-2 max-w-7xl text-balance text-3xl font-semibold tracking-tight md:text-5xl">
-                        <span className="text-gray-300">I love building</span>
-                        <span className="text-gray-900"> products</span>
-                        <span className="text-gray-300"> that</span>
-                        <span className="text-gray-900"> solve real problems</span>
-                        <span className="text-gray-300"> for</span>
-                        <span className="text-gray-900"> real people.</span>
-                    </h1>
+                    <StyledBlurText
+                        segments={[
+                            { text: "I", className: "text-gray-300" },
+                            { text: "love", className: "text-gray-300" },
+                            { text: "building", className: "text-gray-300" },
+                            { text: " products", className: "text-gray-900" },
+                            { text: " that", className: "text-gray-300" },
+                            { text: " solve", className: "text-gray-900" },
+                            { text: " real ", className: "text-gray-900" },
+                            { text: " problems", className: "text-gray-900" },
+                            { text: " for", className: "text-gray-300" },
+                            { text: " real", className: "text-gray-900" },
+                            { text: " people.", className: "text-gray-900" }
+                        ]}
+                        delay={150}
+                        animateBy="words"
+                        direction="bottom"
+                        onAnimationComplete={() => console.log('Hero animation completed!')}
+                        className="mx-auto mt-2 max-w-7xl text-balance text-3xl font-semibold tracking-tight md:text-5xl"
+                    />
 
                     {/* <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto mt-8">
                         <Button
