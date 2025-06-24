@@ -21,14 +21,11 @@ export default function ProjectsPage() {
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
             <SparkleIcon className="size-4 sm:size-5"/>
-            <span>Featured Projects</span>
+            <span>Crafted with Precision</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-            Crafted with Precision
+          <h2 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tight text-neutral-900">
+            Latest Projects
           </h2>
-          <p className="text-base sm:text-lg text-neutral-700 max-w-[50ch] mx-auto">
-            Discover our latest web applications built with modern technologies, delivering exceptional user experiences.
-          </p>
         </div>
 
         <div className="mt-12 sm:mt-16 max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
@@ -44,14 +41,11 @@ export default function ProjectsPage() {
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
                 <SparkleIcon className="size-4 sm:size-5"/>
-                <span>Winning Hackathons</span>
+                <span>Competitions that shaped my journey as a developer</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
+              <h2 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
                 Featured Hackathons
               </h2>
-              <p className="text-base sm:text-lg text-neutral-700 max-w-[50ch] mx-auto">
-                I wouldn&apos;t be where I am today without the support of these amazing hackathons.
-              </p>
             </div>
 
             <div className="mt-12 sm:mt-16 max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
