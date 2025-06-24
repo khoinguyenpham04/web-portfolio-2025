@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import type React from "react"
 import { useState } from "react"
+import { ArrowUpRight } from "lucide-react"
 import type { Project } from "./types"
 import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
 
@@ -88,6 +89,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           />
         </div>
       ))}
+
+      {/* Clickable indicator */}
+      <div className="absolute top-4 right-4 z-10">
+        <div className="p-2 rounded-full bg-black/50 backdrop-blur-sm text-white hover:bg-black/70 transition-colors">
+          <ArrowUpRight className="h-5 w-5" />
+        </div>
+      </div>
 
       {/* Controls */}
       {project.images.length > 1 && (
