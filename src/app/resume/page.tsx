@@ -9,14 +9,14 @@ const Resume = () => {
   const handleDownload = () => {
     // Replace with your actual resume PDF path
     const link = document.createElement('a');
-    link.href = '/Tran_Khoi_Nguyen_Pham_s_Resume_2027.pdf';
+    link.href = '/Tran_Khoi_Nguyen_Pham_s_Resume_2025.pdf';
     link.download = 'Noah_Pham_Resume.pdf';
     link.click();
   };
 
   const handleOpenInNewTab = () => {
     // Replace with your actual resume PDF path
-    window.open('/Tran_Khoi_Nguyen_Pham_s_Resume_2027.pdf', '_blank');
+    window.open('/Tran_Khoi_Nguyen_Pham_s_Resume_2025.pdf', '_blank');
   };
 
   return (
@@ -45,7 +45,7 @@ const Resume = () => {
                     Computer Science Student & Developer
                   </p>
                   <p className="mt-1 text-lg text-gray-400">
-                        Last Updated: October 2023
+                        Last Updated: Jul 2025
                   </p>
                 </div>
                 

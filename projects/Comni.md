@@ -190,12 +190,6 @@ const initializePolkadotConnection = async () => {
 
 ## Impact and Results
 
-### User Adoption Metrics
-- **Strategy Generation Success Rate**: 94% of users create profitable allocations
-- **Risk Reduction**: Average 23% decrease in portfolio volatility
-- **Return Enhancement**: 18% average improvement over manual strategies
-- **User Retention**: 78% monthly active user rate
-
 ### Technical Performance
 - **Sub-Second Strategy Generation**: AI responses under 800ms average
 - **99.9% Uptime**: Robust infrastructure with automatic failover
