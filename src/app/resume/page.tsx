@@ -75,7 +75,7 @@ const Resume = () => {
               <div className="relative w-full">
                 <div className="relative overflow-hidden rounded-xl bg-gray-50 shadow-lg">
                   <iframe
-                    src="/Tran_Khoi_Nguyen_Pham_s_Resume_2027.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    src="/Tran_Khoi_Nguyen_Pham_s_Resume_2025.pdf#toolbar=0&navpanes=0&scrollbar=0"
                     width="100%"
                     height="800"
                     className="border-0 rounded-xl"
