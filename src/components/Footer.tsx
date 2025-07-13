@@ -1,15 +1,7 @@
 // components/Footer.tsx
 
 import React from 'react';
-import Image from 'next/image';
-
-// Define a type for our social links for type-safety
-type SocialLink = {
-  name: string;
-  href: string;
-  iconSrc: string;
-  rotation: string;
-};
+import { GithubIcon, LinkedInIcon, InstagramIcon, YoutubeIcon } from './FontAwesomeIcons';
 
 // --- SVG Icon Components ---
 const NotionMailIcon = ({ className }: { className?: string }) => (
@@ -21,32 +13,34 @@ const NotionMailIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
-// Array of social links based on the inspected code
-const socialLinks: SocialLink[] = [
+const socialLinks = [
     {
         name: 'GitHub',
         href: 'https://github.com/khoinguyenpham04',
-        iconSrc: '/footer-icon/github.png',
+        icon: <GithubIcon />,
         rotation: '',
+        color: '#333',
     },
     {
         name: 'LinkedIn',
         href: 'https://www.linkedin.com/in/phamtrankhoinguyen-noah/',
-        iconSrc: '/footer-icon/linkedin.png',
+        icon: <LinkedInIcon />,
         rotation: '',
+        color: '#0B65C2',
     },
-
     {
         name: 'Instagram',
         href: 'https://www.instagram.com/khoinguyen_pham',
-        iconSrc: '/footer-icon/instagram.png',
+        icon: <InstagramIcon />,
         rotation: '0',
+        color: '#E1415C',
     },
     {
         name: 'Youtube',
         href: 'https://www.youtube.com/@khoinguyen_pham',
-        iconSrc: '/footer-icon/youtube.png',
+        icon: <YoutubeIcon />,
         rotation: '',
+        color: '#FF0000',
     },
 ];
 
@@ -69,7 +63,7 @@ const Footer = () => {
         <div className="w-3/4 h-px bg-gray-300 md:hidden my-5"></div>
 
         {/* Social Icons */}
-        <div className="flex items-center gap-3 sm:gap-5">
+        <div className="flex items-center gap-4 sm:gap-5">
           {socialLinks.map((link) => (
             <a
               key={link.name}
@@ -77,16 +71,10 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Link to ${link.name} profile`}
-              className={`transition-transform hover:scale-110 hover:z-10 ${link.rotation}`}
+              className={`transition-transform hover:scale-110 hover:z-10 ${link.rotation} text-5xl sm:text-6xl`}
+              style={{ color: link.color }}
             >
-              <Image
-                src={link.iconSrc}
-                alt={`${link.name} logo`}
-                width={48}
-                height={48}
-                className="h-10 w-10 sm:h-12 sm:w-12"
-                unoptimized // Since icons are from an external source, you can use this or configure next.config.js
-              />
+              {link.icon}
             </a>
           ))}
         </div>
