@@ -11,6 +11,19 @@ import MapBoxIcon from "@/components/icons/MapBox"
 import ClerkIcon from "@/components/icons/ClerkIcon"
 import PartyKitIcon from "@/components/icons/PartyKitIcon"
 import AwsIcon from "@/components/icons/AwsIcon"
+import { 
+  GithubIcon, 
+  PythonIcon, 
+  JavaScriptIcon, 
+  JavaIcon, 
+  HtmlIcon, 
+  DockerIcon,
+  GitIcon,
+  GitlabIcon,
+  LinuxIcon,
+  WindowsIcon,
+  AwsFontAwesomeIcon
+} from "@/components/FontAwesomeIcons"
 
 export function getIcon(tag: string) {
     switch (tag) {
@@ -42,6 +55,28 @@ export function getIcon(tag: string) {
             return <PartyKitIcon/>;
         case "Amazon EC2":
             return <AwsIcon />;
+        case "GitHub":
+            return <GithubIcon />;
+        case "Python":
+            return <PythonIcon />;
+        case "JavaScript":
+            return <JavaScriptIcon />;
+        case "Java":
+            return <JavaIcon />;
+        case "HTML/CSS":
+            return <HtmlIcon />;
+        case "Docker":
+            return <DockerIcon />;
+        case "Git":
+            return <GitIcon />;
+        case "GitLab":
+            return <GitlabIcon />;
+        case "Linux":
+            return <LinuxIcon />;
+        case "Windows":
+            return <WindowsIcon />;
+        case "AWS":
+            return <AwsFontAwesomeIcon />;
         default:
             return null;
     }

@@ -18,33 +18,47 @@ type Skill = {
 };
 
 const skills: { [key: string]: Skill[] } = {
-  "Languages & Frameworks": [
-    { name: "JavaScript (ES6+)" },
+  "Languages": [
+    { name: "Python", iconName: "Python" },
     { name: "TypeScript", iconName: "TypeScript" },
-    { name: "Python" },
-    { name: "Java" },
-    { name: "React", iconName: "React" },
+    { name: "JavaScript", iconName: "JavaScript" },
+    { name: "Java", iconName: "Java" },
+    { name: "C++" },
+    { name: "SQL" },
+    { name: "HTML/CSS", iconName: "HTML/CSS" },
+    { name: "C" },
+  ],
+  "Frameworks & Libraries": [
     { name: "Next.js", iconName: "Next.js" },
-  ],
-  "Styling & Design": [
-    { name: "CSS3" },
-    { name: "SASS (SCSS)" },
-    { name: "Tailwind CSS", iconName: "Tailwind CSS" },
-    { name: "Figma" },
-    { name: "Photoshop" },
-    { name: "Illustrator" },
-  ],
-  "Backend & Tools": [
+    { name: "React.js", iconName: "React" },
     { name: "Node.js" },
-    { name: "Express" },
-    { name: "Firebase" },
+    { name: "Tailwind CSS", iconName: "Tailwind CSS" },
+    { name: "Framer Motion" },
+    { name: "Qt" },
+    { name: "PartyKit", iconName: "PartyKit" },
+    { name: "OpenAI Whisper", iconName: "OpenAI" },
+  ],
+  "Developer Tools & Platforms": [
+    { name: "Docker", iconName: "Docker" },
+    { name: "Git", iconName: "Git" },
+    { name: "GitHub", iconName: "GitHub" },
+    { name: "GitLab", iconName: "GitLab" },
+    { name: "Vercel" },
+    { name: "Linux", iconName: "Linux" },
+    { name: "Windows", iconName: "Windows" },
+    { name: "LaTeX" },
+    { name: "AWS", iconName: "Amazon EC2" },
+    { name: "Google Analytics", iconName: "Google Analytics" },
+    { name: "Mapbox", iconName: "Mapbox GL" },
+    { name: "Clerk", iconName: "Clerk" },
+  ],
+  "Database & BaaS": [
+    { name: "PostgreSQL", iconName: "PostgreSQL" },
     { name: "Supabase", iconName: "Supabase" },
     { name: "MongoDB", iconName: "MongoDB" },
-    { name: "Git" },
-  ],
-  "Testing & QA": [
-    { name: "Jest" },
-    { name: "Sentry" }
+    { name: "MySQL" },
+    { name: "SQLite" },
+    { name: "Firebase" },
   ],
 };
 
