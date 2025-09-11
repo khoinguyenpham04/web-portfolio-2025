@@ -6,7 +6,7 @@ images: ["/chessmind/thumbnail.png"]
 layout: "imageRight"
 brandIcon: "/chessmindlogo.png"
 category: "project"
-date: "2025-06-21"
+date: "2024-01-21"
 liveUrl: "https://chessmindai.vercel.app"
 githubUrl: "https://github.com/khoinguyen-pham/chess-analyser"
 ---

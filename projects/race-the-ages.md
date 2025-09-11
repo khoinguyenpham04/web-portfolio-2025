@@ -6,7 +6,7 @@ images: ["/racetheagescollage.png"]
 layout: "imageLeft"
 brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"
-date: "2024-06-21"
+date: "2024-11-30"
 githubUrl: "https://github.com/khoinguyenpham04/GUHack2024"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "SpeakWisely"
-description: "AI-powered instant personalized feedback, and structured practice for IELTS Speaking."
+description: "AI-powered instant personalised feedback, and structured practice for IELTS Speaking."
 tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "OpenAI", "Whisper", "Google Analytics"]
 images: ["/speakwisely/thumbnail.png"]
 layout: "imageRight"
@@ -11,17 +11,17 @@ liveUrl: "https://speakwisely.me"
 ---
 # Overview
 
-SpeakWisely revolutionizes IELTS Speaking preparation by combining advanced AI technology with proven language learning methodologies. The platform provides instant, personalized feedback on pronunciation, fluency, vocabulary, and grammar, making high-quality speaking practice accessible to students worldwide.
+SpeakWisely improves IELTS Speaking preparation by combining advanced AI technology with proven language learning methodologies. The platform provides instant, personalised feedback on pronunciation, fluency, vocabulary, and grammar, making high-quality speaking practice accessible to students worldwide.
 
 ## The Challenge
 
 Traditional IELTS Speaking preparation faces several critical limitations:
 
--   **Limited Access to Expert Tutors**: High-quality speaking instructors are expensive and often unavailable in many regions
--   **Inconsistent Feedback**: Different tutors may provide varying assessments, creating confusion for students
--   **Scheduling Constraints**: Finding time slots that work for both student and tutor can be challenging
--   **Practice Anxiety**: Many students feel nervous practicing with human tutors, affecting their natural speaking ability
--   **Cost Barriers**: Regular one-on-one tutoring sessions are financially prohibitive for many students
+-   **Limited Access to Expert Tutors**: High-quality speaking instructors are expensive and often unavailable in many regions, while more affordable tutors are proven unreliable.
+-   **Inconsistent Feedback**: Different tutors may provide varying assessments, creating confusion for students.
+-   **Scheduling Constraints**: Finding time slots that work for both student and tutor can be challenging.
+-   **Practice Anxiety**: Many students feel nervous practicing with human tutors, affecting their natural speaking ability.
+-   **Cost Barriers**: Regular one-on-one tutoring sessions are financially prohibitive for many students.
 
 ## The Solution
 
@@ -31,11 +31,11 @@ SpeakWisely addresses these challenges through an intelligent AI-powered platfor
 
 Real-time analysis of speaking performance using OpenAI's advanced language models, providing immediate insights on:
 
--   **Pronunciation accuracy** with phonetic analysis
 -   **Fluency and coherence** assessment
 -   **Vocabulary range and appropriateness**
 -   **Grammar accuracy and complexity**
--   **Task achievement** based on IELTS criteria
+-   **Task achievement** based on the official IELTS criteria
+-   **Pronunciation accuracy** with phonetic analysis
 
 ### 🎤 Advanced Speech Recognition
 
@@ -58,73 +58,26 @@ Authentic IELTS Speaking test simulation with:
 
 ### Frontend Technology Stack
 
--   **Next.js 15**: For server-side rendering and optimal performance
--   **React 18**: Modern component-based UI development
--   **TypeScript**: Type-safe development and enhanced code quality
--   **Tailwind CSS**: Utility-first styling for responsive design
--   **Framer Motion**: Smooth animations and micro-interactions
+-   **Next.js 15**: For server-side rendering and optimal performance.
+-   **React 18**: Modern component-based UI development.
+-   **TypeScript**: Type-safe development and enhanced code quality.
+-   **Tailwind CSS**: Utility-first styling for responsive design.
+-   **Framer Motion**: Smooth animations and micro-interactions.
 
 ### Backend Infrastructure
 
--   **Supabase**: PostgreSQL database with real-time subscriptions
--   **OpenAI API**: GPT-4.1-nano for intelligent feedback generation
--   **Whisper API**: Advanced speech recognition and transcription
--   **Edge Functions**: Serverless API endpoints for optimal performance
-
-### Key Features Implementation
-
-#### 1. Real-time Speech Analysis
-
-```typescript
-// Speech recording and analysis pipeline
-const analyzeRecording = async (audioBlob: Blob) => {
-  // Convert audio to text using Whisper
-  const transcription = await whisperAPI.transcribe(audioBlob);
-
-  // Analyze content with GPT-4.1-nano
-  const feedback = await openai.chat.completions.create({
-    model: "gpt-4.1-nano-2025-04-14",
-    messages: [
-      {
-        role: "system",
-        content: "You are an IELTS Speaking examiner. Analyze the following response..."
-      },
-      {
-        role: "user",
-        content: transcription.text
-      }
-    ]
-  });
-
-  return parseFeedback(feedback);
-};
-```
-
-#### 2. Progressive Scoring System
-
-Implements the official IELTS 9-band scoring system with detailed breakdowns:
-
--   **Band 9**: Expert user with full operational command
--   **Band 7-8**: Good to very good user with operational command
--   **Band 5-6**: Modest to competent user with partial command
--   **Detailed sub-scores** for each assessment criterion
-
-#### 3. Adaptive Question Generation
-
-Dynamic question selection based on:
-
--   Student's current proficiency level
--   Previous performance analytics
--   Weak areas identification
--   Practice frequency and consistency
+-   **Supabase**: PostgreSQL database with real-time updates on user's practice sessions data.
+-   **OpenAI API**: GPT-5.1-nano for intelligent feedback generation.
+-   **Whisper API**: Advanced speech recognition and transcription.
+-   **Edge Functions**: Serverless API endpoints for optimal performance.
 
 ## User Experience Design
 
 ### Clean, Intuitive Interface
 
--   **Minimalist design** focusing on core functionality
--   **Responsive layout** optimized for desktop, tablet, and mobile devices
--   **Progress visualization** with clear metrics and achievement tracking
+-   **Minimalist design** focusing on core functionality.
+-   **Responsive layout** optimised for desktop, tablet, and mobile devices.
+-   **Progress visualization** with clear metrics and achievement tracking.
 
 ## Performance Metrics
 
@@ -167,7 +120,7 @@ Students using SpeakWisely demonstrate measurable improvements:
 -   **Peer Practice**: Matched conversation partners for collaborative learning
 -   **Advanced Analytics**: Detailed performance trends and predictions
 -   **Mobile App**: Native iOS and Android applications
--   **Multi-language Support**: Expanded to other English proficiency tests
+-   **Multi-tests Support**: Expanded to other English proficiency tests like TOEFL.
 
 ### AI Improvements
 
@@ -179,4 +132,4 @@ Students using SpeakWisely demonstrate measurable improvements:
 
 SpeakWisely represents a significant advancement in language learning technology, making high-quality IELTS Speaking preparation accessible, affordable, and effective. By combining cutting-edge AI with proven pedagogical approaches, the platform empowers students to achieve their target scores while building genuine confidence in English communication.
 
-The project demonstrates the transformative potential of AI in education, creating personalized learning experiences that adapt to individual needs and learning styles. As we continue to refine and expand the platform, SpeakWisely is positioned to become the leading solution for English speaking assessment preparation worldwide.
+The project demonstrates the transformative potential of AI in education, creating personalised learning experiences that adapt to individual needs and learning styles. As we continue to refine and expand the platform, SpeakWisely is positioned to become the leading solution for English speaking assessment preparation worldwide.

@@ -13,4 +13,5 @@ export interface Project {
   layout: "imageLeft" | "imageRight"
   brandIcon?: string
   category?: "project" | "hackathon"
+  date?: string | null;
 }

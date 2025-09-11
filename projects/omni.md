@@ -4,7 +4,7 @@ description: "A decentralized application for wallet management for Polkadot-bas
 tags: ["Next.js", "React", "TypeScript", "Polkadot", "Substrate", "AI", "DeFi", "Hardhat", "Gemini"]
 images: ["/omni-thumbnail.png"]
 layout: "imageRight"
-date: "2025-04-15"
+date: "2025/04/15"
 brandIcon: "/svg/omnilogo.svg"
 category: "hackathon"
 ---

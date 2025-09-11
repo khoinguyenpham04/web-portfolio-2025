@@ -3,9 +3,8 @@ import Image from 'next/image';
 import { SparkleIcon } from '../icons/SparkleIcon';
 import { Button } from "@/components/ui/button";
 import { IconPointerFilled } from "@tabler/icons-react";
-import Link from 'next/link';  // added Link import
+import Link from 'next/link';
 import { Codesandbox } from 'lucide-react';
-// --- Reusable Placeholder Component ---
 
 const FeaturedHackathons = () => {
     return (
@@ -54,7 +53,7 @@ const FeaturedHackathons = () => {
                             <div className="relative pt-[61.29%] rounded-2xl overflow-hidden">
                                 <Image
                                     src="/racetheagescollage.png"
-                                    alt="Placeholder image"
+                                    alt="race the ages image"
                                     fill
                                     className="object-cover"
                                 />
@@ -123,13 +122,6 @@ const FeaturedHackathons = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className="text-center mt-8 text-3xl">
-                    <Button variant="tactile-primary" size="default" asChild>
-                        <Link href="/projects" className="inline-flex items-center gap-2">
-                            Click to View More Hackathon Submissions
-                        </Link>
-                    </Button>
                 </div>
             </div>
         </section>

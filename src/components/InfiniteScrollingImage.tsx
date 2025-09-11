@@ -51,16 +51,4 @@ const images = [
     src: "/racetheagescollage.png",
     alt: "racetheagescollage",
   },
-  {
-    src: "/chessmind/588shots_so.png",
-    alt: "Blue background",
-  },
-  {
-    src: "/omni-thumbnail.png",
-    alt: "Omni",
-  },
-  {
-    src: "/codeclash.png",
-    alt: "CodeClash",
-  },
 ];

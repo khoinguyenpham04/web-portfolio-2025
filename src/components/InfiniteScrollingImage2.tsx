@@ -40,14 +40,6 @@ const images = [
     alt: "Blue background",
   },
   {
-    src: "/leetcoach-thumbnail.png",  
-    alt: "LeetCoach",
-  },
-  {
-    src: "/racetheagescollage.png",
-    alt: "racetheagescollage",
-  },
-  {
     src: "/omni-thumbnail.png",
     alt: "Omni",
   },
@@ -56,15 +48,7 @@ const images = [
     alt: "CodeClash",
   },
   {
-    src: "/studymapper/thumbnail.png",
-    alt: "studymapper",
-  },
-  {
-    src: "/speakwisely/thumbnail.png",
-    alt: "ChronoQuest",
-  },
-  {
-    src: "/codeclash.png",
+    src: "/neuphonics-win.jpg",
     alt: "CodeClash",
   },
 ];

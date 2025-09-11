@@ -1,11 +1,12 @@
 ---
 title: "LeetCoach"
 description: "AI-powered coding companion for interview preparation with voice-enabled support and real-time feedback."
-tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "AIOHTTP", "Gemini API", "Neuphonic API", "CodeMirror", "Docker", "Cloudflare", "Vercel"]
+tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "Docker", "AIOHTTP", "Gemini", "Neuphonic", "CodeMirror", "Cloudflare", "Vercel"]
 images: ["/leetcoach-thumbnail.png"]
 layout: "imageRight"
 brandIcon: "/svg/leetcoach.svg"
 category: "hackathon"
+date: "2025/04/01"
 githubUrl: "https://github.com/khoinguyenpham04/SHack25Neuphonic"
 ---
 

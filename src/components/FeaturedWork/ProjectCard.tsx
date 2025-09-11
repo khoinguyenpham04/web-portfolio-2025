@@ -6,7 +6,7 @@ import type React from "react"
 import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
 import type { Project } from "./types"
-import type { JSX } from "react/jsx-runtime" // Import JSX to fix the undeclared variable error
+import type { JSX } from "react/jsx-runtime" 
 
 interface ProjectCardProps {
   project: Project
