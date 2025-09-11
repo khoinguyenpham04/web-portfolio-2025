@@ -18,7 +18,7 @@ const FeaturedHackathons = () => {
                     <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
                         Favorite Hackathons
                     </h2>
-                    <p className="text-lg text-neutral-500 max-w-[50ch] mx-auto">
+                    <p className="text-lg text-gray-400 max-w-[50ch] mx-auto">
                         Competitions that shaped my journey as a developer.
                     </p>
                 </div>

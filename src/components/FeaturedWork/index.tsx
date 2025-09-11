@@ -18,8 +18,8 @@ export default function FeaturedWork({ projects }: { projects: Project[] }) {
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
             My Latest Work
           </h2>
-          <p className="text-lg text-neutral-500 max-w-[50ch] mx-auto">
-            Discover my latest projects built with modern technologies, delivering exceptional user experiences.
+          <p className="text-lg text-gray-400 max-w-[40ch] mx-auto">
+            Discover my projects built with modern technologies, delivering exceptional user experiences.
           </p>
         </div>
 
