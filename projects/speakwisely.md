@@ -54,6 +54,16 @@ Authentic IELTS Speaking test simulation with:
 -   Progressive difficulty levels
 -   Practice mode and exam mode options
 
+### 🤖 AI Examiner
+
+Real-time multi-agent conversational system that delivers authentic test experiences:
+
+-   **Dynamic Test Simulation**: Specialized agents handle different examination phases with seamless handoffs
+-   **Natural Voice Interaction**: Sub-200ms response times using OpenAI's Realtime API with WebRTC transport
+-   **Intelligent Question Selection**: Randomized topics from 12+ IELTS categories with structured question sequences
+-   **Complete Session Recording**: High-quality audio capture of both user and AI responses for review
+-   **Structured Conversation Flow**: State machine design ensures consistent and realistic test experiences
+
 ## Technical Architecture
 
 ### Frontend Technology Stack
@@ -63,6 +73,7 @@ Authentic IELTS Speaking test simulation with:
 -   **TypeScript**: Type-safe development and enhanced code quality.
 -   **Tailwind CSS**: Utility-first styling for responsive design.
 -   **Framer Motion**: Smooth animations and micro-interactions.
+-   **WebRTC**: Real-time audio streaming with optimal codec selection.
 
 ### Backend Infrastructure
 
@@ -70,6 +81,8 @@ Authentic IELTS Speaking test simulation with:
 -   **OpenAI API**: GPT-5.1-nano for intelligent feedback generation.
 -   **Whisper API**: Advanced speech recognition and transcription.
 -   **Edge Functions**: Serverless API endpoints for optimal performance.
+-   **OpenAI Realtime API**: Low-latency voice conversations with multi-agent orchestration.
+-   **Event-Driven Architecture**: Comprehensive event system for managing conversation states and interactions.
 
 ## User Experience Design
 
