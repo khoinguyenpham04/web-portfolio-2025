@@ -1,30 +1,17 @@
 import type { NextConfig } from "next";
-import path from 'path';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['images.unsplash.com'],
-  },
-  webpack: (config) => {
-    // Add alias for '@' path mapping
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      '@': path.resolve(__dirname, 'src'),
-    };
-    // Handle GLB files
-    config.module.rules.push({
-      test: /\.(glb|gltf)$/,
-      use: {
-        loader: 'file-loader',
-        options: {
-          publicPath: '/_next/static/models/',
-          outputPath: 'static/models/',
-        },
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
-    });
-    return config;
+    ],
   },
-  /* config options here */
+  // Empty turbopack config to acknowledge Turbopack is being used
+  // The '@' alias is already configured in tsconfig.json
+  turbopack: {},
 };
 
 export default nextConfig;

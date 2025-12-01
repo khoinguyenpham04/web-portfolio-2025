@@ -47,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body className={`${inter.className} ${instrumentSerif.variable}`}>
+    <html lang="en">
+      <body className={`${inter.className} ${instrumentSerif.variable}`} suppressHydrationWarning>
         <Header />
           <main className="pt-20 lg:pt-24">
             {children}
