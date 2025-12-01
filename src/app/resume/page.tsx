@@ -9,14 +9,14 @@ const Resume = () => {
   const handleDownload = () => {
     // Replace with your actual resume PDF path
     const link = document.createElement('a');
-    link.href = '/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Oct_2025.pdf';
+    link.href = '/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf';
     link.download = 'Noah_Pham_Resume.pdf';
     link.click();
   };
 
   const handleOpenInNewTab = () => {
     // Replace with your actual resume PDF path
-    window.open('/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Oct_2025.pdf', '_blank');
+    window.open('/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf', '_blank');
   };
 
   return (
@@ -75,7 +75,7 @@ const Resume = () => {
               <div className="relative w-full">
                 <div className="relative overflow-hidden rounded-xl bg-gray-50 shadow-lg">
                   <iframe
-                    src="/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Oct_2025.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    src="/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf#toolbar=0&navpanes=0&scrollbar=0"
                     width="100%"
                     height="800"
                     className="border-0 rounded-xl"

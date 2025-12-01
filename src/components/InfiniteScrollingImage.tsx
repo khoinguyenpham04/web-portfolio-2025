@@ -44,8 +44,16 @@ const images = [
     alt: "studymapper",
   },
   {
+    src: "/Delego.jpeg",
+    alt: "Delego",
+  },
+  {
     src: "/leetcoach-thumbnail.png",  
     alt: "LeetCoach",
+  },
+  {
+    src: "/memoral.jpeg",
+    alt: "Memoral",
   },
   {
     src: "/racetheagescollage.png",

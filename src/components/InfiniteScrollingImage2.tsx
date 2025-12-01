@@ -36,12 +36,16 @@ export function InfiniteMovingImages2() {
 
 const images = [
   {
-    src: "/chessmind/588shots_so.png",
-    alt: "Blue background",
+    src: "/walk.jpeg",
+    alt: "Snapchat Walk",
   },
   {
     src: "/omni-thumbnail.png",
     alt: "Omni",
+  },
+  {
+    src: "/memoral-win.jpeg",
+    alt: "Memoral",
   },
   {
     src: "/codeclash.png",

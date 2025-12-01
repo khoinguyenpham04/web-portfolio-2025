@@ -34,8 +34,8 @@ const menuItems: MenuItem[] = [
 ]
 
 const profileImages = [
-    '/profile-icons/cartoon2.jpg',
     '/profile-icons/speaker-icon.jpeg',
+    '/profile-icons/cartoon2.jpg',
     '/profile-icons/icon1.png',
 ];
 
