@@ -200,7 +200,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
               {(projectData.data.liveUrl || projectData.data.githubUrl) && (
                 <div className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-8">
                   {projectData.data.liveUrl && (
-                    <Button asChild variant="tactile-primary" className="justify-center sm:justify-start">
+                    <Button asChild variant="tactile-black" className="justify-center sm:justify-start">
                       <a href={projectData.data.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <ExternalLink className="w-4 h-4" />
                         View Live

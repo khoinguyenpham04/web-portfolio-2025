@@ -52,7 +52,7 @@ const Resume = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button 
                     onClick={handleDownload}
-                    variant="tactile-primary"
+                    variant="tactile-black"
                     className="flex items-center gap-2"
                   >
                     <Download size={16} />

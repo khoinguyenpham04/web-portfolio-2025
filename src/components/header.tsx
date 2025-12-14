@@ -194,7 +194,7 @@ export const Header = () => {
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
                                     size="sm"
-                                    variant="tactile-primary"
+                                    variant="tactile-black"
                                     data-cal-namespace="15min"
                                     data-cal-link="noahpham/15min"
                                     data-cal-config='{"layout":"month_view","theme":"light"}'

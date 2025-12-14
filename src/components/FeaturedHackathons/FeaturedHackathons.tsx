@@ -42,7 +42,7 @@ const FeaturedHackathons = () => {
                                 <h3 className="text-[28px] font-bold leading-tight m-0">Race The Ages</h3>
                                 <p className="text-base text-black/70 mt-1">Real-time historical guesser multiplayer game</p>
                             </div>
-                            <Button variant="tactile-primary" size="default" asChild className="w-fit">
+                            <Button variant="tactile-black" size="default" asChild className="w-fit">
                                 <Link href="/projects/race-the-ages" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
@@ -77,7 +77,7 @@ const FeaturedHackathons = () => {
                                     Your personal coding interview voice agent AI.
                                 </p>
                             </div>
-                            <Button variant="tactile-primary" size="default" asChild className="w-fit">
+                            <Button variant="tactile-black" size="default" asChild className="w-fit">
                                 <Link href="/projects/leetcoach" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
@@ -104,7 +104,7 @@ const FeaturedHackathons = () => {
                                 <h3 className="text-[28px] font-bold leading-tight m-0">Omni</h3>
                                 <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI strategist</p>
                             </div>
-                            <Button variant="tactile-primary" size="default" asChild className="w-fit">
+                            <Button variant="tactile-black" size="default" asChild className="w-fit">
                                 <Link href="/projects/omni" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More

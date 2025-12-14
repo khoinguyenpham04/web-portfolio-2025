@@ -253,36 +253,36 @@ html, body {
   gap: 0.5rem;
   padding: 0.25rem 0.625rem; /* py-1 px-2.5 */
   transition: all 200ms;
-  background: rgb(18, 18, 18); /* Near black */
-  color: rgb(245, 245, 245); /* Near white */
-  box-shadow: 
-    0 0 0 1px hsl(0, 0%, 10%), /* Outer border */
-    0 1px 2px hsl(0, 0%, 5%),  /* Mid shadow */
-    0 3px 3px hsl(0, 0%, 2%),  /* Deeper shadow */
-    0 -2px hsl(0, 0%, 15%) inset; /* Top inner highlight */
+  background: #2C2820; /* Warm dark brown base */
+  color: #F5F3EF; /* Warm white */
+  box-shadow:
+    0 0 0 1px #1D1A14, /* Outer border */
+    0 1px 2px #14120D,  /* Mid shadow */
+    0 3px 3px #0E0C09,  /* Deeper shadow */
+    0 -2px #3D382E inset; /* Top inner highlight */
 }
 
 .btn-tactile-black:hover:not(:disabled) {
-  background: rgb(30, 30, 30);
+  background: #38332A; /* Lighter warm brown on hover */
   transform: translateY(1px) scale(0.98);
-  box-shadow: 
-    0 0 0 1px hsl(0, 0%, 8%),
-    0 1px 2px hsl(0, 0%, 3%);
+  box-shadow:
+    0 0 0 1px #1D1A14,
+    0 1px 2px #0E0C09;
 }
 
 .btn-tactile-black:active:not(:disabled) {
-  background: rgb(30, 30, 30);
+  background: #252118; /* Darker on active */
   transform: translateY(2px) scale(0.97);
-  box-shadow: 
-    0 0 0 1px hsl(0, 0%, 8%),
-    inset 0 1px 1px hsl(0, 0%, 0%);
+  box-shadow:
+    0 0 0 1px #1D1A14,
+    inset 0 1px 1px #14120D;
 }
 
 .btn-tactile-black:disabled {
   cursor: not-allowed;
   opacity: 0.5;
-  background: rgb(50, 50, 50);
-  color: rgb(100, 100, 100);
+  background: #3D382E;
+  color: #8A8275;
   box-shadow: none;
   transform: none;
 }
