@@ -2,9 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import { SparkleIcon } from '../icons/SparkleIcon';
 import { Button } from "@/components/ui/button";
-import { IconPointerFilled } from "@tabler/icons-react";
+import { IconPointerFilled, IconTrophy } from "@tabler/icons-react";
 import Link from 'next/link';
-import { Codesandbox } from 'lucide-react';
 
 const FeaturedHackathons = () => {
     return (
@@ -25,22 +24,16 @@ const FeaturedHackathons = () => {
 
                 <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-6">
                     
-                    {/* --- Race The Ages Block --- */}
+                    {/* --- HackJunction Block --- */}
                     <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col justify-between lg:row-span-2">
                         <div className="p-8 flex flex-col gap-4">
-                            <div className="relative w-22 h-22">
-                                <Image 
-                                    src="/hackathon-images/ChronoQuest.png"
-                                    alt="ChronoQuest Logo"
-                                    fill
-                                    className="object-contain"
-                                    sizes="(max-width: 768px) 96px, 128px"
-                                    priority
-                                />
+                            <div className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full text-xs font-semibold w-fit">
+                                <IconTrophy className="w-3.5 h-3.5" />
+                                1st Place in the Snap Challenge
                             </div>
                             <div>
-                                <h3 className="text-[28px] font-bold leading-tight m-0">Race The Ages</h3>
-                                <p className="text-base text-black/70 mt-1">Real-time historical guesser multiplayer game</p>
+                                <h3 className="text-[28px] font-bold leading-tight m-0">HackJunction</h3>
+                                <p className="text-base text-black/70 mt-1">AR safety navigation with Agentic AI companion</p>
                             </div>
                             <Button variant="tactile-black" size="default" asChild className="w-fit">
                                 <Link href="/projects/race-the-ages" className="inline-flex items-center gap-2">
@@ -49,11 +42,12 @@ const FeaturedHackathons = () => {
                                 </Link>
                             </Button>
                         </div>
-                        <div className="w-full relative p-3">
-                            <div className="relative pt-[61.29%] rounded-2xl overflow-hidden">
+                        <div className="w-full relative p-3 flex-1">
+                            <div className="relative w-full h-full min-h-[200px] lg:aspect-[4/3] rounded-2xl overflow-hidden">
+                                <span className="absolute bottom-3 right-3 z-10 text-xs font-medium text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">November 2025</span>
                                 <Image
-                                    src="/racetheagescollage.png"
-                                    alt="race the ages image"
+                                    src="/HackJunction.jpg"
+                                    alt="HackJunction image"
                                     fill
                                     className="object-cover"
                                 />
@@ -61,20 +55,38 @@ const FeaturedHackathons = () => {
                         </div>
                     </div>
 
-                    {/* --- LeetCoachBlock --- */}
-                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
-                         <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
-                            {/* LeetCoach Icon */}
-                            <Image
-                                src="/leetcoach.png"
-                                alt="LeetCoach Icon"
-                                width={64}
-                                height={64}
-                            />
+                    {/* --- GreatUniHack 2025 Block --- */}
+                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[250px]">
+                         <div className="p-6 flex flex-col gap-3 justify-center z-10 w-full lg:w-[40%] lg:flex-shrink-0">
+                            {/* Mobile: Show all awards */}
+                            <div className="flex flex-wrap gap-1.5 lg:hidden">
+                                <div className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    <IconTrophy className="w-3.5 h-3.5" />
+                                    1st Reply Challenge
+                                </div>
+                                <div className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    <IconTrophy className="w-3.5 h-3.5" />
+                                    1st ARM Challenge
+                                </div>
+                                <div className="inline-flex items-center gap-1.5 bg-orange-100 text-orange-700 px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    <IconTrophy className="w-3.5 h-3.5" />
+                                    3rd Overall
+                                </div>
+                            </div>
+                            {/* Desktop: Compact version */}
+                            <div className="hidden lg:flex flex-wrap gap-1.5">
+                                <div className="inline-flex items-center gap-1.5 bg-amber-100 text-amber-700 px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    <IconTrophy className="w-3.5 h-3.5" />
+                                    1st Place
+                                </div>
+                                <div className="inline-flex items-center gap-1.5 bg-neutral-100 text-neutral-600 px-2.5 py-1 rounded-full text-xs font-semibold">
+                                    +2 awards
+                                </div>
+                            </div>
                             <div>
-                                <h3 className="text-[28px] font-bold leading-tight m-0">LeetCoach</h3>
+                                <h3 className="text-[24px] font-bold leading-tight m-0">GreatUniHack</h3>
                                 <p className="text-base text-black/70 mt-1">
-                                    Your personal coding interview voice agent AI.
+                                    Agentic AI for Dementia patients and their caretakers
                                 </p>
                             </div>
                             <Button variant="tactile-black" size="default" asChild className="w-fit">
@@ -84,10 +96,11 @@ const FeaturedHackathons = () => {
                                 </Link>
                             </Button>
                         </div>
-                         <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
+                         <div className="relative w-full lg:flex-1 h-[300px] sm:h-[350px] lg:h-auto z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                                <span className="absolute bottom-3 right-2 z-10 text-xs font-medium text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">October 2025</span>
                                 <Image
-                                    src="/leetcoach-thumbnail.png"
+                                    src="/GreatUniHack25.jpg"
                                     alt="Placeholder image"
                                     fill
                                     className="object-cover"
@@ -95,27 +108,31 @@ const FeaturedHackathons = () => {
                             </div>
                         </div>
                     </div>
-                    
-                    {/* --- Omni Block --- */}
-                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row justify-between min-h-[250px]">
-                        <div className="p-6 flex flex-col gap-4 flex-grow z-10 lg:max-w-[50%]">
-                            <Codesandbox className="w-12 h-12 text-black" />
+
+                    {/* --- Race The Ages Block (horizontal) --- */}
+                    <div className="bg-[#F6F5F4] rounded-xl overflow-hidden relative flex flex-col lg:flex-row min-h-[250px]">
+                        <div className="p-6 flex flex-col gap-4 justify-center z-10 w-full lg:w-[40%] lg:flex-shrink-0">
+                            <div className="inline-flex items-center gap-1.5 bg-slate-200 text-slate-600 px-2.5 py-1 rounded-full text-xs font-semibold w-fit">
+                                <IconTrophy className="w-3.5 h-3.5" />
+                                2nd Place Overall
+                            </div>
                             <div>
-                                <h3 className="text-[28px] font-bold leading-tight m-0">Omni</h3>
-                                <p className="text-base text-black/70 mt-1">Crypto Wallet and Trading AI strategist</p>
+                                <h3 className="text-[24px] font-bold leading-tight m-0">GreatUniHack</h3>
+                                <p className="text-base text-black/70 mt-1">Historical guesser multiplayer game</p>
                             </div>
                             <Button variant="tactile-black" size="default" asChild className="w-fit">
-                                <Link href="/projects/omni" className="inline-flex items-center gap-2">
+                                <Link href="/projects/race-the-ages" className="inline-flex items-center gap-2">
                                     <IconPointerFilled className="w-6 h-6 fill-current" />
                                     Click to View More
                                 </Link>
                             </Button>
                         </div>
-                        <div className="relative w-full lg:w-[600px] h-[300px] sm:h-[350px] lg:h-full z-0 p-3">
+                        <div className="relative w-full lg:flex-1 h-[300px] sm:h-[350px] lg:h-auto z-0 p-3">
                             <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                                <span className="absolute bottom-3 right-2 z-10 text-xs font-medium text-white bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-full">November 2024</span>
                                 <Image
-                                    src="/omni-thumbnail.png"
-                                    alt="Placeholder image"
+                                    src="/racetheagescollage.png"
+                                    alt="Race the ages image"
                                     fill
                                     className="object-cover"
                                 />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../ui/button';
 import Link from 'next/link';
 import { ParticleGrid } from '../ui/ParticleGrid';
+import { IconPointerFilled } from '@tabler/icons-react';
 
 export const ExploreProjectsCallToAction: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ export const ExploreProjectsCallToAction: React.FC = () => {
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Button variant="tactile-secondary" size="default" asChild>
             <Link href="/projects" className="inline-flex items-center gap-2">
+                <IconPointerFilled className="w-6 h-6 fill-current" />
                 Click to View More
             </Link>
           </Button>
