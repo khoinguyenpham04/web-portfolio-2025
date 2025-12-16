@@ -11,6 +11,7 @@ import type { Project } from "@/components/FeaturedWork/types";
 
 export default function HomePage({ projects }: { projects: Project[] }) {
   const featuredProjects = projects.filter((project) => project.category === "project" || !project.category).slice(0, 2);
+  const hackathonProjects = projects.filter((project) => project.category === "hackathon");
   return (
     <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
       <div style={{ height: '100%', overflowY: 'auto' }}>
@@ -25,7 +26,7 @@ export default function HomePage({ projects }: { projects: Project[] }) {
           <InfiniteMovingImages />
           <InfiniteMovingImages2 />
           <FeaturedWork projects={featuredProjects} />
-          <FeaturedHackathons />
+          <FeaturedHackathons hackathons={hackathonProjects} />
         </ClickSpark>
       </div>
 

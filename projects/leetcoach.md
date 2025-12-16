@@ -1,6 +1,6 @@
 ---
 title: "LeetCoach"
-description: "AI-powered coding companion for interview preparation with voice-enabled support and real-time feedback."
+description: "Agentic conversational coding companion for interview preparation"
 tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "Docker", "AIOHTTP", "Gemini", "Neuphonic", "CodeMirror", "Cloudflare", "Vercel"]
 images: ["/leetcoach-thumbnail.png"]
 layout: "imageRight"
@@ -8,6 +8,12 @@ brandIcon: "/svg/leetcoach.svg"
 category: "hackathon"
 date: "2025/04/01"
 githubUrl: "https://github.com/khoinguyenpham04/SHack25Neuphonic"
+hackathonName: "StudentHack"
+displayDate: "April 2025"
+priority: 4
+awards:
+  - label: "2nd Place"
+    variant: "silver"
 ---
 
 # Overview

@@ -1,12 +1,18 @@
 ---
 title: "Omni AI"
-description: "A decentralized application for wallet management for Polkadot-based assets with an AI-powered investment strategist."
+description: "A decentralized wallet management app with an investment strategist."
 tags: ["Next.js", "React", "TypeScript", "Polkadot", "Substrate", "AI", "DeFi", "Hardhat", "Gemini"]
 images: ["/omni-thumbnail.png"]
 layout: "imageRight"
 date: "2025/04/15"
 brandIcon: "/svg/omnilogo.svg"
 category: "hackathon"
+hackathonName: "Polkadot Hackathon"
+displayDate: "April 2025"
+priority: 6
+awards:
+  - label: "Participant"
+    variant: "special"
 ---
 
 # Omni AI: AI-Powered DeFi Strategy Generator

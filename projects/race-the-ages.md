@@ -1,6 +1,6 @@
 ---
 title: "Race the Ages"
-description: "Turning history into a multiplayer adventure where players guess historical dates and locations in real-time."
+description: "Historical guesser multiplayer game"
 tags: ["Next.js", "React", "TypeScript", "PartyKit", "Tailwind CSS", "Framer Motion"]
 images: ["/racetheagescollage.png"]
 layout: "imageLeft"
@@ -8,17 +8,23 @@ brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"
 date: "2024-11-30"
 githubUrl: "https://github.com/khoinguyenpham04/GUHack2024"
+hackathonName: "GreatUniHack"
+displayDate: "November 2024"
+priority: 3
+awards:
+  - label: "2nd Place Overall"
+    variant: "silver"
 ---
 
-# ChronoQuest: Turning History Into a Multiplayer Adventure 🚀
+# ChronoQuest: Turning History Into a Multiplayer Adventure
 
-## The Spark ✨
+## The Spark
 
 Have you ever looked at a historical photograph and felt that tingling sense of mystery? That's exactly how our journey began. During a late-night conversation about how our grandparents used to share amazing historical stories, we realized something profound: history isn't just about memorizing dates – it's about understanding the when and where of human stories.
 
 Then it hit us: what if we could transform this curiosity into a game? What if we could make history as engaging as scrolling through social media, but with the added thrill of competition and discovery?
 
-## The Vision 🎯
+## The Vision
 
 We envisioned a platform where:
 
@@ -28,7 +34,7 @@ We envisioned a platform where:
 - Every guess leads to a new discovery
 - Education meets entertainment seamlessly
 
-## The Building Process 🔨
+## The Building Process
 
 ### Foundation: Technology with Purpose
 
@@ -59,7 +65,7 @@ We chose our tech stack carefully:
 - Created feedback systems
 - Implemented social features
 
-## Challenges & Breakthroughs 💡
+## Challenges & Breakthroughs
 
 ### Challenge 1: The Real-Time Puzzle
 Initially, synchronizing multiple players' guesses and maintaining game state seemed daunting. The breakthrough came when we discovered PartyKit's elegant solution for real-time communication. This turned our biggest challenge into one of our strongest features.
@@ -67,7 +73,7 @@ Initially, synchronizing multiple players' guesses and maintaining game state se
 ### Challenge 2: Historical Accuracy
 Ensuring accurate historical data while making the game engaging was tricky. We solved this by creating a robust validation system and partnering with history enthusiasts to verify our content.
 
-## What We Learned 📚
+## What We Learned
 
 This project taught us more than just coding:
 
@@ -76,7 +82,7 @@ This project taught us more than just coding:
 - **Educational Design** requires a delicate balance
 - **Community Feedback** is invaluable for improvement
 
-## Technical Insights 💻
+## Technical Insights
 
 Our most proud technical achievements:
 
@@ -85,7 +91,7 @@ Our most proud technical achievements:
 - Developing an adaptive difficulty system that keeps players engaged
 - Building a scalable content management system for historical events
 
-## The Future 🌟
+## The Future
 
 ChronoQuest is just beginning its journey. We plan to:
 
@@ -94,7 +100,7 @@ ChronoQuest is just beginning its journey. We plan to:
 - Create themed historical event packages
 - Develop mobile apps for iOS and Android
 
-## The Impact 🌍
+## The Impact
 
 We believe ChronoQuest can:
 
@@ -103,7 +109,7 @@ We believe ChronoQuest can:
 - Preserve historical knowledge in an interactive format
 - Bridge generational gaps through shared gameplay
 
-## Key Takeaways 🎓
+## Key Takeaways
 
 - Innovation doesn't always mean inventing something new – sometimes it's about reimagining existing concepts
 - User Experience is crucial in educational technology

@@ -7,10 +7,16 @@ import { getIcon } from '@/lib/getIcon';
 const projectsDirectory = path.join(process.cwd(), 'projects');
 
 function compareProjects(a: Project, b: Project) {
-  const dateA = a.date ? new Date(a.date).getTime() : Infinity;
+  // Sort by priority first (lower = higher rank), then by date (newest first)
+  const priorityA = a.priority ?? Infinity;
+  const priorityB = b.priority ?? Infinity;
 
-  const dateB = b.date ? new Date(b.date).getTime() : Infinity;
+  if (priorityA !== priorityB) {
+    return priorityA - priorityB;
+  }
 
+  const dateA = a.date ? new Date(a.date).getTime() : 0;
+  const dateB = b.date ? new Date(b.date).getTime() : 0;
   return dateB - dateA;
 }
 
@@ -33,6 +39,11 @@ export function getProjectsData(): Project[] {
       brandIcon: matterResult.data.brandIcon,
       category: matterResult.data.category || "project",
       date: matterResult.data.date || null,
+      // Hackathon-specific fields
+      awards: matterResult.data.awards || undefined,
+      hackathonName: matterResult.data.hackathonName || undefined,
+      displayDate: matterResult.data.displayDate || undefined,
+      priority: matterResult.data.priority ?? undefined,
     };
     return project;
   });
