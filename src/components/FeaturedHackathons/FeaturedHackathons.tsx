@@ -21,14 +21,11 @@ const FeaturedHackathons: React.FC<FeaturedHackathonsProps> = ({ hackathons }) =
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
             <SparkleIcon className="size-5"/>
-            <span>Featured Projects</span>
+            <span>48 hours to ideate, build, and ship</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-            Favorite Hackathons
+            Hackathon Highlights
           </h2>
-          <p className="text-lg text-gray-400 max-w-[50ch] mx-auto">
-            Competitions that shaped my journey as a developer.
-          </p>
         </div>
 
         <div className="mt-16">

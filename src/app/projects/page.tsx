@@ -31,10 +31,10 @@ export default function ProjectsPage() {
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
             <SparkleIcon className="size-4 sm:size-5"/>
-            <span>Crafted with Precision</span>
+            <span>End-to-end builds from concept to production</span>
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tight text-neutral-900">
-            Latest Projects
+            Featured Work
           </h2>
         </div>
 
@@ -51,10 +51,10 @@ export default function ProjectsPage() {
             <div className="text-center max-w-3xl mx-auto">
               <div className="inline-flex items-center gap-2 text-sm font-medium border border-neutral-300 bg-white px-3 py-1.5 rounded-full mb-4">
                 <SparkleIcon className="size-4 sm:size-5"/>
-                <span>Competitions that shaped my journey as a developer</span>
+                <span>48 hours to ideate, build, and ship</span>
               </div>
               <h2 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-                Featured Hackathons
+                Hackathon Highlights
               </h2>
             </div>
 

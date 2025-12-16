@@ -10,7 +10,7 @@ hackathonName: "GreatUniHack"
 displayDate: "October 2025"
 priority: 2
 awards:
-  - label: "1st Place"
+  - label: "1st Reply Challenge"
     variant: "gold"
   - label: "1st ARM Challenge"
     variant: "gold"

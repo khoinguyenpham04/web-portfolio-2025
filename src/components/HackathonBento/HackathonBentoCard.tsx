@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
-import { IconPointerFilled, IconTrophy } from "@tabler/icons-react";
+import { IconPointerFilled, IconTrophy, IconMedal, IconMedal2, IconAward } from "@tabler/icons-react";
 import type { Project, Award } from '@/components/FeaturedWork/types';
 
 interface HackathonBentoCardProps {
@@ -15,6 +15,21 @@ const awardVariantStyles: Record<Award['variant'], string> = {
   silver: 'bg-slate-200 text-slate-600',
   bronze: 'bg-orange-100 text-orange-700',
   special: 'bg-neutral-100 text-neutral-600',
+};
+
+const getAwardIcon = (variant: Award['variant']) => {
+  switch (variant) {
+    case 'gold':
+      return <IconTrophy className="w-3.5 h-3.5" />;
+    case 'silver':
+      return <IconMedal2 className="w-3.5 h-3.5" />;
+    case 'bronze':
+      return <IconMedal className="w-3.5 h-3.5" />;
+    case 'special':
+      return <IconAward className="w-3.5 h-3.5" />;
+    default:
+      return <IconTrophy className="w-3.5 h-3.5" />;
+  }
 };
 
 export const HackathonBentoCard: React.FC<HackathonBentoCardProps> = ({ hackathon, variant }) => {
@@ -33,7 +48,7 @@ export const HackathonBentoCard: React.FC<HackathonBentoCardProps> = ({ hackatho
                   key={index}
                   className={`inline-flex items-center gap-1.5 ${awardVariantStyles[award.variant]} px-2.5 py-1 rounded-full text-xs font-semibold`}
                 >
-                  <IconTrophy className="w-3.5 h-3.5" />
+                  {getAwardIcon(award.variant)}
                   {award.label}
                 </div>
               ))}
@@ -86,7 +101,7 @@ export const HackathonBentoCard: React.FC<HackathonBentoCardProps> = ({ hackatho
                   key={index}
                   className={`inline-flex items-center gap-1.5 ${awardVariantStyles[award.variant]} px-2.5 py-1 rounded-full text-xs font-semibold`}
                 >
-                  <IconTrophy className="w-3.5 h-3.5" />
+                  {getAwardIcon(award.variant)}
                   {award.label}
                 </div>
               ))}
@@ -97,7 +112,7 @@ export const HackathonBentoCard: React.FC<HackathonBentoCardProps> = ({ hackatho
                 <div
                   className={`inline-flex items-center gap-1.5 ${awardVariantStyles[awards[0].variant]} px-2.5 py-1 rounded-full text-xs font-semibold`}
                 >
-                  <IconTrophy className="w-3.5 h-3.5" />
+                  {getAwardIcon(awards[0].variant)}
                   {awards[0].label}
                 </div>
               ) : (
@@ -105,7 +120,7 @@ export const HackathonBentoCard: React.FC<HackathonBentoCardProps> = ({ hackatho
                   <div
                     className={`inline-flex items-center gap-1.5 ${awardVariantStyles[awards[0].variant]} px-2.5 py-1 rounded-full text-xs font-semibold`}
                   >
-                    <IconTrophy className="w-3.5 h-3.5" />
+                    {getAwardIcon(awards[0].variant)}
                     {awards[0].label}
                   </div>
                   <div className="inline-flex items-center gap-1.5 bg-neutral-100 text-neutral-600 px-2.5 py-1 rounded-full text-xs font-semibold">
