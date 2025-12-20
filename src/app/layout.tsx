@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import { Header } from "@/components/header";
+import SnowfallEffect from "@/components/Snowfall";
 
 const inter = Inter({ subsets: ["latin"] });
 const instrumentSerif = Instrument_Serif({ 
@@ -86,6 +87,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${instrumentSerif.variable}`} suppressHydrationWarning>
+        <SnowfallEffect />
         <Header />
         <main className="pt-20 lg:pt-24">
           {children}

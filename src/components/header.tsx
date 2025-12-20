@@ -87,18 +87,27 @@ export const Header = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
-                                <button
-                                    onClick={handleImageClick}
-                                    className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-md", isAnimating && "animate-wiggle")}
-                                >
+                                <div className="relative">
                                     <Image
-                                        src={profileImages[currentImageIndex]}
-                                        alt="Profile Picture"
-                                        width={40}
-                                        height={40}
-                                        className="h-full w-full object-cover"
+                                        src="/christmas_hat.png"
+                                        alt="Christmas Hat"
+                                        width={28}
+                                        height={28}
+                                        className="absolute -top-3 -right-2.5 z-10 w-7 h-7 rotate-[25deg] pointer-events-none"
                                     />
-                                </button>
+                                    <button
+                                        onClick={handleImageClick}
+                                        className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-md", isAnimating && "animate-wiggle")}
+                                    >
+                                        <Image
+                                            src={profileImages[currentImageIndex]}
+                                            alt="Profile Picture"
+                                            width={40}
+                                            height={40}
+                                            className="h-full w-full object-cover"
+                                        />
+                                    </button>
+                                </div>
                                 <span>Noah Pham</span>
                             </Link>
 
