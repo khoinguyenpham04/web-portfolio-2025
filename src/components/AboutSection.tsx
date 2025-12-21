@@ -17,6 +17,49 @@ type Skill = {
   iconName?: string;
 };
 
+type ExperienceItem = {
+  role: string;
+  company: string;
+  companyLogo?: string;
+  type: string;
+  duration: string;
+  description?: string;
+  link?: string;
+};
+
+const experiences: ExperienceItem[] = [
+  {
+    role: "Software Developer",
+    company: "Ping Proxies",
+    companyLogo: "/svg/dns-logo.svg",
+    type: "Internship",
+    duration: "Oct 2025 - Present",
+    description:
+      "Building scalable infrastructure for data-driven companies and AI-focused startups to access publicly available web data at scale.",
+    link: "https://pingproxies.com",
+  },
+  {
+    role: "Digital Design Web Developer",
+    company: "University of Manchester Students' Union",
+    companyLogo: "/svg/student-union-icon.svg",
+    type: "Part-time",
+    duration: "Aug 2025 - Present",
+    description:
+      "Designing and developing web experiences for the Students' Union, serving over 100,000 students.",
+    link: "https://manchesterstudentsunion.com",
+  },
+  {
+    role: "Founder",
+    company: "SpeakWisely",
+    companyLogo: "/svg/speakwiselylogo.svg",
+    type: "Startup",
+    duration: "Oct 2024 - Present",
+    description:
+      "Building an AI-powered platform to help 300+ students excel at IELTS Speaking.",
+    link: "https://speakwisely.me",
+  },
+];
+
 const skills: { [key: string]: Skill[] } = {
   "Languages": [
     { name: "Python", iconName: "Python" },
@@ -110,6 +153,118 @@ export default function AboutSection() {
               <p className="mt-3 text-sm italic text-gray-500">
                 Manchester Campus in Summer
               </p>
+            </div>
+          </div>
+        </div>
+
+        <hr className="mx-auto my-16 w-full border-t border-gray-200" />
+
+        {/* Experience Section */}
+        <div className="mb-16">
+          <h2 className="mb-12 text-sm font-medium uppercase tracking-wider text-gray-400">
+            Experience
+          </h2>
+
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[2fr_3fr]">
+            {/* Experience List */}
+            <div className="space-y-6">
+              {experiences.map((exp, index) => (
+                <div key={index} className="flex gap-4">
+                  {/* Logo */}
+                  <div className="shrink-0">
+                    <div className="h-11 w-11 overflow-hidden rounded-lg border border-gray-200 bg-white">
+                      {exp.companyLogo ? (
+                        <Image
+                          src={exp.companyLogo}
+                          alt={`${exp.company} logo`}
+                          width={44}
+                          height={44}
+                          className="h-full w-full object-cover"
+                        />
+                      ) : (
+                        <div className="flex h-full w-full items-center justify-center bg-gray-100 text-base font-semibold text-gray-400">
+                          {exp.company.charAt(0)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold tracking-tight text-gray-900">
+                      {exp.role}
+                    </h3>
+                    <p className="text-sm text-gray-500">
+                      {exp.company}
+                      <span className="text-gray-300"> · </span>
+                      {exp.type}
+                    </p>
+                    <p className="mt-0.5 text-sm text-gray-400">{exp.duration}</p>
+                    {exp.description && (
+                      <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                        {exp.description}
+                      </p>
+                    )}
+                    {exp.link && (
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1.5 inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                      >
+                        Visit
+                        <svg className="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Work Screenshots - Bento Grid */}
+            <div className="grid grid-cols-6 auto-rows-fr gap-2">
+              {/* Top left - larger */}
+              <div className="col-span-4 relative overflow-hidden rounded-lg rounded-tl-2xl shadow-sm">
+                <div className="aspect-[16/10]">
+                  <Image
+                    src="/dnsdirectory/DNS Thumbnail 1.svg"
+                    alt="DNS Directory"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              {/* Top right - smaller */}
+              <div className="col-span-2 relative overflow-hidden rounded-lg rounded-tr-2xl shadow-sm">
+                <Image
+                  src="/umsu/su-thumbnail.png"
+                  alt="Students' Union Website"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Bottom left - smaller */}
+              <div className="col-span-2 relative overflow-hidden rounded-lg rounded-bl-2xl shadow-sm">
+                <Image
+                  src="/dnsdirectory/Slide 4_3 - 1.svg"
+                  alt="Ping Proxies Dashboard"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Bottom right - larger */}
+              <div className="col-span-4 relative overflow-hidden rounded-lg rounded-br-2xl shadow-sm">
+                <div className="aspect-[16/10]">
+                  <Image
+                    src="/speakwisely/thumbnail.png"
+                    alt="Development Workspace"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
