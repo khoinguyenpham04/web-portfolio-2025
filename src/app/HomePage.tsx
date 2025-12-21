@@ -10,7 +10,7 @@ import GradualBlur from "@/components/GradualBlur";
 import type { Project } from "@/components/FeaturedWork/types";
 
 export default function HomePage({ projects }: { projects: Project[] }) {
-  const featuredProjects = projects.filter((project) => project.category === "project" || !project.category).slice(0, 2);
+  const featuredProjects = projects.filter((project) => project.category === "project" || !project.category).slice(0, 3);
   const hackathonProjects = projects.filter((project) => project.category === "hackathon");
   return (
     <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>

@@ -8,6 +8,7 @@ brandIcon: "/svg/speakwiselylogo.svg"
 category: "project"
 date: "2025-12-15"
 liveUrl: "https://speakwisely.me"
+priority: 1
 ---
 # Overview
 

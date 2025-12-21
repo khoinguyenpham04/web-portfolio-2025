@@ -3,11 +3,12 @@ title: "StudyMapper"
 description: "Interactive web app helping University of Manchester students find available study spaces across campus."
 tags: ["Next.js", "React", "TypeScript", "MongoDB", "Tailwind CSS", "Mapbox GL"]
 images: ["/studymapper/Component 3.png"]
-layout: "imageLeft"
+layout: "imageRight"
 brandIcon: "/svg/studdymapperlogo.svg"
 category: "project"
 liveUrl: "https://studymapper.vercel.app"
 date: "2024-12-21"
+priority: 3
 ---
 # StudyMapper: Finding Study Spaces at the University of Manchester
 

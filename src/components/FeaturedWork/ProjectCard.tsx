@@ -136,11 +136,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         {project.layout === "imageLeft" ? (
           <>
             <div className="lg:flex-[3]">{imageGallery}</div>
-            <div className="lg:flex-[2]">{content}</div>
+            <div className="lg:flex-[2] lg:flex lg:items-center">{content}</div>
           </>
         ) : (
           <>
-            <div className="lg:flex-[2]">{content}</div>
+            <div className="lg:flex-[2] lg:flex lg:items-center">{content}</div>
             <div className="lg:flex-[3]">{imageGallery}</div>
           </>
         )}
