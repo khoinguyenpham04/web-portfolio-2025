@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, extend, useFrame } from "@react-three/fiber";
 import {
   useGLTF,
@@ -24,6 +24,10 @@ import * as THREE from "three";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
+// Preload assets to prevent loading lag on first render
+useGLTF.preload("/about/Lanyard/card.glb");
+useTexture.preload("/about/Lanyard/lanyards.png");
+
 interface LanyardProps {
   position?: [number, number, number];
   gravity?: [number, number, number];
@@ -46,11 +50,12 @@ export default function Lanyard({
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
         }
       >
-        <ambientLight intensity={Math.PI} />
-        <Physics gravity={gravity} timeStep={1 / 60}>
-          <Band />
-        </Physics>
-        <Environment blur={0.75}>
+        <Suspense fallback={null}>
+          <ambientLight intensity={Math.PI} />
+          <Physics gravity={gravity} timeStep={1 / 60}>
+            <Band />
+          </Physics>
+          <Environment blur={0.75}>
           <Lightformer
             intensity={2}
             color="white"
@@ -80,6 +85,7 @@ export default function Lanyard({
             scale={[100, 10, 1]}
           />
         </Environment>
+        </Suspense>
       </Canvas>
     </div>
   );
@@ -106,19 +112,28 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const card = useRef<any>(null);
 
-  const vec = new THREE.Vector3();
-  const ang = new THREE.Vector3();
-  const rot = new THREE.Vector3();
-  const dir = new THREE.Vector3();
+  // Memoize vectors to prevent recreation on each render
+  const { vec, ang, rot, dir } = useMemo(
+    () => ({
+      vec: new THREE.Vector3(),
+      ang: new THREE.Vector3(),
+      rot: new THREE.Vector3(),
+      dir: new THREE.Vector3(),
+    }),
+    []
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const segmentProps: any = {
-    type: "dynamic" as RigidBodyProps["type"],
-    canSleep: true,
-    colliders: false,
-    angularDamping: 4,
-    linearDamping: 4,
-  };
+  const segmentProps: any = useMemo(
+    () => ({
+      type: "dynamic" as RigidBodyProps["type"],
+      canSleep: true,
+      colliders: false,
+      angularDamping: 4,
+      linearDamping: 4,
+    }),
+    []
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { nodes, materials } = useGLTF("/about/Lanyard/card.glb") as any;
@@ -206,8 +221,11 @@ function Band({ maxSpeed = 50, minSpeed = 0 }: BandProps) {
     }
   });
 
-  curve.curveType = "chordal";
-  texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  // Configure curve and texture once
+  useMemo(() => {
+    curve.curveType = "chordal";
+    texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+  }, [curve, texture]);
 
   return (
     <>
