@@ -16,6 +16,8 @@ type StyledBlurTextProps = {
   rootMargin?: string;
   onAnimationComplete?: () => void;
   stepDuration?: number;
+  as?: "h1" | "h2" | "h3" | "span" | "p" | "div";
+  initialDelay?: number;
 };
 
 const buildKeyframes = (
@@ -44,9 +46,11 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
   rootMargin = "0px",
   onAnimationComplete,
   stepDuration = 0.35,
+  as: Component = "h1",
+  initialDelay = 0,
 }) => {
   const [inView, setInView] = useState(false);
-  const ref = useRef<HTMLHeadingElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   // Flatten segments into animatable units while preserving styling
   const animationUnits = useMemo(() => {
@@ -123,14 +127,14 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
   );
 
   return (
-    <h1 ref={ref} className={className}>
+    <Component ref={ref as React.RefObject<never>} className={className}>
       {animationUnits.map((unit, index) => {
         const animateKeyframes = buildKeyframes(defaultFrom, defaultTo);
 
         const spanTransition: Transition = {
           duration: totalDuration,
           times,
-          delay: (index * delay) / 1000,
+          delay: (initialDelay + index * delay) / 1000,
         };
 
         return (
@@ -150,14 +154,14 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
           >
             {unit.text === " " ? "\u00A0" : unit.text}
             {/* Add space after words (except for letters animation) */}
-            {animateBy === "words" && 
-             index < animationUnits.length - 1 && 
-             animationUnits[index + 1]?.segmentIndex !== unit.segmentIndex && 
+            {animateBy === "words" &&
+             index < animationUnits.length - 1 &&
+             animationUnits[index + 1]?.segmentIndex !== unit.segmentIndex &&
              "\u00A0"}
           </motion.span>
         );
       })}
-    </h1>
+    </Component>
   );
 };
 

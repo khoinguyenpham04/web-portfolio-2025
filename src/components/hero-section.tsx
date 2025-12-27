@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getCalApi } from "@calcom/embed-react"
+import { motion } from 'framer-motion'
 import StyledBlurText from './ui/StyledBlurText'
+import RotatingText from './RotatingText'
 
 export default function HeroSection() {
+    const [blurAnimationDone, setBlurAnimationDone] = useState(false)
+
     useEffect(() => {
         (async function () {
             const cal = await getCalApi({"namespace":"15min"});
@@ -12,31 +16,64 @@ export default function HeroSection() {
 
     return (
         <section>
-            <div className="relative z-10 mx-auto w-full max-w-2xl px-6 pt-12">
+            <div className="relative z-10 mx-auto w-full max-w-3xl px-6 pt-12">
                 <div className="relative text-center mb-8">
                     <h2 className="mb-6 text-xs sm:text-sm font-medium uppercase tracking-wider text-gray-400">
                         Computer Science @ University of Manchester
                     </h2>
-                    <StyledBlurText
-                        segments={[
-                            { text: "I", className: "text-gray-300" },
-                            { text: "love", className: "text-gray-300" },
-                            { text: "building", className: "text-gray-300" },
-                            { text: " products", className: "text-gray-900" },
-                            { text: " that", className: "text-gray-300" },
-                            { text: " solve", className: "text-gray-900" },
-                            { text: " real ", className: "text-gray-900" },
-                            { text: " problems", className: "text-gray-900" },
-                            { text: " for", className: "text-gray-300" },
-                            { text: " real", className: "text-gray-900" },
-                            { text: " people.", className: "text-gray-900" }
-                        ]}
-                        delay={150}
-                        animateBy="words"
-                        direction="bottom"
-                        onAnimationComplete={() => console.log('Hero animation completed!')}
-                        className="mx-auto mt-2 max-w-7xl text-balance text-3xl font-semibold tracking-tight md:text-5xl"
-                    />
+                    <h1 className="mx-auto mt-2 max-w-7xl text-balance text-3xl font-semibold tracking-tight md:text-5xl">
+                        <StyledBlurText
+                            as="span"
+                            segments={[
+                                { text: "I", className: "text-gray-300" },
+                                { text: "love", className: "text-gray-300" },
+                            ]}
+                            delay={150}
+                            animateBy="words"
+                            direction="bottom"
+                        />
+                        <motion.span
+                            initial={{ filter: "blur(10px)", opacity: 0, y: 50 }}
+                            animate={{
+                                filter: ["blur(10px)", "blur(5px)", "blur(0px)"],
+                                opacity: [0, 0.5, 1],
+                                y: [50, -5, 0]
+                            }}
+                            transition={{ duration: 0.7, delay: 0.3, times: [0, 0.5, 1] }}
+                            style={{ display: "inline-block" }}
+                        >
+                            <RotatingText
+                                texts={[" building ", " shipping ", " crafting "]}
+                                mainClassName="text-gray-900 inline-flex overflow-hidden pb-1.5 -mb-1.5 min-w-[130px] md:min-w-[195px] justify-center"
+                                staggerFrom="last"
+                                staggerDuration={0.025}
+                                rotationInterval={2000}
+                                auto={blurAnimationDone}
+                                initial={{ y: "100%", opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                exit={{ y: "-100%", opacity: 0 }}
+                                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            />
+                        </motion.span>
+                        <StyledBlurText
+                            as="span"
+                            segments={[
+                                { text: " products", className: "text-gray-900" },
+                                { text: " that", className: "text-gray-300" },
+                                { text: " solve", className: "text-gray-900" },
+                                { text: " real", className: "text-gray-900" },
+                                { text: " problems", className: "text-gray-900" },
+                                { text: " for", className: "text-gray-300" },
+                                { text: " real", className: "text-gray-900" },
+                                { text: " people.", className: "text-gray-900" }
+                            ]}
+                            delay={150}
+                            initialDelay={450}
+                            animateBy="words"
+                            direction="bottom"
+                            onAnimationComplete={() => setBlurAnimationDone(true)}
+                        />
+                    </h1>
 
                     {/* <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto mt-8">
                         <Button

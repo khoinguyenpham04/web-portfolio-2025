@@ -31,7 +31,7 @@ const experiences: ExperienceItem[] = [
   {
     role: "Software Developer",
     company: "Ping Proxies",
-    companyLogo: "/svg/dns-logo.svg",
+    companyLogo: "/svg/ping-logo.svg",
     type: "Internship",
     duration: "Oct 2025 - Present",
     description:
