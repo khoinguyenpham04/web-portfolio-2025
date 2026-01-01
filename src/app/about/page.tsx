@@ -1,10 +1,23 @@
 "use client";
 
 import React from 'react'
-import Lanyard from "@/components/Lanyard";
+import dynamic from 'next/dynamic';
 import AboutSection from "@/components/AboutSection";
 import ClickSpark from '@/components/ui/ClickSpark';
 import CircularText from '@/components/ui/CircularText/CircularText';
+
+// Lazy load the heavy 3D Lanyard component to prevent lag on initial page load
+const Lanyard = dynamic(() => import("@/components/Lanyard"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-16 h-16 border-4 border-gray-200 border-t-gray-400 rounded-full animate-spin" />
+        <span className="text-sm text-gray-400">Loading 3D scene...</span>
+      </div>
+    </div>
+  ),
+});
 
 const About = () => {
   return (
