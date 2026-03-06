@@ -1,7 +1,10 @@
+"use client"
+
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
 import { cva } from "class-variance-authority"
 import { ChevronDownIcon } from "lucide-react"
+import { useWebHaptics } from "web-haptics/react"
 
 import { cn } from "@/lib/utils"
 
@@ -65,12 +68,23 @@ const navigationMenuTriggerStyle = cva(
 function NavigationMenuTrigger({
   className,
   children,
+  onClick,
   ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Trigger>) {
+}: React.ComponentProps<typeof NavigationMenuPrimitive.Trigger> & {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
+}) {
+  const haptic = useWebHaptics()
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    haptic.trigger("selection")
+    if (onClick) onClick(e)
+  }
+
   return (
     <NavigationMenuPrimitive.Trigger
       data-slot="navigation-menu-trigger"
       className={cn(navigationMenuTriggerStyle(), "group", className)}
+      onClick={handleClick}
       {...props}
     >
       {children}{" "}
@@ -123,8 +137,18 @@ function NavigationMenuViewport({
 
 function NavigationMenuLink({
   className,
+  onClick,
   ...props
-}: React.ComponentProps<typeof NavigationMenuPrimitive.Link>) {
+}: React.ComponentProps<typeof NavigationMenuPrimitive.Link> & {
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
+}) {
+  const haptic = useWebHaptics()
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    haptic.trigger("selection")
+    if (onClick) onClick(e)
+  }
+
   return (
     <NavigationMenuPrimitive.Link
       data-slot="navigation-menu-link"
@@ -132,6 +156,7 @@ function NavigationMenuLink({
         "data-[active=true]:focus:bg-accent data-[active=true]:hover:bg-accent data-[active=true]:bg-accent/50 data-[active=true]:text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus-visible:ring-ring/50 [&_svg:not([class*='text-'])]:text-muted-foreground flex flex-col gap-1 rounded-sm p-2 text-sm transition-all outline-none focus-visible:ring-[3px] focus-visible:outline-1 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
+      onClick={handleClick}
       {...props}
     />
   )

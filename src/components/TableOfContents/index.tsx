@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { useWebHaptics } from 'web-haptics/react';
 
 interface Heading {
   id: string;
@@ -16,6 +17,7 @@ interface TableOfContentsProps {
 export function TableOfContents({ content }: TableOfContentsProps) {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>('');
+  const haptic = useWebHaptics();
 
   useEffect(() => {
     try {
@@ -116,7 +118,10 @@ export function TableOfContents({ content }: TableOfContentsProps) {
               {headings.map((heading) => (
                 <li key={heading.id}>
                   <button
-                    onClick={() => scrollToHeading(heading.id)}
+                    onClick={() => {
+                      haptic.trigger('selection');
+                      scrollToHeading(heading.id);
+                    }}
                     className={cn(
                       'text-xs sm:text-sm transition-all duration-200 w-full text-left py-1 px-2 rounded-md',
                       'hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',

@@ -5,6 +5,7 @@ import Link from "next/link"
 import type React from "react"
 import { useState } from "react"
 import { ArrowUpRight } from "lucide-react"
+import { useWebHaptics } from "web-haptics/react"
 import type { Project } from "./types"
 import type { JSX } from "react/jsx-runtime" 
 
@@ -20,6 +21,7 @@ const Tag: React.FC<{ name: string; icon?: JSX.Element }> = ({ name, icon }) => 
 )
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const haptic = useWebHaptics()
   const [activeIndex, setActiveIndex] = useState(0)
   const [imageLoaded, setImageLoaded] = useState<boolean[]>(project.images.map(() => false))
 
@@ -103,6 +105,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <button
             onClick={(e) => {
               e.preventDefault()
+              haptic.trigger('selection')
               cycleImages('prev')
             }}
             className="p-2 rounded-full bg-black/50 backdrop-blur-sm text-white hover:bg-black/70 transition-colors"
@@ -116,6 +119,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <button
             onClick={(e) => {
               e.preventDefault()
+              haptic.trigger('selection')
               cycleImages('next')
             }}
             className="p-2 rounded-full bg-black/50 backdrop-blur-sm text-white hover:bg-black/70 transition-colors"

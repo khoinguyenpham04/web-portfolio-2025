@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import React, { useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { getCalApi } from "@calcom/embed-react"
+import { useWebHaptics } from 'web-haptics/react'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -41,6 +42,34 @@ const profileImages = [
     '/profile-icons/icon1.png',
 ];
 
+const SeasonToggle = ({ season, toggleSeason }: { season: string, toggleSeason: () => void }) => (
+    <Button
+        onClick={toggleSeason}
+        variant="tactile-secondary"
+        size="icon"
+        className="!rounded-full !w-8 !h-8 !p-0 relative overflow-hidden active:!scale-95 flex-shrink-0"
+        aria-label="Toggle Season"
+    >
+        <AnimatePresence mode="wait">
+            <motion.div
+                key={season}
+                initial={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
+                animate={{ filter: 'blur(0px)', opacity: 1, scale: 1 }}
+                exit={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+                className="absolute inset-0 flex items-center justify-center p-0 m-0"
+            >
+                {season === 'spring' ? (
+                    <Flower className="h-4 w-4 text-pink-400" />
+                ) : season === 'christmas' ? (
+                    <Snowflake className="h-4 w-4 text-blue-400" />
+                ) : (
+                    <Sun className="h-4 w-4 text-yellow-500 relative -top-[0.5px]" />
+                )}
+            </motion.div>
+        </AnimatePresence>
+    </Button>
+);
 
 export const Header = () => {
     const season = useSeasonStore((state) => state.season);
@@ -49,6 +78,7 @@ export const Header = () => {
     const [isScrolled, setIsScrolled] = React.useState(false)
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
     const [isAnimating, setIsAnimating] = React.useState(false);
+    const haptic = useWebHaptics();
 
     useEffect(() => {
         (async function () {
@@ -60,6 +90,7 @@ export const Header = () => {
     const handleImageClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         e.preventDefault();
+        haptic.trigger('light');
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % profileImages.length);
         setIsAnimating(true);
     };
@@ -86,10 +117,11 @@ export const Header = () => {
                 className="fixed z-50 w-full px-4 sm:px-6 lg:px-8">
                 <div className={cn('mx-auto mt-2 max-w-7xl px-0 transition-all duration-300', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
+                        <div className="flex w-full justify-between items-center lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
+                                onClick={() => haptic.trigger('light')}
                                 className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
                                 <div className="relative">
                                     {season === 'christmas' && (
@@ -117,13 +149,19 @@ export const Header = () => {
                                 <span>Noah Pham</span>
                             </Link>
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
+                            <div className="flex items-center gap-3 lg:hidden">
+                                <SeasonToggle season={season} toggleSeason={toggleSeason} />
+                                <button
+                                    onClick={() => {
+                                        haptic.trigger('selection');
+                                        setMenuState(!menuState);
+                                    }}
+                                    aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                                    className="relative z-20 -mr-4 block cursor-pointer p-2.5">
+                                    <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                                    <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                </button>
+                            </div>
                         </div>
 
                         <div className="absolute inset-0 m-auto hidden size-fit lg:block">
@@ -185,7 +223,10 @@ export const Header = () => {
                                                                 <Link
                                                                     href={subItem.href}
                                                                     className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                                                    onClick={() => setMenuState(false)} // Close menu on click
+                                                                    onClick={() => {
+                                                                        haptic.trigger('selection');
+                                                                        setMenuState(false);
+                                                                    }} // Close menu on click
                                                                 >
                                                                     <span>{subItem.name}</span>
                                                                 </Link>
@@ -197,7 +238,10 @@ export const Header = () => {
                                                 <Link
                                                     href={item.href!}
                                                     className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                                    onClick={() => setMenuState(false)} // Close menu on click
+                                                    onClick={() => {
+                                                        haptic.trigger('selection');
+                                                        setMenuState(false);
+                                                    }} // Close menu on click
                                                 >
                                                     <span>{item.name}</span>
                                                 </Link>
@@ -206,33 +250,10 @@ export const Header = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit items-center">
-                                <Button
-                                    onClick={toggleSeason}
-                                    variant="tactile-secondary"
-                                    size="icon"
-                                    className="!rounded-full !w-9 !h-9 !p-0 relative overflow-hidden active:!scale-95"
-                                    aria-label="Toggle Season"
-                                >
-                                    <AnimatePresence mode="wait">
-                                        <motion.div
-                                            key={season}
-                                            initial={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
-                                            animate={{ filter: 'blur(0px)', opacity: 1, scale: 1 }}
-                                            exit={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
-                                            transition={{ duration: 0.2 }}
-                                            className="absolute inset-0 flex items-center justify-center p-0 m-0"
-                                        >
-                                            {season === 'spring' ? (
-                                                <Flower className="h-4 w-4 text-pink-400" />
-                                            ) : season === 'christmas' ? (
-                                                <Snowflake className="h-4 w-4 text-blue-400" />
-                                            ) : (
-                                                <Sun className="h-4 w-4 text-yellow-500 relative -top-[0.5px]" />
-                                            )}
-                                        </motion.div>
-                                    </AnimatePresence>
-                                </Button>
+                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit items-center flex-nowrap">
+                                <div className="hidden lg:flex items-center justify-center">
+                                    <SeasonToggle season={season} toggleSeason={toggleSeason} />
+                                </div>
                                 <Button
                                     size="sm"
                                     variant="tactile-black"
