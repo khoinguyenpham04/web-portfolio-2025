@@ -5,18 +5,19 @@ import ClickSpark from '@/components/ui/ClickSpark';
 import { Button } from '@/components/ui/button';
 import { Download, ExternalLink } from 'lucide-react';
 
+const RESUME_PDF_PATH = '/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Feb_2026.pdf';
+const RESUME_PDF_VIEWER_SRC = `${RESUME_PDF_PATH}#toolbar=0&navpanes=0&scrollbar=0`;
+
 const Resume = () => {
   const handleDownload = () => {
-    // Replace with your actual resume PDF path
     const link = document.createElement('a');
-    link.href = '/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf';
+    link.href = RESUME_PDF_PATH;
     link.download = 'Noah_Pham_Resume.pdf';
     link.click();
   };
 
   const handleOpenInNewTab = () => {
-    // Replace with your actual resume PDF path
-    window.open('/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf', '_blank');
+    window.open(RESUME_PDF_PATH, '_blank');
   };
 
   return (
@@ -45,7 +46,7 @@ const Resume = () => {
                     Computer Science Student & Developer
                   </p>
                   <p className="mt-1 text-lg text-gray-400">
-                        Last Updated: Jul 2025
+                    Last Updated: Feb 2026
                   </p>
                 </div>
                 
@@ -75,7 +76,7 @@ const Resume = () => {
               <div className="relative w-full">
                 <div className="relative overflow-hidden rounded-xl bg-gray-50 shadow-lg">
                   <iframe
-                    src="/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Dec_2025.pdf#toolbar=0&navpanes=0&scrollbar=0"
+                    src={RESUME_PDF_VIEWER_SRC}
                     width="100%"
                     height="800"
                     className="border-0 rounded-xl"
