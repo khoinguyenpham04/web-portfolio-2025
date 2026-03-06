@@ -56,7 +56,7 @@ const experiences: ExperienceItem[] = [
     duration: "Oct 2024 - Present",
     description:
       "Building an AI-powered platform to help 300+ students excel at IELTS Speaking.",
-    link: "https://speakwisely.me",
+    link: "https://speakwisely.vercel.app",
   },
 ];
 

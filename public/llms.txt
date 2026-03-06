@@ -22,7 +22,7 @@ Tran Khoi Nguyen Pham, also known as Noah Pham, or Pham Tran Khoi Nguyen, is a C
 
 ### SpeakWisely
 AI-powered IELTS Speaking preparation platform with instant personalized feedback on pronunciation, fluency, vocabulary, and grammar.
-- Live: https://speakwisely.me
+- Live: https://speakwisely.vercel.app
 - Tech: Next.js, React, TypeScript, Supabase, PostgreSQL, OpenAI, Whisper
 
 ### YourWalk (HackJunction 1st Place)

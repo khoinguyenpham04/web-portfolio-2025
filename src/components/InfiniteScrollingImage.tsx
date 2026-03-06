@@ -44,6 +44,10 @@ const images = [
     alt: "studymapper",
   },
   {
+    src: "/ICHACK26-cropped.jpg",
+    alt: "ICHack 2026",
+  },
+  {
     src: "/Delego.jpeg",
     alt: "Delego",
   },

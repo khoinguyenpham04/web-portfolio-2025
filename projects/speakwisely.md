@@ -7,7 +7,7 @@ layout: "imageRight"
 brandIcon: "/svg/speakwiselylogo.svg"
 category: "project"
 date: "2025-12-15"
-liveUrl: "https://speakwisely.me"
+liveUrl: "https://speakwisely.vercel.app"
 priority: 1
 ---
 # Overview
