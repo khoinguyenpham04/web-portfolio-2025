@@ -1,7 +1,9 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Snowflake, Flower, Sun } from 'lucide-react'
+import { useSeasonStore } from '@/store/useSeasonStore'
 import { Button } from '@/components/ui/button'
 import React, { useEffect } from 'react'
 import { cn } from '@/lib/utils'
@@ -41,6 +43,8 @@ const profileImages = [
 
 
 export const Header = () => {
+    const season = useSeasonStore((state) => state.season);
+    const toggleSeason = useSeasonStore((state) => state.toggleSeason);
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
     const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
@@ -88,13 +92,15 @@ export const Header = () => {
                                 aria-label="home"
                                 className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
                                 <div className="relative">
-                                    <Image
-                                        src="/christmas_hat.png"
-                                        alt="Christmas Hat"
-                                        width={28}
-                                        height={28}
-                                        className="absolute -top-3 -right-2.5 z-10 w-7 h-7 rotate-[25deg] pointer-events-none"
-                                    />
+                                    {season === 'christmas' && (
+                                        <Image
+                                            src="/christmas_hat.png"
+                                            alt="Christmas Hat"
+                                            width={28}
+                                            height={28}
+                                            className="absolute -top-3 -right-2.5 z-10 w-7 h-7 rotate-[25deg] pointer-events-none"
+                                        />
+                                    )}
                                     <button
                                         onClick={handleImageClick}
                                         className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-md", isAnimating && "animate-wiggle")}
@@ -200,7 +206,33 @@ export const Header = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit items-center">
+                                <Button
+                                    onClick={toggleSeason}
+                                    variant="tactile-secondary"
+                                    size="icon"
+                                    className="!rounded-full !w-9 !h-9 !p-0 relative overflow-hidden active:!scale-95"
+                                    aria-label="Toggle Season"
+                                >
+                                    <AnimatePresence mode="wait">
+                                        <motion.div
+                                            key={season}
+                                            initial={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
+                                            animate={{ filter: 'blur(0px)', opacity: 1, scale: 1 }}
+                                            exit={{ filter: 'blur(2px)', opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.2 }}
+                                            className="absolute inset-0 flex items-center justify-center p-0 m-0"
+                                        >
+                                            {season === 'spring' ? (
+                                                <Flower className="h-4 w-4 text-pink-400" />
+                                            ) : season === 'christmas' ? (
+                                                <Snowflake className="h-4 w-4 text-blue-400" />
+                                            ) : (
+                                                <Sun className="h-4 w-4 text-yellow-500 relative -top-[0.5px]" />
+                                            )}
+                                        </motion.div>
+                                    </AnimatePresence>
+                                </Button>
                                 <Button
                                     size="sm"
                                     variant="tactile-black"
