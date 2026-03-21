@@ -2,7 +2,7 @@
 title: "DNS Directory"
 description: "Public DNS server monitoring platform with 20,000+ servers globally and real-time analytics."
 tags: ["Next.js", "TypeScript", "Python", "Flask", "PostgreSQL", "SQLAlchemy", "REST API", "Tailwind CSS"]
-images: ["/dnsdirectory/DNS Thumbnail 1.svg"]
+images: ["/dnsdirectory/DNS Thumbnail (1).jpg"]
 brandIcon: "/svg/dns-logo.svg"
 layout: "imageLeft"
 category: "project"

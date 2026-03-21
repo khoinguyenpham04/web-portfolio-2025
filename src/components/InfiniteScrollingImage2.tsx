@@ -40,8 +40,8 @@ const images = [
     alt: "Snapchat Walk",
   },
   {
-    src: "/omni-thumbnail.png",
-    alt: "Omni",
+    src: "/clarion/164shots_so.jpeg",
+    alt: "Clarion",
   },
   {
     src: "/memoral-win.jpeg",
