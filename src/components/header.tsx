@@ -36,11 +36,7 @@ const menuItems: MenuItem[] = [
     { name: 'Resume', href: '/resume' },
 ]
 
-const profileImages = [
-    '/profile-icons/speaker-icon.jpeg',
-    '/profile-icons/cartoon2.jpg',
-    '/profile-icons/icon1.png',
-];
+const profileImage = '/profile-icons/profile-icon.jpeg';
 
 const SeasonToggle = ({ season, toggleSeason }: { season: string, toggleSeason: () => void }) => (
     <Button
@@ -76,31 +72,30 @@ export const Header = () => {
     const toggleSeason = useSeasonStore((state) => state.toggleSeason);
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
-    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-    const [isAnimating, setIsAnimating] = React.useState(false);
+    const [isVietnamese, setIsVietnamese] = React.useState(false)
     const haptic = useWebHaptics();
+
+    const [isMobile, setIsMobile] = React.useState(false);
+
+    React.useEffect(() => {
+        const mql = window.matchMedia('(max-width: 767px)');
+        setIsMobile(mql.matches);
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        mql.addEventListener('change', handler);
+        return () => mql.removeEventListener('change', handler);
+    }, []);
+
+    const displayName = isVietnamese
+        ? (isMobile ? "Nguyên Phạm" : "Phạm Trần Khôi Nguyên")
+        : "Noah Pham";
+    const nameWords = displayName.split(" ");
 
     useEffect(() => {
         (async function () {
             const cal = await getCalApi({"namespace":"15min"});
             cal("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
         })();
-    }, [])
-
-    const handleImageClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-        e.preventDefault();
-        haptic.trigger('light');
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % profileImages.length);
-        setIsAnimating(true);
-    };
-
-    React.useEffect(() => {
-        if (isAnimating) {
-            const timer = setTimeout(() => setIsAnimating(false), 1500); // Tailwind's bounce is 1s
-            return () => clearTimeout(timer);
-        }
-    }, [isAnimating]);
+    }, []);
 
 
     React.useEffect(() => {
@@ -118,36 +113,91 @@ export const Header = () => {
                 <div className={cn('mx-auto mt-2 max-w-7xl px-0 transition-all duration-300', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg px-5')}>
                     <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
                         <div className="flex w-full justify-between items-center lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                onClick={() => haptic.trigger('light')}
-                                className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
-                                <div className="relative">
-                                    {season === 'christmas' && (
-                                        <Image
-                                            src="/christmas_hat.png"
-                                            alt="Christmas Hat"
-                                            width={28}
-                                            height={28}
-                                            className="absolute -top-3 -right-2.5 z-10 w-7 h-7 rotate-[25deg] pointer-events-none"
-                                        />
-                                    )}
-                                    <button
-                                        onClick={handleImageClick}
-                                        className={cn("h-10 w-10 flex-shrink-0 overflow-hidden rounded-md", isAnimating && "animate-wiggle")}
-                                    >
-                                        <Image
-                                            src={profileImages[currentImageIndex]}
-                                            alt="Profile Picture"
-                                            width={40}
-                                            height={40}
-                                            className="h-full w-full object-cover"
-                                        />
-                                    </button>
-                                </div>
-                                <span>Noah Pham</span>
-                            </Link>
+                            <div className="flex items-center space-x-2 text-3xl font-semibold tracking-tight text-accent-foreground">
+                                <Link
+                                    href="/"
+                                    aria-label="home"
+                                    onClick={() => haptic.trigger('light')}
+                                >
+                                    <div className="relative">
+                                        {season === 'christmas' && (
+                                            <Image
+                                                src="/christmas_hat.png"
+                                                alt="Christmas Hat"
+                                                width={28}
+                                                height={28}
+                                                className="absolute -top-3 -right-2.5 z-10 w-7 h-7 rotate-[25deg] pointer-events-none"
+                                            />
+                                        )}
+                                        <div className="h-10 w-10 flex-shrink-0 overflow-hidden rounded-md">
+                                            <Image
+                                                src={profileImage}
+                                                alt="Profile Picture"
+                                                width={40}
+                                                height={40}
+                                                className="h-full w-full object-cover"
+                                            />
+                                        </div>
+                                    </div>
+                                </Link>
+                                <button
+                                    onClick={() => {
+                                        haptic.trigger('light');
+                                        setIsVietnamese(prev => !prev);
+                                    }}
+                                    className="cursor-pointer active:scale-[0.97] transition-transform duration-[160ms] ease-[cubic-bezier(0.23,1,0.32,1)]"
+                                >
+                                    <AnimatePresence mode="wait" initial={false}>
+                                        <motion.span
+                                            key={displayName}
+                                            className="flex"
+                                            initial="hidden"
+                                            animate="visible"
+                                            exit="exit"
+                                            variants={{
+                                                visible: {
+                                                    transition: { staggerChildren: 0.08 }
+                                                },
+                                                exit: {
+                                                    transition: { staggerChildren: 0.03 }
+                                                }
+                                            }}
+                                        >
+                                            {nameWords.map((word, i) => (
+                                                <motion.span
+                                                    key={i}
+                                                    variants={{
+                                                        hidden: {
+                                                            filter: "blur(10px)",
+                                                            opacity: 0,
+                                                            y: 6,
+                                                        },
+                                                        visible: {
+                                                            filter: "blur(0px)",
+                                                            opacity: 1,
+                                                            y: 0,
+                                                        },
+                                                        exit: {
+                                                            filter: "blur(8px)",
+                                                            opacity: 0,
+                                                            y: -4,
+                                                        },
+                                                    }}
+                                                    transition={{
+                                                        duration: 0.3,
+                                                        ease: [0.23, 1, 0.32, 1],
+                                                    }}
+                                                    className="inline-block"
+                                                    style={{ willChange: "transform, filter, opacity" }}
+                                                >
+                                                    {word}
+                                                    {i < nameWords.length - 1 ? "\u00A0" : ""}
+                                                </motion.span>
+                                            ))}
+                                        </motion.span>
+                                    </AnimatePresence>
+                                </button>
+                            </div>
 
                             <div className="flex items-center gap-3 lg:hidden">
                                 <SeasonToggle season={season} toggleSeason={toggleSeason} />
