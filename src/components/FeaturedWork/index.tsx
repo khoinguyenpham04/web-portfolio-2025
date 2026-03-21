@@ -24,11 +24,13 @@ export default function FeaturedWork({ projects }: { projects: Project[] }) {
           </p>
         </div>
 
-        <div className="mt-16 max-w-6xl mx-auto flex flex-col gap-8">
+        <div className="mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project: Project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
-          <ExploreProjectsCallToAction />
+          <div className="md:col-span-2">
+            <ExploreProjectsCallToAction />
+          </div>
         </div> 
       </div>
     </section>

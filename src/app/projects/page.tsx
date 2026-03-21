@@ -38,7 +38,7 @@ export default function ProjectsPage() {
           </h2>
         </div>
 
-        <div className="mt-12 sm:mt-16 max-w-6xl mx-auto flex flex-col gap-6 sm:gap-8">
+        <div className="mt-12 sm:mt-16 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {regularProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                 <span>48 hours to ideate, build, and ship</span>
               </div>
               <h2 className="text-4xl sm:text-5xl md:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-                Hackathon Highlights
+                10x hackathon winner, consecutively.
               </h2>
             </div>
 

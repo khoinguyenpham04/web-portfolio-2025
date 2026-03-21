@@ -221,7 +221,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
             {/* Hero image */}
             {projectData.data.images && projectData.data.images[0] && (
-              <div className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden mb-8 md:mb-12 bg-gray-100">
+              <div className="relative aspect-[4/3] rounded-lg sm:rounded-xl overflow-hidden mb-8 md:mb-12 bg-gray-100">
                 <Image
                   src={projectData.data.images[0]}
                   alt={projectData.data.title || 'Project image'}

@@ -1,6 +1,6 @@
 ---
 title: "DNS Directory"
-description: "Public DNS server monitoring platform with 77,000+ records and real-time analytics."
+description: "Public DNS server monitoring platform with 20,000+ servers globally and real-time analytics."
 tags: ["Next.js", "TypeScript", "Python", "Flask", "PostgreSQL", "SQLAlchemy", "REST API", "Tailwind CSS"]
 images: ["/dnsdirectory/DNS Thumbnail 1.svg"]
 brandIcon: "/svg/dns-logo.svg"
@@ -8,58 +8,35 @@ layout: "imageLeft"
 category: "project"
 date: "2025-12-20"
 liveUrl: "https://dnsdirectory.com"
-priority: 2
+priority: 4
 ---
 
 # Overview
 
-Led the end-to-end full-stack development of a public DNS Directory with 77,000+ records, improving load times via server-side rendering and memoized caching layers by 60%. Built for [Ping](https://pingproxies.com).
+DNS Directory is a public monitoring platform that tracks 20,000+ DNS servers worldwide. You can look up any server, check its uptime history, see where it's located, and filter by status, features, or region. Built for [Ping](https://pingproxies.com).
 
-## Backend Architecture
+The core challenge was making a dataset this large feel fast and browsable. Nobody wants to wait around while 20k records load.
 
-### High-Performance REST APIs
-- Engineered 10+ REST APIs with PostgreSQL and SQLAlchemy ORM
-- Implemented TTL-based caching to reduce database load and improve response times
-- Built aggregation queries powering analytics dashboards and dynamic filtering
-- Designed efficient pagination handling 77k+ records with sub-100ms response times
+## What It Does
 
-### Database & Caching
-- PostgreSQL database with optimized indexes for common query patterns
-- SQLAlchemy ORM with connection pooling for concurrent request handling
-- TTL-based caching layers reducing redundant database queries
-- Memoized computation for expensive aggregation operations
+The main surface is a searchable, filterable directory of public DNS servers. Each server has a detail page showing its current status, 90-day uptime history, reliability metrics, and location on an interactive map. You can filter by IP, domain, country, status, or supported features.
 
-### API Security
-- IP-based rate limiting (100 req/min for searches, 50 req/min for filters)
-- Request validation and sanitization
-- Hidden API endpoints - external URLs never exposed to clients
-- All requests proxied through Server Actions
+There's also an analytics dashboard that aggregates the data into trends and breakdowns, so you can see things like global uptime distributions or which regions have the most reliable servers.
 
-## Frontend Architecture
+## Performance
 
-### Performance Optimizations
-- Server-side rendering improving initial load times by 60%
-- Next.js 16 Cache Components with `cacheLife` API for near real-time data
-- Lazy-loaded heavy components (maps, charts) for optimal Core Web Vitals
-- Server-side pagination efficiently handling 77k+ records
+Speed was the main constraint. The backend runs 10+ REST APIs on Flask with PostgreSQL and SQLAlchemy. Every expensive query is cached with TTL-based layers, and aggregation results are memoised so repeated requests skip the database entirely. Pagination keeps response times under 100ms even across the full dataset.
 
-### Real-time Monitoring Dashboard
-- Track status, uptime, and reliability metrics for 77,000+ DNS servers
-- 90-day uptime history charts with day-by-day reliability tracking
-- Interactive map visualization with Mapbox GL
-- Advanced filtering by IP, domain, location, status, and features
+On the frontend, server-side rendering cut initial load times by 60%. Heavy components like the map and charts are lazy-loaded. Next.js cache components with the `cacheLife` API handle near real-time data without hammering the backend.
 
-### SEO & Discoverability
-- Dynamic metadata with JSON-LD structured data for rich snippets
-- Auto-generated sitemap.xml covering all DNS servers and countries
-- Server-side rendered pages for optimal search engine indexing
+## Security
+
+All API endpoints are hidden from the client. Every request goes through Next.js Server Actions, so external URLs are never exposed. Rate limiting is IP-based: 100 requests per minute for searches, 50 for filters. Inputs are validated and sanitised before they hit the database.
+
+## SEO
+
+Every server and country page gets dynamic metadata with JSON-LD structured data for rich snippets. The sitemap is auto-generated and covers the full directory. All pages are server-rendered for indexing.
 
 ## Tech Stack
 
-- **Frontend:** Next.js 16, TypeScript, Tailwind CSS v4, Radix UI
-- **Backend:** Python, Flask, SQLAlchemy ORM
-- **Database:** PostgreSQL with optimized indexes
-- **Caching:** TTL-based caching, memoization layers
-- **Maps:** Mapbox GL with React Map GL
-- **Charts:** Recharts
-- **Tables:** TanStack Table v8
+The frontend is Next.js 16 with TypeScript, Tailwind CSS v4, and Radix UI. The backend is Python with Flask and SQLAlchemy ORM on PostgreSQL. Maps use Mapbox GL with React Map GL. Charts are built with Recharts. Tables use TanStack Table v8.

@@ -24,7 +24,7 @@ const FeaturedHackathons: React.FC<FeaturedHackathonsProps> = ({ hackathons }) =
             <span>48 hours to ideate, build, and ship</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-neutral-900 mb-4">
-            Hackathon Highlights
+            10x hackathon winner, consecutively.
           </h2>
         </div>
 

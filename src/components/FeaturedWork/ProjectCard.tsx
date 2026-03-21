@@ -14,7 +14,7 @@ interface ProjectCardProps {
 }
 
 const Tag: React.FC<{ name: string; icon?: JSX.Element }> = ({ name, icon }) => (
-  <div className="flex items-center gap-1.5 whitespace-nowrap rounded-lg border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs font-medium text-gray-700 transition-colors hover:bg-gray-100">
+  <div className="flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
     {icon}
     <span>{name}</span>
   </div>
@@ -45,7 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   }
 
   const content = (
-    <div className="flex flex-1 flex-col justify-center gap-6 p-8 lg:p-12">
+    <div className="flex flex-1 flex-col justify-center gap-6 p-6 lg:p-8">
       <div className="flex items-center gap-3">
         {project.brandIcon && (
           <Image 
@@ -53,18 +53,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             alt={`${project.name} logo`}
             width={80} 
             height={80} 
-            className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 shadow-sm rounded-lg object-contain"
+            className="w-10 h-10 sm:w-12 sm:h-12 shadow-sm rounded-lg object-contain"
           />
         )}
-        <h2 className="text-3xl lg:text-4xl font-semibold tracking-tight text-gray-900">{project.name}</h2>
+        <h2 className="text-2xl lg:text-3xl font-semibold tracking-tight text-gray-900">{project.name}</h2>
       </div>
       
-      <h3 className="max-w-md font-semibold tracking-tight leading-relaxed text-gray-600">{project.description}</h3>
-      <div className="flex flex-wrap items-center gap-2">
-        {project.tags.map((tag) => (
-          <Tag key={tag.name} name={tag.name} icon={tag.icon} />
-        ))}
-      </div>
+      <h3 className="max-w-md font-medium tracking-tight leading-relaxed text-gray-500">{project.description}</h3>
     </div>
   )
 
@@ -84,7 +79,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             src={src || "/placeholder.svg"}
             alt={`${project.name} screenshot ${index + 1}`}
             fill
-            sizes="(max-width: 768px) 100vw, 60vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover"
             priority={index === 0}
             onLoad={() => handleImageLoad(index)}
@@ -98,6 +93,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <ArrowUpRight className="h-5 w-5" />
         </div>
       </div>
+
+      {/* Tech tags overlay - disabled for now */}
+      {/* <div className="absolute bottom-0 left-0 right-0 z-10 p-4 pt-10 bg-gradient-to-t from-black/60 to-transparent">
+        <div className="flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <Tag key={tag.name} name={tag.name} icon={tag.icon} />
+          ))}
+        </div>
+      </div> */}
 
       {/* Controls */}
       {project.images.length > 1 && (
@@ -136,18 +140,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 
   return (
     <div className="group rounded-2xl border border-gray-100 bg-[#FAFAFA] shadow-sm transition-all duration-300 hover:shadow-lg hover:border-gray-100 p-3">
-      <Link href={project.href} className="flex flex-col lg:flex-row h-full">
-        {project.layout === "imageLeft" ? (
-          <>
-            <div className="lg:flex-[3]">{imageGallery}</div>
-            <div className="lg:flex-[2] lg:flex lg:items-center">{content}</div>
-          </>
-        ) : (
-          <>
-            <div className="lg:flex-[2] lg:flex lg:items-center">{content}</div>
-            <div className="lg:flex-[3]">{imageGallery}</div>
-          </>
-        )}
+      <Link href={project.href} className="flex flex-col h-full">
+        <div>{imageGallery}</div>
+        <div>{content}</div>
       </Link>
     </div>
   )
