@@ -49,8 +49,8 @@ export default function SnowfallEffect() {
         {/* Background Layer: Distant, small, blurry, slow */}
         <Snowfall
           images={images}
-          snowflakeCount={12}
-          radius={[4, 8]}
+          snowflakeCount={6}
+          radius={[3, 6]}
           speed={[0.2, 0.6]}
           wind={[-0.1, 0.5]}
           rotationSpeed={[-0.5, 0.5]}
@@ -60,8 +60,8 @@ export default function SnowfallEffect() {
         {/* Middle Layer: Mid-distance, medium size, slight blur, normal speed */}
         <Snowfall
           images={images}
-          snowflakeCount={8}
-          radius={[8, 16]}
+          snowflakeCount={4}
+          radius={[6, 12]}
           speed={[0.5, 1.2]}
           wind={[-0.3, 0.8]}
           rotationSpeed={[-0.8, 0.8]}
@@ -71,8 +71,8 @@ export default function SnowfallEffect() {
         {/* Foreground Layer: Close, large, sharp, fast */}
         <Snowfall
           images={images}
-          snowflakeCount={5}
-          radius={[16, 28]}
+          snowflakeCount={3}
+          radius={[12, 18]}
           speed={[1.0, 2.5]}
           wind={[-0.5, 1.2]}
           rotationSpeed={[-1.2, 1.2]}

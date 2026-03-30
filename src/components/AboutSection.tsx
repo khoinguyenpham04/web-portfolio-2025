@@ -248,7 +248,7 @@ export default function AboutSection() {
               {/* Bottom left - smaller */}
               <div className="col-span-2 relative overflow-hidden rounded-lg rounded-bl-2xl shadow-sm">
                 <Image
-                  src="/dnsdirectory/Slide 4_3 - 1.svg"
+                  src="/about/byteful43.jpeg"
                   alt="Ping Proxies Dashboard"
                   fill
                   className="object-cover"

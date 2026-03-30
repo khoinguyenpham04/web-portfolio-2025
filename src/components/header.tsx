@@ -86,7 +86,7 @@ export const Header = () => {
     }, []);
 
     const displayName = isVietnamese
-        ? (isMobile ? "Nguyên Phạm" : "Phạm Trần Khôi Nguyên")
+        ? ((isMobile || isScrolled) ? "Nguyên Phạm" : "Phạm Trần Khôi Nguyên")
         : "Noah Pham";
     const nameWords = displayName.split(" ");
 
