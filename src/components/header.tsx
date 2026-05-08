@@ -43,7 +43,7 @@ const SeasonToggle = ({ season, toggleSeason }: { season: string, toggleSeason: 
         onClick={toggleSeason}
         variant="tactile-secondary"
         size="icon"
-        className="!rounded-full !w-8 !h-8 !p-0 relative overflow-hidden active:!scale-95 flex-shrink-0"
+        className="!rounded-md !w-9 !h-9 !p-0 relative overflow-hidden active:!scale-95 flex-shrink-0"
         aria-label="Toggle Season"
     >
         <AnimatePresence mode="wait">
