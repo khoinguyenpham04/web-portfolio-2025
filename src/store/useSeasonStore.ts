@@ -6,7 +6,7 @@ interface SeasonState {
 }
 
 export const useSeasonStore = create<SeasonState>((set) => ({
-  season: 'spring',
+  season: 'none',
   toggleSeason: () => set((state) => ({ 
     season: state.season === 'spring' ? 'none' : 
             state.season === 'none' ? 'christmas' : 'spring' 

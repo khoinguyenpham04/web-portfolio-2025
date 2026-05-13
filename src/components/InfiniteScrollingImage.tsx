@@ -9,9 +9,9 @@ export function InfiniteMovingImages() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setSpeed("fast");
-      } else {
         setSpeed("normal");
+      } else {
+        setSpeed("slow");
       }
     };
 

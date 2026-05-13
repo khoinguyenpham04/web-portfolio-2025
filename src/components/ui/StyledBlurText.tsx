@@ -1,9 +1,12 @@
 import { motion, Transition } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState, useMemo } from "react";
 
 type TextSegment = {
   text: string;
   className?: string;
+  icon?: { src: string; alt: string; className?: string };
+  lineBreak?: boolean;
 };
 
 type StyledBlurTextProps = {
@@ -54,9 +57,18 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
 
   // Flatten segments into animatable units while preserving styling
   const animationUnits = useMemo(() => {
-    const units: Array<{ text: string; className?: string; segmentIndex: number; unitIndex: number }> = [];
-    
+    const units: Array<{
+      text: string;
+      className?: string;
+      segmentIndex: number;
+      unitIndex: number;
+      icon?: { src: string; alt: string; className?: string };
+      lineBreakAfter?: boolean;
+    }> = [];
+
     segments.forEach((segment, segmentIndex) => {
+      const segmentUnitsStart = units.length;
+
       if (animateBy === "words") {
         const words = segment.text.split(" ");
         words.forEach((word, wordIndex) => {
@@ -80,8 +92,17 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
           });
         });
       }
+
+      // Attach the segment's icon to the FIRST unit it contributed
+      if (segment.icon && units.length > segmentUnitsStart) {
+        units[segmentUnitsStart].icon = segment.icon;
+      }
+      // Mark the LAST unit of this segment with a trailing line break
+      if (segment.lineBreak && units.length > segmentUnitsStart) {
+        units[units.length - 1].lineBreakAfter = true;
+      }
     });
-    
+
     return units;
   }, [segments, animateBy]);
 
@@ -138,27 +159,42 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
         };
 
         return (
-          <motion.span
-            key={`${unit.segmentIndex}-${unit.unitIndex}-${index}`}
-            initial={defaultFrom}
-            animate={inView ? animateKeyframes : defaultFrom}
-            transition={spanTransition}
-            onAnimationComplete={
-              index === animationUnits.length - 1 ? onAnimationComplete : undefined
-            }
-            className={unit.className}
-            style={{
-              display: "inline-block",
-              willChange: "transform, filter, opacity",
-            }}
-          >
-            {unit.text === " " ? "\u00A0" : unit.text}
-            {/* Add space after words (except for letters animation) */}
-            {animateBy === "words" &&
-             index < animationUnits.length - 1 &&
-             animationUnits[index + 1]?.segmentIndex !== unit.segmentIndex &&
-             "\u00A0"}
-          </motion.span>
+          <span key={`${unit.segmentIndex}-${unit.unitIndex}-${index}`} style={{ display: "inline" }}>
+            <motion.span
+              initial={defaultFrom}
+              animate={inView ? animateKeyframes : defaultFrom}
+              transition={spanTransition}
+              onAnimationComplete={
+                index === animationUnits.length - 1 ? onAnimationComplete : undefined
+              }
+              className={unit.className}
+              style={{
+                display: "inline-block",
+                willChange: "transform, filter, opacity",
+              }}
+            >
+              {unit.icon && (
+                <Image
+                  src={unit.icon.src}
+                  alt={unit.icon.alt}
+                  width={64}
+                  height={64}
+                  priority
+                  className={
+                    unit.icon.className ??
+                    "inline-block h-[0.9em] w-[0.9em] align-[-0.1em] mr-[0.15em] object-contain"
+                  }
+                />
+              )}
+              {unit.text === " " ? "\u00A0" : unit.text}
+              {/* Add space after every word except the last and except before a line break */}
+              {animateBy === "words" &&
+                index < animationUnits.length - 1 &&
+                !unit.lineBreakAfter &&
+                "\u00A0"}
+            </motion.span>
+            {unit.lineBreakAfter && <br />}
+          </span>
         );
       })}
     </Component>
