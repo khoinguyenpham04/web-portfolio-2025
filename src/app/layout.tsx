@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Space_Grotesk } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
@@ -8,11 +8,16 @@ import { Header } from "@/components/header";
 import SnowfallEffect from "@/components/Snowfall";
 
 const inter = Inter({ subsets: ["latin"] });
-const instrumentSerif = Instrument_Serif({ 
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
   style: ["normal", "italic"],
   variable: "--font-instrument-serif"
+});
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
@@ -89,7 +94,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${instrumentSerif.variable}`} suppressHydrationWarning>
+      <body className={`${inter.className} ${instrumentSerif.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
         <SnowfallEffect />
         <Header />
         <main className="pt-20 lg:pt-24">
