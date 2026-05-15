@@ -65,10 +65,11 @@ export const metadata: Metadata = {
     siteName: "Tran Khoi Nguyen Pham Portfolio",
     images: [
       {
-        url: '/opengraph.png',
-        width: 1910,
-        height: 1000,
+        url: '/opengraph.jpg',
+        width: 3820,
+        height: 2000,
         alt: 'Tran Khoi Nguyen Pham - Portfolio',
+        type: 'image/jpeg',
       },
     ],
     locale: 'en_GB',
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Tran Khoi Nguyen Pham | Software Developer & Builder",
     description: "Portfolio of Tran Khoi Nguyen Pham (Noah Pham) - a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
-    images: ['/opengraph.png'],
+    images: ['/opengraph.jpg'],
     creator: "@noahpham",
   },
   verification: {
