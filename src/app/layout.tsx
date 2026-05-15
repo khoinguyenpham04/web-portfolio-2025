@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Space_Grotesk } from "next/font/google";
+import { Inter, Instrument_Serif, Space_Grotesk, Caveat } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
@@ -18,6 +18,11 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["600"],
   variable: "--font-space-grotesk",
+});
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["500"],
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {
@@ -94,7 +99,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${instrumentSerif.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className={`${inter.className} ${instrumentSerif.variable} ${spaceGrotesk.variable} ${caveat.variable}`} suppressHydrationWarning>
         <SnowfallEffect />
         <Header />
         <main className="pt-20 lg:pt-24">

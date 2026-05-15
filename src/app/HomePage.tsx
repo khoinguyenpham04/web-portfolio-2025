@@ -25,6 +25,29 @@ export default function HomePage({ projects }: { projects: Project[] }) {
           <HeroSection />
           <InfiniteMovingImages />
           <InfiniteMovingImages2 />
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-2 sm:mt-4 -mb-2 sm:-mb-4 text-right pr-12 sm:pr-24 md:pr-48 lg:pr-64">
+            <span className="inline-flex items-end gap-1 -rotate-2 text-gray-500">
+              <span className="font-[family-name:var(--font-caveat)] text-xl sm:text-2xl">
+                <span className="sm:hidden">psst, swipe</span>
+                <span className="hidden sm:inline">
+                  pssst, you can drag this
+                </span>
+              </span>
+              <svg
+                viewBox="0 0 60 70"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-8 sm:w-10 h-10 sm:h-12 mb-1 sm:mb-1.5"
+                aria-hidden="true"
+              >
+                <path d="M 5 60 C 40 60, 55 30, 50 10" />
+                <path d="M 44 17 L 50 10 L 56 17" />
+              </svg>
+            </span>
+          </div>
           <FeaturedWork projects={featuredProjects} />
           <FeaturedHackathons hackathons={hackathonProjects} />
         </ClickSpark>
