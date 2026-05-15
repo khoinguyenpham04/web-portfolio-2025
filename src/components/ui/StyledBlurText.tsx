@@ -177,8 +177,8 @@ const StyledBlurText: React.FC<StyledBlurTextProps> = ({
                 <Image
                   src={unit.icon.src}
                   alt={unit.icon.alt}
-                  width={64}
-                  height={64}
+                  width={256}
+                  height={256}
                   priority
                   className={
                     unit.icon.className ??

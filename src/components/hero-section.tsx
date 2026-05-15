@@ -6,7 +6,7 @@ const icons = {
     manchester: {
         src: "/landing/manchester.png",
         alt: "University of Manchester",
-        className: "inline-block h-[1.4em] w-[1.4em] align-[-0.35em] mr-[0.15em] object-contain",
+        className: "inline-block h-[1.8em] w-[1.8em] align-[-0.45em] mr-[0.15em] object-contain",
     },
     byteful: {
         src: "/landing/byteful.png",
