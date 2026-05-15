@@ -176,13 +176,19 @@ export const InfiniteMovingCards = ({
     }
   }, [wrapOffset]);
 
-  const onPointerUp = useCallback(() => {
+  const onPointerUp = useCallback((e: React.PointerEvent) => {
     if (!isDraggingRef.current) return;
     isDraggingRef.current = false;
     setIsDraggingState(false);
 
     if (Math.abs(velocityRef.current) > MOMENTUM_ENTRY_THRESHOLD) {
       isMomentumRef.current = true;
+    }
+
+    // Touch never reliably fires onPointerLeave/onMouseLeave after release —
+    // explicitly unpause so the carousel doesn't get stuck.
+    if (e.pointerType === "touch") {
+      isPausedRef.current = false;
     }
   }, []);
 
@@ -200,8 +206,8 @@ export const InfiniteMovingCards = ({
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
       onPointerCancel={onPointerUp}
-      onMouseEnter={() => { if (pauseOnHover) isPausedRef.current = true; }}
-      onMouseLeave={() => { if (pauseOnHover) isPausedRef.current = false; }}
+      onPointerEnter={(e) => { if (pauseOnHover && e.pointerType === "mouse") isPausedRef.current = true; }}
+      onPointerLeave={(e) => { if (pauseOnHover && e.pointerType === "mouse") isPausedRef.current = false; }}
     >
       <ul
         ref={scrollerRef}

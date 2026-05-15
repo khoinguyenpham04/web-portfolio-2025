@@ -34,7 +34,7 @@ export default function HomePage({ projects }: { projects: Project[] }) {
                 </span>
               </span>
               <svg
-                viewBox="0 0 60 70"
+                viewBox="0 0 60 55"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="3"
@@ -43,8 +43,8 @@ export default function HomePage({ projects }: { projects: Project[] }) {
                 className="w-8 sm:w-10 h-10 sm:h-12 mb-1 sm:mb-1.5"
                 aria-hidden="true"
               >
-                <path d="M 5 60 C 40 60, 55 30, 50 10" />
-                <path d="M 44 17 L 50 10 L 56 17" />
+                <path d="M 5 50 C 40 50, 55 22, 50 8" />
+                <path d="M 44 15 L 50 8 L 56 15" />
               </svg>
             </span>
           </div>
