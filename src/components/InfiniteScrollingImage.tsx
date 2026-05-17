@@ -36,31 +36,31 @@ export function InfiniteMovingImages() {
 
 const images = [
   {
-    src: "/speakwisely/thumbnail.png",
+    src: "/carousel/speakwisely.jpeg",
     alt: "ChronoQuest",
   },
   {
-    src: "/studymapper/thumbnail.png",
+    src: "/carousel/studymapper.jpeg",
     alt: "studymapper",
   },
   {
-    src: "/ICHACK26-cropped.jpg",
+    src: "/carousel/ichack26.jpg",
     alt: "ICHack 2026",
   },
   {
-    src: "/Delego.jpeg",
+    src: "/carousel/delego.jpeg",
     alt: "Delego",
   },
   {
-    src: "/leetcoach-thumbnail.png",  
+    src: "/carousel/leetcoach.jpeg",
     alt: "LeetCoach",
   },
   {
-    src: "/memoral.jpeg",
+    src: "/carousel/memoral.jpeg",
     alt: "Memoral",
   },
   {
-    src: "/racetheagescollage.png",
+    src: "/carousel/race-the-ages.png",
     alt: "racetheagescollage",
   },
 ];

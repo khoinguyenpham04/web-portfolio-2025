@@ -2,7 +2,7 @@
 title: "SpeakWisely"
 description: "AI-powered instant personalised feedback, and structured practice for IELTS Speaking."
 tags: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "OpenAI", "Whisper", "Google Analytics"]
-images: ["/speakwisely/thumbnail.png"]
+images: ["/carousel/speakwisely.jpeg"]
 layout: "imageRight"
 brandIcon: "/svg/speakwiselylogo.svg"
 category: "project"

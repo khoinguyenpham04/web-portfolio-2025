@@ -2,7 +2,7 @@
 title: "LeetCoach"
 description: "Agentic conversational coding companion for interview preparation"
 tags: ["Next.js", "TypeScript", "Tailwind CSS", "Python", "Docker", "AIOHTTP", "Gemini", "Neuphonic", "CodeMirror", "Cloudflare", "Vercel"]
-images: ["/leetcoach-thumbnail.png"]
+images: ["/carousel/leetcoach.jpeg"]
 layout: "imageRight"
 brandIcon: "/svg/leetcoach.svg"
 category: "hackathon"

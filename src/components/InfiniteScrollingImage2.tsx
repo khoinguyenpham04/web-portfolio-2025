@@ -17,23 +17,23 @@ export function InfiniteMovingImages2() {
 
 const images = [
   {
-    src: "/walk.jpeg",
+    src: "/carousel/snapchat-walk.jpeg",
     alt: "Snapchat Walk",
   },
   {
-    src: "/clarion/164shots_so.jpeg",
+    src: "/carousel/clarion.jpeg",
     alt: "Clarion",
   },
   {
-    src: "/memoral-win.jpeg",
+    src: "/carousel/memoral-win.jpeg",
     alt: "Memoral",
   },
   {
-    src: "/codeclash.png",
+    src: "/carousel/codeclash.png",
     alt: "CodeClash",
   },
   {
-    src: "/neuphonics-win.jpg",
+    src: "/carousel/neuphonics-win.jpg",
     alt: "CodeClash",
   },
 ];

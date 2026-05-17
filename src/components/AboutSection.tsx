@@ -258,7 +258,7 @@ export default function AboutSection() {
               <div className="col-span-4 relative overflow-hidden rounded-lg rounded-br-2xl shadow-sm">
                 <div className="aspect-[16/10]">
                   <Image
-                    src="/speakwisely/thumbnail.png"
+                    src="/carousel/speakwisely.jpeg"
                     alt="Development Workspace"
                     fill
                     className="object-cover"

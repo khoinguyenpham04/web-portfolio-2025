@@ -2,7 +2,7 @@
 title: "Delego"
 description: "Autonomous team planning system using digital twins that debate, align, and assign tasks intelligently."
 tags: ["Node.js", "Redis", "GPT-4.1", "Multi-Agent", "RAG", "MCP", "TypeScript"]
-images: ["/Delego.jpeg"]
+images: ["/carousel/delego.jpeg"]
 layout: "imageRight"
 date: "2025-12-14"
 brandIcon:

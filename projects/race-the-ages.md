@@ -2,7 +2,7 @@
 title: "Race the Ages"
 description: "Historical guesser multiplayer game"
 tags: ["Next.js", "React", "TypeScript", "PartyKit", "Tailwind CSS", "Framer Motion"]
-images: ["/racetheagescollage.png"]
+images: ["/carousel/race-the-ages.png"]
 layout: "imageLeft"
 brandIcon: "/hackathon-images/ChronoQuest.png"
 category: "hackathon"
