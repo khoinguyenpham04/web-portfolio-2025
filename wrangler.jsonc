@@ -1,0 +1,30 @@
+// Wrangler config: tells Cloudflare what to deploy and how to run it.
+// Think of this as the Cloudflare equivalent of vercel.json + project settings.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // Worker name -> becomes your URL: noahpham-me.<your-subdomain>.workers.dev
+  "name": "noahpham-me",
+
+  // The server entrypoint OpenNext generates from your Next.js build
+  "main": ".open-next/worker.js",
+
+  // Pins the Workers runtime behavior to this date so updates never surprise you.
+  // Dates >= 2025-09-01 include the virtual node:fs filesystem.
+  "compatibility_date": "2026-06-01",
+
+  // Enables Node.js APIs (fs, path, crypto, ...) inside the Worker
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Static files (public/, /_next/static) served from Cloudflare's CDN for free.
+  // "binding" means the Worker can also access these assets via env.ASSETS.
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+
+  // Turns on logs + metrics in the dashboard (and `wrangler tail`)
+  "observability": {
+    "enabled": true
+  }
+}

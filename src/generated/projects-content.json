@@ -1,0 +1,295 @@
+[
+  {
+    "id": "agentverse",
+    "title": "Delego",
+    "description": "Autonomous team planning system using digital twins that debate, align, and assign tasks intelligently.",
+    "tags": [
+      "Node.js",
+      "Redis",
+      "GPT-4.1",
+      "Multi-Agent",
+      "RAG",
+      "MCP",
+      "TypeScript"
+    ],
+    "images": [
+      "/carousel/delego.jpeg"
+    ],
+    "layout": "imageRight",
+    "date": "2025-12-14",
+    "brandIcon": null,
+    "category": "hackathon",
+    "hackathonName": "AgentVerse Hackathon",
+    "displayDate": "December 2025",
+    "priority": 4,
+    "awards": [
+      {
+        "label": "1st Place",
+        "variant": "gold"
+      }
+    ],
+    "content": "\n# Delego: Autonomous Team Planning with Digital Twins\n\n## Overview\n\nWe won **1st place** at the **AgentVerse Hackathon** by UCL Artificial Intelligence Society, sponsored by Anthropic, Amazon Web Services (AWS), Cisco, Entrepreneurs First, and more!\n\nIn just 24 hours, we built **Delego**, a system that tackles a problem every team faces. Even with advanced tools, project managers spend hours in meetings assigning tasks and tracking progress. We wanted to make planning fully autonomous.\n\n## The Problem\n\nProject managers and team leads spend countless hours in:\n- Task assignment meetings\n- Progress tracking sessions\n- Resource allocation discussions\n- Coordination overhead\n\nThis friction slows down teams and limits their ability to scale effectively.\n\n## What Delego Does\n\nDelego automates team planning using **digital twins** that debate, align, and assign tasks intelligently.\n\n- **No meetings** required for task assignment\n- **No micromanagement** needed\n- **Frictionless scaling** across teams\n\n## Key Technical Highlights\n\n### Multi-Agent Backend with RAG Modeling\nDeployed the system as a **multi-agent backend** with **RAG modeling** and **CAIPE**, enabling scalable, autonomous collaboration across teams.\n\n### Agentic Digital Twin Data Pipeline\nBuilt an **agentic digital twin data pipeline** with **Node** and **Redis** to model each team member's:\n- Skills and expertise\n- Availability windows\n- Working preferences\n- Historical performance\n\n### Fine-Tuned Language Model\n**Fine-tuned GPT-4.1 Nano** with digital twin data for realistic decision patterns that match how real team members would respond.\n\n### Modular Workflow Agents\nDesigned modular **workflow agents** and integrated **MCP servers** (e.g., GitHub MCP) for seamless task delegation and project management integration.\n\n## Architecture\n\n```\n                    +------------------+\n                    |   Task Input     |\n                    +--------+---------+\n                             |\n                    +--------v---------+\n                    |  Digital Twins   |\n                    |  (Debate Phase)  |\n                    +--------+---------+\n                             |\n              +--------------+--------------+\n              |              |              |\n      +-------v------+ +-----v------+ +-----v------+\n      | Twin Agent 1 | | Twin Agent 2| | Twin Agent N|\n      | (Skills/Avail)| | (Skills/Avail)| | (Skills/Avail)|\n      +-------+------+ +-----+------+ +-----+------+\n              |              |              |\n              +--------------+--------------+\n                             |\n                    +--------v---------+\n                    |  Consensus &     |\n                    |  Assignment      |\n                    +--------+---------+\n                             |\n                    +--------v---------+\n                    |  MCP Integration |\n                    |  (GitHub, etc.)  |\n                    +------------------+\n```\n\n## Impact\n\nThis marks my **4th consecutive hackathon win** and demonstrates the power of multi-agent systems for real-world productivity challenges.\n\n## Team\n\nHuge thanks to the amazing team that made this win possible:\n- Salman Chishti\n- Katie Lam\n- Joe Clinton\n- Ryan Lin\n- Suleiman Khan\n\nAnd appreciation to the UCL Artificial Intelligence Society's committees and volunteers for organizing such a well-run event!\n\n## Tech Stack\n\n- **Backend**: Node.js, Redis\n- **AI/ML**: GPT-4.1 Nano (fine-tuned), RAG, CAIPE\n- **Integration**: MCP Servers (GitHub MCP)\n- **Architecture**: Multi-agent system with digital twins\n"
+  },
+  {
+    "id": "clarion",
+    "title": "Clarion",
+    "description": "Enterprise go-to-market research app that turns uploaded documents into executive-ready reports.",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "OpenAI"
+    ],
+    "images": [
+      "/clarion/348shots_so.jpeg"
+    ],
+    "layout": "imageLeft",
+    "brandIcon": "/clarion/logo.png",
+    "category": "project",
+    "date": "2026-03-15",
+    "priority": 2,
+    "content": "\n# Overview\n\nClarion is a research tool built for go-to-market teams. You upload your internal documents, scope a workspace around a specific market or initiative, and let an agentic workflow do the heavy lifting: planning the research, gathering evidence, validating claims, and writing the final report.\n\nThe idea is simple: your documents are the source of truth, and the system works outward from there.\n\n## How It Works\n\nYou start by creating a workspace, basically a project folder scoped to a specific market, product, or launch. Then you upload your source material: PDFs, Word docs, plain text, whatever you have. From there, you can either ask quick questions against your documents or kick off a deep research run.\n\nThe deep research is where things get interesting. The system breaks your question into a research plan, searches your uploaded documents first, fills gaps with web research, extracts structured evidence, and writes a report with clear support and gaps called out. No hallucinated confidence. If something isn't backed by evidence, it says so.\n\nGenerated reports get saved back into the workspace, so they become part of the knowledge base for future research. It compounds over time.\n\n## The Research Pipeline\n\n1. Clarify the request when scope is vague\n2. Convert the prompt into a structured research brief\n3. Build a pre-research plan, then adapt it as evidence comes in\n4. Search workspace documents before touching the open web\n5. Extract structured evidence and flag conflicts\n6. Write a final report with explicit citations and gaps\n\nThis isn't a chatbot that happens to read files. It's a workflow with a clear hierarchy: documents first, web second, synthesis last.\n\n## Tech Stack\n\nThe frontend is Next.js with React and TypeScript, styled with Tailwind and shadcn/ui. The research orchestration runs on LangGraph with a supervisor/researcher pattern. OpenAI handles embeddings and report generation. Tavily covers web validation when the uploaded corpus falls short. Everything persists in Supabase: files in Storage, everything else in Postgres.\n"
+  },
+  {
+    "id": "code-clash",
+    "title": "Code Clash",
+    "description": "A learning platform with multiplayer coding battles.",
+    "tags": [
+      "Next.js",
+      "Amazon EC2",
+      "Framer Motion",
+      "MongoDB",
+      "PartyKit",
+      "Tailwind CSS",
+      "TypeScript",
+      "React"
+    ],
+    "images": [
+      "/carousel/codeclash.png"
+    ],
+    "layout": "imageRight",
+    "category": "hackathon",
+    "brandIcon": "/svg/code-clash.svg",
+    "date": "2024-11-21",
+    "hackathonName": "HackSheffield",
+    "displayDate": "November 2024",
+    "priority": 5,
+    "awards": [
+      {
+        "label": "MLH 1st Place",
+        "variant": "gold"
+      }
+    ],
+    "content": "\n## Code Clash\n\n### Growth Through Gamified Learning\n\n### Inspiration\nTraditional coding education platforms follow a solitary, linear path. But what if learning to code could feel like playing your favorite multiplayer game? Code Clash was born from a simple observation: people learn faster when they're having fun and competing with friends. By turning coding challenges into real-time battles, we're not just teaching code – we're cultivating a growth mindset.\n\n### Originality & Innovation\nWhile coding platforms exist, Code Clash stands out through:\n\n- 🎮 Industry-first real-time multiplayer coding battles\n- 🤖 AI-powered dynamic feedback\n- 🔄 Instant code evaluation with peer learning\n- 🌟 Skill-based matchmaking for balanced competition\n- 💫 Interactive code visualization for beginners\n\n### Theme: Growth in Action\nWe embodied \"Growth\" across multiple dimensions:\n\n- **Personal Growth:** Progressive skill development from basics to advanced\n- **Community Growth:** Peer-to-peer learning and mentorship\n- **Technical Growth:** Real-time feedback and improvement metrics\n- **Accessibility Growth:** Breaking down barriers to coding education\n- **Platform Growth:** Scalable architecture for expanding user base\n\n### Technical Excellence\nOur tech stack pushes boundaries:\n\n- ⚡ Next.js & TypeScript: Enterprise-grade foundation\n- 🎨 Tailwind & Framer Motion: Polished, animated UI/UX\n- 🔗 PartyKit: Cutting-edge real-time multiplayer infrastructure\n- 🧠 Custom LLM Integration: Advanced code analysis self-hosted on Amazon EC2\n- 📊 WebSocket Protocol: Sub-100ms latency for real-time battles\n\n### Development Journey & Learning\nOur team stretched beyond comfort zones:\n\n- First time writing in Typescript let alone implementing real-time multiplayer systems\n- Learned PartyKit from documentation to deployment in 24 hours\n- Mastered WebSocket optimization for minimal latency\n- Developed custom LLM prompts for code evaluation\n- Created responsive animations with Framer Motion\n- Discovered how to implement EC2 cloud storage and MongoDB Atlas\n\n### Design & User Experience\nWe prioritized intuitive design:\n\n- 🎯 Clean, distraction-free coding interface\n- 📱 Responsive design for all devices\n- 🌈 Engaging animations that guide users\n- 🎮 Game-like elements that maintain focus\n- 👥 Inclusive design for all skill levels\n\n### Working Prototype Achievements\nIn 24 hours, we delivered:\n\n- ✅ Fully functional multiplayer system\n- ✅ Real-time code evaluation\n- ✅ Dynamic challenge generation\n- ✅ User authentication and profiles\n- ✅ Cross-browser compatibility\n\n### Technical Challenges Conquered\n- **Multiplayer Synchronization:** Solved using custom PartyKit implementation\n- **Real-time Evaluation:** Optimized LLM processing for instant feedback\n- **Scalability:** Implemented efficient WebSocket management\n- **Security:** Built secure code execution environment\n- **Performance:** Achieved consistent sub-100ms latency\n\n### What's Next\nFuture technical expansions:\n\n- 🏗️ WebAssembly integration for browser-based code compilation\n- 🤖 Advanced AI curriculum adaptation\n- 📊 Enhanced analytics dashboard\n- 🌐 Global tournament infrastructure\n- 📱 Native mobile applications\n\n### Technical Architecture\n```mermaid\ngraph TD\n    A[Client] -->|WebSocket| B[PartyKit Server]\n    B -->|Real-time Updates| A\n    B -->|Code Evaluation| C[EC2 LLM Service]\n    C -->|Results| B\n    D[Challenge Generator] -->|New Problems| B\n```\n\nBuilt with determination in 24 hours by a team passionate about democratizing coding education 💖\n\n**Technologies:** TypeScript, Next.js, Tailwind CSS, Framer Motion, PartyKit, Amazon EC2 ⚡\n"
+  },
+  {
+    "id": "dnsdirectory",
+    "title": "DNS Directory",
+    "description": "Public DNS server monitoring platform with 20,000+ servers globally and real-time analytics.",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "SQLAlchemy",
+      "REST API",
+      "Tailwind CSS"
+    ],
+    "images": [
+      "/dnsdirectory/DNS Thumbnail (1).jpg"
+    ],
+    "brandIcon": "/svg/dns-logo.svg",
+    "layout": "imageLeft",
+    "category": "project",
+    "date": "2025-12-20",
+    "liveUrl": "https://dnsdirectory.com",
+    "priority": 4,
+    "content": "\n# Overview\n\nDNS Directory is a public monitoring platform that tracks 20,000+ DNS servers worldwide. You can look up any server, check its uptime history, see where it's located, and filter by status, features, or region. Built for [Ping](https://pingproxies.com).\n\nThe core challenge was making a dataset this large feel fast and browsable. Nobody wants to wait around while 20k records load.\n\n## What It Does\n\nThe main surface is a searchable, filterable directory of public DNS servers. Each server has a detail page showing its current status, 90-day uptime history, reliability metrics, and location on an interactive map. You can filter by IP, domain, country, status, or supported features.\n\nThere's also an analytics dashboard that aggregates the data into trends and breakdowns, so you can see things like global uptime distributions or which regions have the most reliable servers.\n\n## Performance\n\nSpeed was the main constraint. The backend runs 10+ REST APIs on Flask with PostgreSQL and SQLAlchemy. Every expensive query is cached with TTL-based layers, and aggregation results are memoised so repeated requests skip the database entirely. Pagination keeps response times under 100ms even across the full dataset.\n\nOn the frontend, server-side rendering cut initial load times by 60%. Heavy components like the map and charts are lazy-loaded. Next.js cache components with the `cacheLife` API handle near real-time data without hammering the backend.\n\n## Security\n\nAll API endpoints are hidden from the client. Every request goes through Next.js Server Actions, so external URLs are never exposed. Rate limiting is IP-based: 100 requests per minute for searches, 50 for filters. Inputs are validated and sanitised before they hit the database.\n\n## SEO\n\nEvery server and country page gets dynamic metadata with JSON-LD structured data for rich snippets. The sitemap is auto-generated and covers the full directory. All pages are server-rendered for indexing.\n\n## Tech Stack\n\nThe frontend is Next.js 16 with TypeScript, Tailwind CSS v4, and Radix UI. The backend is Python with Flask and SQLAlchemy ORM on PostgreSQL. Maps use Mapbox GL with React Map GL. Charts are built with Recharts. Tables use TanStack Table v8.\n"
+  },
+  {
+    "id": "greatunihack-2025",
+    "title": "Memoral",
+    "description": "Agentic AI for Dementia patients and their caretakers",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "LangGraph",
+      "Multi-Agent",
+      "TailwindCSS",
+      "Radix UI"
+    ],
+    "images": [
+      "/GreatUniHack25.jpg"
+    ],
+    "layout": "imageRight",
+    "category": "hackathon",
+    "date": "2025-10-20",
+    "hackathonName": "GreatUniHack",
+    "displayDate": "October 2025",
+    "priority": 2,
+    "awards": [
+      {
+        "label": "1st Reply Challenge",
+        "variant": "gold"
+      },
+      {
+        "label": "1st ARM Challenge",
+        "variant": "gold"
+      },
+      {
+        "label": "3rd Overall",
+        "variant": "bronze"
+      }
+    ],
+    "content": "\n# Memoral: Agentic AI for Dementia Care\n\n## Overview\n\nBuilt in 24 hours at GreatUniHack 2025. Won three awards:\n\n- **1st Place** in the Reply Challenge: Best Use of AI Agents in Healthcare\n- **3rd Overall** out of 200+ participants\n- **Hackathons UK Challenge Winner** for Best Use of AI Agents on ARM\n\n## What Memoral Does\n\nMemoral supports people living with dementia and Alzheimer's through:\n\n- Conversational engagement\n- Adaptive reminders\n- Intelligent task management\n\nIt improves daily structure, promotes cognitive engagement, and reduces caregiver burden without intrusive sensors or complex hardware.\n\n**For patients**: Consistency and connection through a familiar AI companion.\n\n**For caregivers**: Real-time visibility into well-being and daily routines.\n\n## Technical Implementation\n\n### Multi-Agent Architecture\n\nBuilt a multi-agent system with specialized agents for:\n\n- **Memory Agent**: Manages patient context and conversation history\n- **Task Agent**: Handles reminders and daily scheduling\n- **Health Agent**: Monitors behavioral patterns and well-being indicators\n- **Supervisor Agent**: Coordinates agent interactions and escalations\n\n### Agent Orchestration\n\nUsed **LangGraph** for agent orchestration with a centralized contextual memory layer. This allows agents to share state and make coordinated decisions based on patient needs.\n\n### Frontend\n\n- **Next.js** and **TypeScript** for the application framework\n- **TailwindCSS** and **Radix UI** for styling and accessible components\n- Real-time caregiver dashboard for behavioral insights and routine tracking\n\n## Impact\n\nDemonstrates how agentic AI systems can deliver practical support in healthcare contexts. The multi-agent approach allows for specialized handling of different care aspects while maintaining a unified patient experience.\n\n## Team\n\n- Sean Lin\n- Muhammad Kalmani\n- Hamza Khan\n"
+  },
+  {
+    "id": "hackjunction",
+    "title": "YourWalk",
+    "description": "AR safety navigation with Snap Spectacles that visualizes safe zones and provides an agentic AI companion for nighttime walks.",
+    "tags": [
+      "Snap Spectacles",
+      "Lens Studio",
+      "AR",
+      "AI Agents",
+      "TypeScript",
+      "Real-time"
+    ],
+    "images": [
+      "/HackJunction.jpg"
+    ],
+    "layout": "imageLeft",
+    "category": "hackathon",
+    "date": "2025-11-15",
+    "hackathonName": "HackJunction",
+    "displayDate": "November 2025",
+    "priority": 1,
+    "awards": [
+      {
+        "label": "1st Place Snap Challenge",
+        "variant": "gold"
+      }
+    ],
+    "content": "\n# YourWalk: AR Safety Navigation\n\n## Overview\n\nWon **1st Place** in the Snap Inc. Challenge at Junction, Europe's largest hackathon with 1,500+ participants. Built in 48 hours in Helsinki, Finland.\n\n## The Problem\n\nWalking alone at night can be stressful. Traditional navigation apps provide directions but lack awareness of safety conditions like crime rates, lighting, and pedestrian activity.\n\n## What YourWalk Does\n\nYourWalk pairs with Snap Spectacles to guide users with awareness rather than just directions.\n\n### AR Guidance\n\nVisualizes safe zones and risk levels directly through the Spectacles lenses. Users see real-time safety information overlaid on their environment.\n\n### Agentic AI Companion\n\nIf the user feels unsafe, an AI agent initiates a conversation to keep them engaged and deter unwanted attention. The companion provides both practical support and a sense of presence.\n\n### Intelligent Routing\n\nCalculates risk scores within 200m using data on:\n\n- Local crime statistics\n- Lighting levels\n- Pedestrian activity\n\nRoutes are optimized for safety rather than just speed or distance.\n\n## Technical Implementation\n\n- **Snap Spectacles** and **Lens Studio** for AR visualization\n- Custom risk scoring algorithm combining multiple data sources\n- Real-time route calculation with safety weighting\n- Conversational AI agent for companion functionality\n\n## Impact\n\nDemonstrates how AR can solve real-world safety problems by providing contextual awareness that traditional apps cannot offer. The combination of visual guidance and AI companionship addresses both practical navigation and psychological comfort.\n\n## Team\n\n- Na Wang\n- Bora Akyuz\n- Divy B.\n\n## Demo\n\n[Watch the demo](https://lnkd.in/etGVvYUg)\n"
+  },
+  {
+    "id": "leetcoach",
+    "title": "LeetCoach",
+    "description": "Agentic conversational coding companion for interview preparation",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Python",
+      "Docker",
+      "AIOHTTP",
+      "Gemini",
+      "Neuphonic",
+      "CodeMirror",
+      "Cloudflare",
+      "Vercel"
+    ],
+    "images": [
+      "/carousel/leetcoach.jpeg"
+    ],
+    "layout": "imageRight",
+    "brandIcon": "/svg/leetcoach.svg",
+    "category": "hackathon",
+    "date": "2025/04/01",
+    "githubUrl": "https://github.com/khoinguyenpham04/SHack25Neuphonic",
+    "hackathonName": "StudentHack",
+    "displayDate": "April 2025",
+    "priority": 4,
+    "awards": [
+      {
+        "label": "2nd Place",
+        "variant": "silver"
+      }
+    ],
+    "content": "\n# Overview\n\nLeetCoach is an innovative AI-powered platform developed during a hackathon to transform coding interview preparation. Designed to assist students and professionals, it integrates real-time guidance, voice-enabled AI support, and secure code execution, offering an engaging and effective solution for mastering technical interviews, particularly with LeetCode problems.\n\n## The Challenge\n\nPreparing for coding interviews poses significant obstacles for many students:\n\n- **Lack of Direction**: Beginners often struggle to identify a starting point or structure their practice effectively.\n- **Isolation**: Solo practice can feel demotivating without immediate feedback or interaction.\n- **Limited Feedback**: Standard solutions lack personalized insights into code quality and optimization.\n- **Accessibility Gaps**: Traditional tools rarely accommodate diverse learning preferences, such as auditory learners.\n\n## The Solution\n\nLeetCoach addresses these pain points with a robust set of features:\n\n- **Practice Problems with Code Execution**: Write and run code directly within the platform.\n- **Voice-Enabled AI Support**: Hands-free guidance via an interactive AI assistant.\n- **Real-Time Feedback**: Instant insights on code quality, complexity, and edge cases.\n- **Natural Voice Responses**: Powered by Neuphonic’s text-to-speech for an immersive experience.\n- **Progress Tracking**: Built-in timer to monitor and enhance problem-solving speed.\n\n## Technical Architecture\n\nLeetCoach leverages a modern tech stack for performance and scalability:\n\n- **Frontend**: Next.js, TypeScript, and Tailwind CSS for a responsive, user-friendly interface.\n- **Backend**: Python AIOHTTP service (\"codedriver\") for secure code execution.\n- **AI Integration**: Gemini API via Google AI client for intelligent, real-time feedback.\n- **Voice Technology**: Web Speech API for transcription, paired with Neuphonic API for natural responses.\n- **Code Editor**: CodeMirror for an intuitive coding environment.\n- **Security**: Sandboxed execution environment with restricted imports to ensure safety.\n\n## Key Features Implementation\n\n### Voice Interaction\n\nA standout feature is the voice-enabled AI assistant, implemented as follows:\n\n```typescript\nconst setupVoiceInteraction = () => {\n  const recognition = new webkitSpeechRecognition();\n  recognition.onresult = async (event) => {\n    const transcript = event.results[0][0].transcript;\n    const response = await getAIResponse(transcript);\n    speak(response);\n  };\n  recognition.start();\n};\n\nconst speak = async (text) => {\n  const audioUrl = await neuphonicAPI.textToSpeech(text);\n  const audio = new Audio(audioUrl);\n  audio.play();\n};\n```\n\nThis enables users to interact hands-free, receiving natural-sounding feedback.\n\n## User Experience Design\n\n- **Intuitive Layout**: Clean design with easy navigation to problems, editor, and AI assistant.\n- **Accessibility**: Voice support enhances usability for diverse learners.\n- **Motivational Tools**: Timers and feedback scores encourage continuous improvement.\n\n## Challenges and Learnings\n\nThe development process presented valuable lessons:\n\n- **Secure Code Execution**: Built a sandboxed environment to safely run user code.\n- **Prompt Engineering**: Refined AI prompts for concise, actionable feedback.\n- **API Integration**: Overcame documentation challenges with Neuphonic and cloud services.\n\nThese hurdles deepened our understanding of secure coding, AI optimization, and third-party integrations.\n\n## Future Enhancements\n\n- **Expanded Problem Set**: Additional questions across varying difficulty levels.\n- **Language Support**: Extend beyond Python to other programming languages.\n- **Collaborative Mode**: Enable pair programming functionality.\n- **Advanced AI Coaching**: Tailored guidance for specific interview strategies.\n- **Interview Simulation**: Timed challenges mimicking real interview scenarios.\n\n## Conclusion\n\nLeetCoach redefines coding interview preparation by blending AI-driven insights with voice technology and a secure, user-centric design. Developed during a hackathon, it showcases innovative problem-solving and technical expertise, making it a standout addition to my portfolio as a Computer Science student at the University of Manchester."
+  },
+  {
+    "id": "race-the-ages",
+    "title": "Race the Ages",
+    "description": "Historical guesser multiplayer game",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "PartyKit",
+      "Tailwind CSS",
+      "Framer Motion"
+    ],
+    "images": [
+      "/carousel/race-the-ages.png"
+    ],
+    "layout": "imageLeft",
+    "brandIcon": "/hackathon-images/ChronoQuest.png",
+    "category": "hackathon",
+    "date": "2024-11-30",
+    "githubUrl": "https://github.com/khoinguyenpham04/GUHack2024",
+    "hackathonName": "GreatUniHack",
+    "displayDate": "November 2024",
+    "priority": 3,
+    "awards": [
+      {
+        "label": "2nd Place Overall",
+        "variant": "silver"
+      }
+    ],
+    "content": "\n# ChronoQuest: Turning History Into a Multiplayer Adventure\n\n## The Spark\n\nHave you ever looked at a historical photograph and felt that tingling sense of mystery? That's exactly how our journey began. During a late-night conversation about how our grandparents used to share amazing historical stories, we realized something profound: history isn't just about memorizing dates – it's about understanding the when and where of human stories.\n\nThen it hit us: what if we could transform this curiosity into a game? What if we could make history as engaging as scrolling through social media, but with the added thrill of competition and discovery?\n\n## The Vision\n\nWe envisioned a platform where:\n\n- History becomes a shared adventure\n- Learning feels like playing\n- Friends can challenge each other across time periods\n- Every guess leads to a new discovery\n- Education meets entertainment seamlessly\n\n## The Building Process\n\n### Foundation: Technology with Purpose\n\nWe chose our tech stack carefully:\n\n- **Next.js and React** for its robust framework and smooth user experience\n- **TypeScript** to ensure code reliability and type safety\n- **PartyKit** for real-time multiplayer functionality\n- **Tailwind CSS** for responsive and beautiful design\n- **Framer Motion** for responsive and seamless design\n\n### Key Development Phases:\n\n#### Research & Planning\n- Studied successful educational games\n- Consulted with history enthusiasts\n- Designed game mechanics\n\n#### Core Development\n- Built the base multiplayer system\n- Created the time-guessing mechanism\n- Implemented location identification\n- Developed scoring algorithms\n\n#### User Experience\n- Designed intuitive interfaces\n- Added engaging animations\n- Created feedback systems\n- Implemented social features\n\n## Challenges & Breakthroughs\n\n### Challenge 1: The Real-Time Puzzle\nInitially, synchronizing multiple players' guesses and maintaining game state seemed daunting. The breakthrough came when we discovered PartyKit's elegant solution for real-time communication. This turned our biggest challenge into one of our strongest features.\n\n### Challenge 2: Historical Accuracy\nEnsuring accurate historical data while making the game engaging was tricky. We solved this by creating a robust validation system and partnering with history enthusiasts to verify our content.\n\n## What We Learned\n\nThis project taught us more than just coding:\n\n- **Team Collaboration** is about listening as much as contributing\n- **User Experience** matters as much as technical excellence\n- **Educational Design** requires a delicate balance\n- **Community Feedback** is invaluable for improvement\n\n## Technical Insights\n\nOur most proud technical achievements:\n\n- Implementing a sophisticated scoring system that considers both time and location accuracy\n- Creating a seamless multiplayer experience with minimal latency\n- Developing an adaptive difficulty system that keeps players engaged\n- Building a scalable content management system for historical events\n\n## The Future\n\nChronoQuest is just beginning its journey. We plan to:\n\n- Add AR features for immersive historical experiences\n- Implement classroom-specific features for educators\n- Create themed historical event packages\n- Develop mobile apps for iOS and Android\n\n## The Impact\n\nWe believe ChronoQuest can:\n\n- Make history education more accessible and engaging\n- Connect people through shared learning experiences\n- Preserve historical knowledge in an interactive format\n- Bridge generational gaps through shared gameplay\n\n## Key Takeaways\n\n- Innovation doesn't always mean inventing something new – sometimes it's about reimagining existing concepts\n- User Experience is crucial in educational technology\n- Community feedback shapes better products\n- Learning can and should be fun!\n\n## Final Thoughts 💭\n\nChronoQuest began as a hackathon project but evolved into something more meaningful: a platform where curiosity meets technology, where learning meets play, and where history comes alive. We're not just building a game; we're creating a new way to experience history.\n\n> \"The past is not dead. It's not even past.\" - William Faulkner\n\nThis quote drives us to continue developing ChronoQuest, making history accessible, engaging, and alive for everyone.\n\n## Built With\n\n- **Framer Motion** - Smooth animations and interactions\n- **Next.js** - React framework for production\n- **PartyKit** - Real-time multiplayer infrastructure\n- **React** - User interface library\n- **Tailwind CSS** - Utility-first CSS framework\n- **TypeScript** - Type-safe JavaScript"
+  },
+  {
+    "id": "speakwisely",
+    "title": "SpeakWisely",
+    "description": "AI-powered instant personalised feedback, and structured practice for IELTS Speaking.",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "OpenAI",
+      "Whisper",
+      "Google Analytics"
+    ],
+    "images": [
+      "/carousel/speakwisely.jpeg"
+    ],
+    "layout": "imageRight",
+    "brandIcon": "/svg/speakwiselylogo.svg",
+    "category": "project",
+    "date": "2025-12-15",
+    "liveUrl": "https://speakwisely.vercel.app",
+    "priority": 1,
+    "content": "\n# Overview\n\nSpeakWisely is an IELTS Speaking prep tool that gives you instant, personalised feedback on your speaking practice. You record yourself answering real IELTS questions, and the platform scores you on fluency, vocabulary, grammar, pronunciation, and task achievement, all based on official IELTS criteria.\n\nThe goal was to make quality speaking practice accessible to anyone, not just people who can afford private tutors.\n\n## The Problem\n\nPreparing for IELTS Speaking is harder than it should be. Good tutors are expensive and hard to find. Cheaper alternatives are inconsistent. Scheduling is a pain. And a lot of students feel too nervous practicing with a real person, which defeats the purpose.\n\nThere was a clear gap: students needed honest, reliable feedback they could get on their own time, without the pressure.\n\n## What It Does\n\nYou pick a question set, hit record, and speak. Once you're done, the platform transcribes your response using OpenAI Whisper and runs it through a feedback model that breaks down your performance across IELTS scoring dimensions. You get specific, actionable notes, not a generic \"good job.\"\n\nThere's also a live AI Examiner mode. It simulates a real IELTS Speaking test with a voice agent that asks follow-up questions, manages the three-part test flow, and adapts to your responses in real time. Response times sit under 200ms using OpenAI's Realtime API over WebRTC, so the conversation feels natural.\n\nEvery session gets recorded and saved. You can go back, compare your scores, and track how you're improving over time.\n\n## How the AI Examiner Works\n\nThe examiner runs as a multi-agent system where different agents handle different parts of the test. Handoffs between agents are seamless, so from the student's side it feels like one continuous conversation. Topics are randomised from 12+ IELTS categories, and the full session audio (both sides) gets captured for review.\n\n## Tech Stack\n\nThe frontend is Next.js with React and TypeScript, styled with Tailwind CSS and animated with Framer Motion. Voice streaming runs over WebRTC. The backend uses Supabase for the database and auth, OpenAI for feedback generation and the Realtime API for voice, and Whisper for transcription. Everything is deployed on Vercel with edge functions handling the API layer.\n"
+  },
+  {
+    "id": "studymapper",
+    "title": "StudyMapper",
+    "description": "Interactive web app helping University of Manchester students find available study spaces across campus.",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind CSS",
+      "Mapbox GL"
+    ],
+    "images": [
+      "/studymapper/Component 3.png"
+    ],
+    "layout": "imageRight",
+    "brandIcon": "/svg/studdymapperlogo.svg",
+    "category": "project",
+    "liveUrl": "https://studymapper.vercel.app",
+    "date": "2024-12-21",
+    "priority": 3,
+    "content": "\n# Overview\n\nStudyMapper helps University of Manchester students find open study spaces on campus. You open the app, see a map of every study location, and instantly know what's open, how far it is, and what amenities it has. Built it because I got tired of walking around campus during exam season looking for somewhere to sit.\n\n## The Problem\n\nThere was no single place to check which study spaces were available. You'd just walk to the library, find it full, try another building, and repeat. During exams it got worse. New students had it even harder because they didn't know half the spots existed.\n\n## What It Does\n\nThe app centres on an interactive Mapbox map showing every study location across campus. Each spot is colour-coded by availability. You can tap any location to see its opening hours, amenities (power outlets, quiet zones, group tables), and Google ratings.\n\nThere's a proximity feature that finds the nearest open spaces to your current location and shows walking distances. You can also filter and sort by distance, availability, or amenities. The data updates daily with current opening hours, and special schedules during exam periods and holidays are handled automatically.\n\n## What Worked\n\nThe app hit 100+ daily active users during exam periods and 1,500+ monthly users across the academic year. Students told me it saved them time and helped them discover spaces they never knew about.\n\nThe biggest technical challenge was getting Mapbox to run smoothly on lower-end phones. That took a lot of optimisation around progressive data loading and keeping the initial bundle small.\n\n## Tech Stack\n\nThe frontend is Next.js with React, TypeScript, and Tailwind CSS. Maps run on Mapbox GL JS. The backend uses MongoDB for study space data and Next.js API Routes for the server layer. Deployed on Vercel.\n"
+  }
+]

@@ -1,11 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-
 import { estimateMarkdownTokens } from "@/lib/markdown-negotiation";
+import {
+  getAllProjectContent,
+  getProjectContent,
+  type ProjectContentRecord,
+} from "@/lib/projects-content";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://noahpham.me";
-const PROJECTS_DIRECTORY = path.join(process.cwd(), "projects");
 
 type ProjectRecord = {
   id: string;
@@ -92,40 +92,32 @@ function compareProjects(a: ProjectRecord, b: ProjectRecord) {
   return dateB - dateA;
 }
 
-function readProject(id: string): ProjectRecord | null {
-  try {
-    const fullPath = path.join(PROJECTS_DIRECTORY, `${id}.md`);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const { data, content } = matter(fileContents);
+function toProjectRecord(record: ProjectContentRecord): ProjectRecord {
+  return {
+    id: record.id,
+    title: record.title,
+    description: record.description,
+    tags: record.tags || [],
+    images: record.images || [],
+    brandIcon: record.brandIcon || undefined,
+    category: record.category || "project",
+    priority: record.priority ?? Number.POSITIVE_INFINITY,
+    date: record.date || null,
+    liveUrl: record.liveUrl || undefined,
+    githubUrl: record.githubUrl || undefined,
+    hackathonName: record.hackathonName || undefined,
+    awards: record.awards || undefined,
+    content: record.content.trim(),
+  };
+}
 
-    return {
-      id,
-      title: data.title,
-      description: data.description,
-      tags: data.tags || [],
-      images: data.images || [],
-      brandIcon: data.brandIcon || undefined,
-      category: data.category || "project",
-      priority: data.priority ?? Number.POSITIVE_INFINITY,
-      date: data.date || null,
-      liveUrl: data.liveUrl || undefined,
-      githubUrl: data.githubUrl || undefined,
-      hackathonName: data.hackathonName || undefined,
-      awards: data.awards || undefined,
-      content: content.trim(),
-    };
-  } catch {
-    return null;
-  }
+function readProject(id: string): ProjectRecord | null {
+  const record = getProjectContent(id);
+  return record ? toProjectRecord(record) : null;
 }
 
 function listProjects(): ProjectRecord[] {
-  const fileNames = fs.readdirSync(PROJECTS_DIRECTORY);
-  const projects = fileNames
-    .map((fileName) => readProject(fileName.replace(/\.md$/, "")))
-    .filter((project): project is ProjectRecord => Boolean(project));
-
-  return projects.sort(compareProjects);
+  return getAllProjectContent().map(toProjectRecord).sort(compareProjects);
 }
 
 function toAbsoluteUrl(href: string) {

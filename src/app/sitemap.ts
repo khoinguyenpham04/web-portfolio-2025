@@ -1,21 +1,15 @@
 import { MetadataRoute } from 'next';
-import fs from 'fs';
-import path from 'path';
+import { getAllProjectContent } from '@/lib/projects-content';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const projectsDirectory = path.join(process.cwd(), 'projects');
-  const projectFiles = fs.readdirSync(projectsDirectory);
-
-  const projectUrls = projectFiles
-    .filter(file => file.endsWith('.md'))
-    .map(file => ({
-      url: `${BASE_URL}/projects/${file.replace('.md', '')}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    }));
+  const projectUrls = getAllProjectContent().map((record) => ({
+    url: `${BASE_URL}/projects/${record.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   return [
     {

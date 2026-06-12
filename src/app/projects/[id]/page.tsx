@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { notFound } from 'next/navigation';
@@ -13,55 +10,48 @@ import { TableOfContents } from '@/components/TableOfContents';
 import { BlogCard } from '@/components/BlogCard';
 import { getIcon } from '@/lib/getIcon';
 import { customSyntaxTheme } from '@/lib/syntax-theme';
-
-const projectsDirectory = path.join(process.cwd(), 'projects');
+import { getAllProjectContent, getProjectContent } from '@/lib/projects-content';
 
 export async function generateStaticParams() {
-  const fileNames = fs.readdirSync(projectsDirectory);
-  return fileNames.map((fileName) => ({
-    id: fileName.replace(/\.md$/,''),
+  return getAllProjectContent().map((record) => ({
+    id: record.id,
   }));
 }
 
 async function getProjectData(id: string) {
-  try {
-    const fullPath = path.join(projectsDirectory, `${id}.md`);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data, content } = matter(fileContents);
-    
-    // Add reading time calculation
-    const wordsPerMinute = 200;
-    const words = content.split(/\s+/).length;
-    const readingTime = Math.ceil(words / wordsPerMinute);
-    
-    return {
-      id,
-      data: {
-        title: data.title,
-        description: data.description,
-        tags: data.tags,
-        images: data.images,
-        brandIcon: data.brandIcon,
-        category: data.category,
-        date: data.date,
-        liveUrl: data.liveUrl,
-        githubUrl: data.githubUrl,
-        readingTime: `${readingTime} min read`
-      },
-      content,
-    };
-  } catch {
+  const record = getProjectContent(id);
+  if (!record) {
     return null;
   }
+
+  const content = record.content;
+
+  // Add reading time calculation
+  const wordsPerMinute = 200;
+  const words = content.split(/\s+/).length;
+  const readingTime = Math.ceil(words / wordsPerMinute);
+
+  return {
+    id,
+    data: {
+      title: record.title,
+      description: record.description,
+      tags: record.tags,
+      images: record.images,
+      brandIcon: record.brandIcon ?? undefined,
+      category: record.category,
+      date: record.date,
+      liveUrl: record.liveUrl,
+      githubUrl: record.githubUrl,
+      readingTime: `${readingTime} min read`
+    },
+    content,
+  };
 }
 
 async function getAllProjects() {
-  const fileNames = fs.readdirSync(projectsDirectory);
   const projects = await Promise.all(
-    fileNames.map(async (fileName) => {
-      const id = fileName.replace(/\.md$/, '');
-      return await getProjectData(id);
-    })
+    getAllProjectContent().map((record) => getProjectData(record.id))
   );
   return projects.filter(Boolean);
 }
@@ -112,7 +102,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       brandIcon: p!.data.brandIcon,
       category: p!.data.category,
       readingTime: p!.data.readingTime,
-      date: p!.data.date
+      date: p!.data.date ?? undefined
     }));
 
   const displayDate = projectData.data.date 

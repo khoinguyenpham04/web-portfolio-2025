@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const homepageDiscoveryLinks = [
   '</docs/agents>; rel="service-doc"; type="text/html"',
@@ -7,6 +8,9 @@ const homepageDiscoveryLinks = [
 
 const nextConfig: NextConfig = {
   images: {
+    // Workers has no built-in Next.js image optimizer; serve originals for now.
+    // Upgrade path: Cloudflare Images binding + custom loader.
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -33,3 +37,7 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+// Lets `next dev` access Cloudflare bindings (env.ASSETS etc.) so local dev
+// and the Workers runtime behave the same. No-op in production builds.
+initOpenNextCloudflareForDev();
