@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Noah Pham's Portfolio",
     short_name: "Noah Pham",
     description:
-      "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder.",
+      "Noah Pham (Nguyen Pham). Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

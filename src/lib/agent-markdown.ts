@@ -179,14 +179,14 @@ function buildHomeMarkdown() {
 
   return (
     buildFrontmatter(
-      "Noah Pham | Software Developer & Builder",
+      "Noah Pham's Portfolio",
       "/",
       "Portfolio homepage for Noah Pham (Nguyen Pham).",
     ) +
     [
       "# Noah Pham",
       "",
-      "Computer Science student at the University of Manchester, founder, and software developer building AI products, voice tools, and developer-focused experiences.",
+      "Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
       "",
       "## Quick Links",
       "",

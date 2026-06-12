@@ -28,10 +28,10 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me'),
   title: {
-    default: "Noah Pham's Portfolio | Software Developer & Builder",
+    default: "Noah Pham's Portfolio",
     template: "%s | Noah Pham",
   },
-  description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+  description: "Noah Pham (Nguyen Pham). Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
   keywords: [
     "Noah Pham",
     "Nguyen Pham",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Noah Pham's Portfolio | Software Developer & Builder",
-    description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+    title: "Noah Pham's Portfolio",
+    description: "Noah Pham (Nguyen Pham). Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me',
     siteName: "Noah Pham's Portfolio",
     images: [
@@ -78,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Noah Pham's Portfolio | Software Developer & Builder",
-    description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+    title: "Noah Pham's Portfolio",
+    description: "Noah Pham (Nguyen Pham). Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
     images: ['/opengraph.jpg'],
     creator: "@noahpham",
   },
@@ -112,7 +112,8 @@ export default function RootLayout({
               name: "Noah Pham",
               alternateName: ["Nguyen Pham", "Tran Khoi Nguyen Pham"],
               url: process.env.NEXT_PUBLIC_SITE_URL || "https://noahpham.me",
-              jobTitle: "Software Developer",
+              alumniOf: { "@type": "CollegeOrUniversity", name: "University of Manchester" },
+              worksFor: { "@type": "Organization", name: "Byteful" },
             }),
           }}
         />
