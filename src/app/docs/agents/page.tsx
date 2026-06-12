@@ -40,7 +40,7 @@ const helpfulPages = [
 export const metadata: Metadata = {
   title: "Agent Discovery",
   description:
-    "Human-readable guidance for agents and tools browsing Tran Khoi Nguyen Pham's portfolio.",
+    "Human-readable guidance for agents and tools browsing Noah Pham's portfolio.",
 };
 
 export default function AgentDocsPage() {

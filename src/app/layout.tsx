@@ -28,13 +28,14 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me'),
   title: {
-    default: "Tran Khoi Nguyen Pham | Software Developer & Builder",
-    template: "%s | Tran Khoi Nguyen Pham",
+    default: "Noah Pham's Portfolio | Software Developer & Builder",
+    template: "%s | Noah Pham",
   },
-  description: "Portfolio of Tran Khoi Nguyen Pham (Noah Pham) - a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+  description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
   keywords: [
-    "Tran Khoi Nguyen Pham",
     "Noah Pham",
+    "Nguyen Pham",
+    "Tran Khoi Nguyen Pham",
     "Software Developer",
     "Full Stack Developer",
     "Web Developer",
@@ -44,9 +45,9 @@ export const metadata: Metadata = {
     "React",
     "TypeScript",
   ],
-  authors: [{ name: "Tran Khoi Nguyen Pham", url: "https://noahpham.me" }],
-  creator: "Tran Khoi Nguyen Pham",
-  publisher: "Tran Khoi Nguyen Pham",
+  authors: [{ name: "Noah Pham", url: "https://noahpham.me" }],
+  creator: "Noah Pham",
+  publisher: "Noah Pham",
   robots: {
     index: true,
     follow: true,
@@ -59,16 +60,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Tran Khoi Nguyen Pham | Software Developer & Builder",
-    description: "Portfolio of Tran Khoi Nguyen Pham (Noah Pham) - a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+    title: "Noah Pham's Portfolio | Software Developer & Builder",
+    description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://noahpham.me',
-    siteName: "Tran Khoi Nguyen Pham Portfolio",
+    siteName: "Noah Pham's Portfolio",
     images: [
       {
         url: '/opengraph.jpg',
         width: 3820,
         height: 2000,
-        alt: 'Tran Khoi Nguyen Pham - Portfolio',
+        alt: 'Noah Pham - Portfolio',
         type: 'image/jpeg',
       },
     ],
@@ -77,8 +78,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tran Khoi Nguyen Pham | Software Developer & Builder",
-    description: "Portfolio of Tran Khoi Nguyen Pham (Noah Pham) - a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
+    title: "Noah Pham's Portfolio | Software Developer & Builder",
+    description: "Portfolio of Noah Pham (Nguyen Pham), a software developer and builder. Explore my projects, hackathon wins, and technical experiences.",
     images: ['/opengraph.jpg'],
     creator: "@noahpham",
   },
@@ -101,6 +102,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} ${instrumentSerif.variable} ${spaceGrotesk.variable} ${caveat.variable}`} suppressHydrationWarning>
+        {/* Person schema: tells search engines all these names are the same person */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Noah Pham",
+              alternateName: ["Nguyen Pham", "Tran Khoi Nguyen Pham"],
+              url: process.env.NEXT_PUBLIC_SITE_URL || "https://noahpham.me",
+              jobTitle: "Software Developer",
+            }),
+          }}
+        />
         <SnowfallEffect />
         <Header />
         <main className="pt-20 lg:pt-24">

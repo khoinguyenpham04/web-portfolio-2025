@@ -179,12 +179,12 @@ function buildHomeMarkdown() {
 
   return (
     buildFrontmatter(
-      "Tran Khoi Nguyen Pham | Software Developer & Builder",
+      "Noah Pham | Software Developer & Builder",
       "/",
-      "Portfolio homepage for Tran Khoi Nguyen Pham (Noah Pham).",
+      "Portfolio homepage for Noah Pham (Nguyen Pham).",
     ) +
     [
-      "# Tran Khoi Nguyen Pham",
+      "# Noah Pham",
       "",
       "Computer Science student at the University of Manchester, founder, and software developer building AI products, voice tools, and developer-focused experiences.",
       "",
@@ -232,9 +232,9 @@ function buildAboutMarkdown() {
     .join("\n\n");
 
   return (
-    buildFrontmatter("About | Tran Khoi Nguyen Pham", "/about", "Background and experience for Tran Khoi Nguyen Pham.") +
+    buildFrontmatter("About | Noah Pham", "/about", "Background and experience for Noah Pham.") +
     [
-      "# About Tran Khoi Nguyen Pham",
+      "# About Noah Pham",
       "",
       "I am a Computer Science student, founder, and developer based in Manchester. I build products that solve real problems for real people, with a focus on intuitive experiences, AI-powered workflows, and accessible tooling.",
       "",
@@ -267,7 +267,7 @@ function buildProjectsMarkdown() {
   const hackathonProjects = projects.filter((project) => project.category === "hackathon");
 
   return (
-    buildFrontmatter("Projects | Tran Khoi Nguyen Pham", "/projects", "Project index for Tran Khoi Nguyen Pham's portfolio.") +
+    buildFrontmatter("Projects | Noah Pham", "/projects", "Project index for Noah Pham's portfolio.") +
     [
       "# Projects",
       "",
@@ -288,11 +288,11 @@ function buildResumeMarkdown() {
   const resumePath = "/Tran_Khoi_Nguyen_Pham_s_Resume_Summer_Feb_2026.pdf";
 
   return (
-    buildFrontmatter("Resume | Tran Khoi Nguyen Pham", "/resume", "Latest resume and download link for Tran Khoi Nguyen Pham.") +
+    buildFrontmatter("Resume | Noah Pham", "/resume", "Latest resume and download link for Noah Pham.") +
     [
       "# Resume",
       "",
-      "Latest resume for Tran Khoi Nguyen Pham (Noah Pham).",
+      "Latest resume for Noah Pham (Nguyen Pham).",
       "",
       `- PDF: ${toAbsoluteUrl(resumePath)}`,
       "- Last updated: Feb 2026",
@@ -307,7 +307,7 @@ function buildResumeMarkdown() {
 
 function buildAgentDocsMarkdown() {
   return (
-    buildFrontmatter("Agent Discovery | Tran Khoi Nguyen Pham", "/docs/agents", "Agent discovery documentation for the site.") +
+    buildFrontmatter("Agent Discovery | Noah Pham", "/docs/agents", "Agent discovery documentation for the site.") +
     [
       "# Agent Discovery",
       "",
