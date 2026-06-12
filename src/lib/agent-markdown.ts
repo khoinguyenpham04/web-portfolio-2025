@@ -178,7 +178,7 @@ function buildHomeMarkdown() {
     [
       "# Noah Pham",
       "",
-      "Computer Science at the University of Manchester, product at Byteful, incoming at Cloudflare.",
+      "Computer Science at the University of Manchester, Software Developer at Byteful, incoming at Cloudflare.",
       "",
       "## Quick Links",
       "",
